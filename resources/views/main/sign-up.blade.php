@@ -2,13 +2,13 @@
 <html lang="en">
 
 
-<!-- Mirrored from pixner.net/sbidu/main/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sbidu - Bid And Auction HTML Template</title>
+    <title>Sbidu</title>
 
     <link rel="stylesheet" href="{{URL::TO('/main/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::TO('/main/css/all.min.css')}}">
@@ -297,15 +297,22 @@
                     <div class="or">
                         <span>Or</span>
                     </div>
-                    <form class="login-form">
+                    <form class="login-form" method="post" action="{{route('login')}}">
+                        @csrf
                         <div class="form-group mb-30">
                             <label for="login-email"><i class="far fa-envelope"></i></label>
-                            <input type="text" id="login-email" placeholder="Email Address">
+                            <input name="email" type="text" id="login-email" placeholder="Email Address" required>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group mb-30">
                             <label for="login-pass"><i class="fas fa-lock"></i></label>
-                            <input type="password" id="login-pass" placeholder="Password">
+                            <input name="password" type="password" id="login-pass" placeholder="Password" required>
                             <span class="pass-type"><i class="fas fa-eye"></i></span>
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror                          
                         </div>
                         <div class="form-group checkgroup mb-30">
                             <input type="checkbox" name="terms" id="check"><label for="check">The Sbidu Terms of Use apply</label>
