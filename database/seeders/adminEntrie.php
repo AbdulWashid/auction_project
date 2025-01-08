@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
+use Hash;
 
 class adminEntrie extends Seeder
 {
@@ -17,7 +18,7 @@ class adminEntrie extends Seeder
             'name' => 'abdul',
             'email' => "abdul@gmail.com",
             'roll'=>'1',
-            'password' =>bcrypt('12345678')
+            'password' =>Hash::make('12345678')
         ]);
     }
 }

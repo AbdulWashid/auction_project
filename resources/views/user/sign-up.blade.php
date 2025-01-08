@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from pixner.net/sbidu/main/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
+<!-- Mirrored from pixner.net/sbidu/user/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
 
     <title>Sbidu - Bid And Auction HTML Template</title>
 
-    <link rel="stylesheet" href="{{URL::TO('/main/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/animate.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/owl.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/jquery-ui.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/aos.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/main.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/animate.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/aos.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/main.css')}}">
 
-    <link rel="shortcut icon" href="{{URL::TO('/main/images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{URL::TO('/user/images/favicon.png')}}" type="image/x-icon">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="{{URL::TO('/main/images/logo/logo.png')}}" alt="logo">
+                            <img src="{{URL::TO('/user/images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
@@ -191,7 +191,7 @@
     <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="index.html" class="logo">
-                <img src="{{URL::TO('/main/images/logo/logo2.png')}}" alt="logo">
+                <img src="{{URL::TO('/user/images/logo/logo2.png')}}" alt="logo">
             </a>
             <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
         </div>
@@ -200,7 +200,7 @@
                 <h4 class="title">Shopping cart</h4>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop01.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop01.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Color Pencil</a></h4>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop02.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop02.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Water Pot</a></h4>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop03.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop03.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Art Paper</a></h4>
@@ -230,7 +230,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop04.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop04.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Stop Watch</a></h4>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop05.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop05.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Comics Book</a></h4>
@@ -272,7 +272,7 @@
                 </li>
             </ul>
         </div>
-        <div class="bg_img hero-bg bottom_center" data-background="{{URL::TO('/main/images/banner/hero-bg.png')}}"></div>
+        <div class="bg_img hero-bg bottom_center" data-background="{{URL::TO('/user/images/banner/hero-bg.png')}}"></div>
     </div>
     <!--============= Hero Section Ends Here =============-->
 
@@ -336,35 +336,35 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="{{URL::TO('/main/images/footer/footer-bg.jpg')}}">
+    <footer class="bg_img padding-top oh" data-background="{{URL::TO('/user/images/footer/footer-bg.jpg')}}">
         <div class="footer-top-shape">
-            <img src="{{URL::TO('/main/css/img/footer-top-shape.png')}}" alt="css">
+            <img src="{{URL::TO('/user/css/img/footer-top-shape.png')}}" alt="css">
         </div>
         <div class="anime-wrapper">
             <div class="anime-1 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p1.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p1.png')}}" alt="footer">
             </div>
             <div class="anime-2 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p2.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p2.png')}}" alt="footer">
             </div>
             <div class="anime-3 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p3.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p3.png')}}" alt="footer">
             </div>
             <div class="anime-5 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c2.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c2.png')}}" alt="footer">
             </div>
             <div class="anime-6 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c3.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c3.png')}}" alt="footer">
             </div>
             <div class="anime-7 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c4.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c4.png')}}" alt="footer">
             </div>
         </div>
         <div class="newslater-wrapper">
             <div class="container">
                 <div class="newslater-area">
                     <div class="newslater-thumb">
-                        <img src="{{URL::TO('/main/images/footer/newslater.png')}}" alt="footer">
+                        <img src="{{URL::TO('/user/images/footer/newslater.png')}}" alt="footer">
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
@@ -504,20 +504,20 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src="{{URL::TO('/main/images/logo/footer-logo.png')}}" alt="logo"></a>
+                            <a href="index.html"><img src="{{URL::TO('/user/images/logo/footer-logo.png')}}" alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/paypal.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/paypal.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/visa.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/visa.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/discover.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/discover.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/mastercard.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/mastercard.png')}}" alt="footer"></a>
                             </li>
                         </ul>
                         <div class="copyright"><p>&copy; Copyright 2024 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
@@ -530,23 +530,23 @@
 
 
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{URL::TO('/main/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/modernizr-3.6.0.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/plugins.js')}}"></script>
-    <script src="{{URL::TO('/main/js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/isotope.pkgd.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/aos.js')}}"></script>
-    <script src="{{URL::TO('/main/js/wow.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/waypoints.js')}}"></script>
-    <script src="{{URL::TO('/main/js/nice-select.js')}}"></script>
-    <script src="{{URL::TO('/main/js/counterup.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/owl.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/magnific-popup.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/yscountdown.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/jquery-ui.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/main.js')}}"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{URL::TO('/user/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/plugins.js')}}"></script>
+    <script src="{{URL::TO('/user/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/aos.js')}}"></script>
+    <script src="{{URL::TO('/user/js/wow.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/waypoints.js')}}"></script>
+    <script src="{{URL::TO('/user/js/nice-select.js')}}"></script>
+    <script src="{{URL::TO('/user/js/counterup.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/owl.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/magnific-popup.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/yscountdown.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/jquery-ui.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/main.js')}}"></script>
 </body>
 
 
-<!-- Mirrored from pixner.net/sbidu/main/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
+<!-- Mirrored from pixner.net/sbidu/user/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
 </html>

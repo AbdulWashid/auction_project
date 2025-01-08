@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from pixner.net/sbidu/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:13:52 GMT -->
+<!-- Mirrored from pixner.net/sbidu/user/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:13:52 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
 
     <title>Sbidu - Bid And Auction HTML Template</title>
 
-    <link rel="stylesheet" href="{{URL::TO('/main/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/animate.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/nice-select.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/owl.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/jquery-ui.min.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/aos.css')}}">
-    <link rel="stylesheet" href="{{URL::TO('/main/css/main.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/animate.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/aos.css')}}">
+    <link rel="stylesheet" href="{{URL::TO('/user/css/main.css')}}">
 
-    <link rel="shortcut icon" href="{{URL::TO('/main/images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{URL::TO('/user/images/favicon.png')}}" type="image/x-icon">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="{{URL::TO('/main/images/logo/logo.png')}}" alt="logo">
+                            <img src="{{URL::TO('/user/images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
@@ -191,7 +191,7 @@
     <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="index.html" class="logo">
-                <img src="{{URL::TO('/main/images/logo/logo2.png')}}" alt="logo">
+                <img src="{{URL::TO('/user/images/logo/logo2.png')}}" alt="logo">
             </a>
             <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
         </div>
@@ -200,7 +200,7 @@
                 <h4 class="title">Shopping cart</h4>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop01.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop01.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Color Pencil</a></h4>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop02.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop02.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Water Pot</a></h4>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop03.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop03.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Art Paper</a></h4>
@@ -230,7 +230,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop04.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop04.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Stop Watch</a></h4>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="{{URL::TO('/main/images/shop/shop05.jpg')}}" alt="shop"></a>
+                        <a href="#0"><img src="{{URL::TO('/user/images/shop/shop05.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Comics Book</a></h4>
@@ -258,7 +258,7 @@
 
 
     <!--============= Banner Section Starts Here =============-->
-    <section class="banner-section bg_img" data-background="{{URL::TO('/main/images/banner/banner-bg-1.png')}}">
+    <section class="banner-section bg_img" data-background="{{URL::TO('/user/images/banner/banner-bg-1.png')}}">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">
@@ -273,13 +273,13 @@
                 </div>
                 <div class="d-none d-lg-block col-lg-6" data-aos="fade-right" data-aos-duration="1200">
                     <div class="banner-thumb-2">
-                        <img src="{{URL::TO('/main/images/banner/banner-1.png')}}" alt="banner">
+                        <img src="{{URL::TO('/user/images/banner/banner-1.png')}}" alt="banner">
                     </div>
                 </div>
             </div>
         </div>
         <div class="banner-shape d-none d-lg-block">
-            <img src="{{URL::TO('/main/css/img/banner-shape.png')}}" alt="css">
+            <img src="{{URL::TO('/user/css/img/banner-shape.png')}}" alt="css">
         </div>
     </section>
     <!--============= Banner Section Ends Here =============-->
@@ -301,27 +301,27 @@
                 <div class="m--15">
                     <div class="browse-slider owl-theme owl-carousel">
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/01.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/01.png')}}" alt="auction">
                             <span class="info">Vehicles</span>
                         </a>
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/02.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/02.png')}}" alt="auction">
                             <span class="info">Jewelry</span>
                         </a>
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/03.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/03.png')}}" alt="auction">
                             <span class="info">Watches</span>
                         </a>
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/04.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/04.png')}}" alt="auction">
                             <span class="info">Electronics</span>
                         </a>
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/05.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/05.png')}}" alt="auction">
                             <span class="info">Sports</span>
                         </a>
                         <a href="#0" class="browse-item">
-                            <img src="{{URL::TO('/main/images/auction/06.png')}}" alt="auction">
+                            <img src="{{URL::TO('/user/images/auction/06.png')}}" alt="auction">
                             <span class="info">Real Estate</span>
                         </a>
                     </div>
@@ -332,12 +332,12 @@
         
         <!--============= Car Auction Section Starts Here =============-->
         <section class="car-auction-section padding-bottom padding-top pos-rel oh">
-            <div class="car-bg"><img src="{{URL::TO('/main/images/auction/car/car-bg.png')}}" alt="car"></div>
+            <div class="car-bg"><img src="{{URL::TO('/user/images/auction/car/car-bg.png')}}" alt="car"></div>
             <div class="container">
                 <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                     <div class="left">
                         <div class="thumb">
-                            <img src="{{URL::TO('/main/images/header-icons/car-1.png')}}" alt="header-icons">
+                            <img src="{{URL::TO('/user/images/header-icons/car-1.png')}}" alt="header-icons">
                         </div>
                         <div class="title-area">
                             <h2 class="title">Vehicles</h2>
@@ -350,7 +350,7 @@
                     <div class="col-sm-10 col-md-6 col-lg-4">
                         <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/car/auction-1.jpg')}}" alt="car"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/car/auction-1.jpg')}}" alt="car"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -393,7 +393,7 @@
                     <div class="col-sm-10 col-md-6 col-lg-4">
                         <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1100">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/car/auction-2.jpg')}}" alt="car"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/car/auction-2.jpg')}}" alt="car"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -436,7 +436,7 @@
                     <div class="col-sm-10 col-md-6 col-lg-4">
                         <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1200">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/car/auction-3.jpg')}}" alt="car"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/car/auction-3.jpg')}}" alt="car"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -485,12 +485,12 @@
 
     <!--============= Jewelry Auction Section Starts Here =============-->
     <section class="jewelry-auction-section padding-bottom padding-top pos-rel">
-        <div class="jewelry-bg d-none d-xl-block"><img src="{{URL::TO('/main/images/auction/jewelry/jwelry-bg.png')}}" alt="jewelry"></div>
+        <div class="jewelry-bg d-none d-xl-block"><img src="{{URL::TO('/user/images/auction/jewelry/jwelry-bg.png')}}" alt="jewelry"></div>
         <div class="container">
             <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                 <div class="left">
                     <div class="thumb">
-                        <img src="{{URL::TO('/main/images/header-icons/coin-1.png')}}" alt="header-icons">
+                        <img src="{{URL::TO('/user/images/header-icons/coin-1.png')}}" alt="header-icons">
                     </div>
                     <div class="title-area">
                         <h2 class="title">Jewelry</h2>
@@ -503,7 +503,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1300">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/jewelry/auction-1.jpg')}}" alt="jewelry"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/jewelry/auction-1.jpg')}}" alt="jewelry"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -546,7 +546,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1400">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/jewelry/auction-2.jpg')}}" alt="jewelry"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/jewelry/auction-2.jpg')}}" alt="jewelry"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -589,7 +589,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1500">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/jewelry/auction-3.jpg')}}" alt="jewelry"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/jewelry/auction-3.jpg')}}" alt="jewelry"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -638,7 +638,7 @@
     <!--============= Call In Section Starts Here =============-->
     <section class="call-in-section padding-top pt-max-xl-0">
         <div class="container">
-            <div class="call-wrapper cl-white bg_img" data-background="{{URL::TO('/main/images/call-in/call-bg.png')}}">
+            <div class="call-wrapper cl-white bg_img" data-background="{{URL::TO('/user/images/call-in/call-bg.png')}}">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
                     <h3 class="title">Register for Free & Start Bidding Now!</h3>
                     <p>From cars to diamonds to iPhones, we have it all.</p>
@@ -656,7 +656,7 @@
             <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                 <div class="left">
                     <div class="thumb">
-                        <img src="{{URL::TO('/main/images/header-icons/coin-1.png')}}" alt="header-icons">
+                        <img src="{{URL::TO('/user/images/header-icons/coin-1.png')}}" alt="header-icons">
                     </div>
                     <div class="title-area">
                         <h2 class="title">Watches</h2>
@@ -669,7 +669,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1600">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/watches/auction-1.jpg')}}" alt="watches"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/watches/auction-1.jpg')}}" alt="watches"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -712,7 +712,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1700">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/watches/auction-2.jpg')}}" alt="watches"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/watches/auction-2.jpg')}}" alt="watches"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -755,7 +755,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1800">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/watches/auction-3.jpg')}}" alt="watches"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/watches/auction-3.jpg')}}" alt="watches"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -803,7 +803,7 @@
 
     <!--============= Popular Auction Section Starts Here =============-->
     <section class="popular-auction padding-top pos-rel">
-        <div class="popular-bg bg_img" data-background="{{URL::TO('/main/images/auction/popular/popular-bg.png')}}"></div>
+        <div class="popular-bg bg_img" data-background="{{URL::TO('/user/images/auction/popular/popular-bg.png')}}"></div>
         <div class="container">
             <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
                 <span class="cate">Closing Within 24 Hours</span>
@@ -815,7 +815,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1500">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-1.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-1.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -840,7 +840,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="900">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-2.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-2.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -866,7 +866,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1000">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-3.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-3.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -892,7 +892,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1200">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-4.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-4.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -918,7 +918,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1300">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-5.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-5.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -944,7 +944,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1400">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/popular/auction-6.jpg')}}" alt="popular"></a>
+                                <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/popular/auction-6.jpg')}}" alt="popular"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -976,12 +976,12 @@
 
     <!--============= Coins and Bullion Auction Section Starts Here =============-->
     <section class="coins-and-bullion-auction-section padding-bottom padding-top pos-rel pb-max-xl-0">
-        <div class="jewelry-bg d-none d-xl-block"><img src="{{URL::TO('/main/images/auction/coins/coin-bg.png')}}" alt="coin"></div>
+        <div class="jewelry-bg d-none d-xl-block"><img src="{{URL::TO('/user/images/auction/coins/coin-bg.png')}}" alt="coin"></div>
         <div class="container">
             <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                 <div class="left">
                     <div class="thumb">
-                        <img src="{{URL::TO('/main/images/header-icons/coin-1.png')}}" alt="header-icons">
+                        <img src="{{URL::TO('/user/images/header-icons/coin-1.png')}}" alt="header-icons">
                     </div>
                     <div class="title-area">
                         <h2 class="title">Coins & Bullion</h2>
@@ -994,7 +994,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1900">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/coins/auction-1.jpg')}}" alt="coins"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/coins/auction-1.jpg')}}" alt="coins"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -1037,7 +1037,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2000">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/coins/auction-2.jpg')}}" alt="coins"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/coins/auction-2.jpg')}}" alt="coins"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -1080,7 +1080,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2100">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/coins/auction-3.jpg')}}" alt="coins"></a>
+                            <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/coins/auction-3.jpg')}}" alt="coins"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -1128,12 +1128,12 @@
 
     <!--============= Real Estate Section Starts Here =============-->
     <section class="real-estate-auction padding-top padding-bottom pos-rel oh">
-        <div class="car-bg"><img src="{{URL::TO('/main/images/auction/realstate/real-bg.png')}}" alt="realstate"></div>
+        <div class="car-bg"><img src="{{URL::TO('/user/images/auction/realstate/real-bg.png')}}" alt="realstate"></div>
         <div class="container">
             <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                 <div class="left">
                     <div class="thumb">
-                        <img src="{{URL::TO('/main/images/header-icons/coin-1.png')}}" alt="header-icons">
+                        <img src="{{URL::TO('/user/images/header-icons/coin-1.png')}}" alt="header-icons">
                     </div>
                     <div class="title-area">
                         <h2 class="title">Real Estate</h2>
@@ -1145,7 +1145,7 @@
             <div class="auction-slider-4 owl-theme owl-carousel">
                 <div class="auction-item-4">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
+                        <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
@@ -1185,7 +1185,7 @@
                 </div>
                 <div class="auction-item-4">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
+                        <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
@@ -1225,7 +1225,7 @@
                 </div>
                 <div class="auction-item-4">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
+                        <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
@@ -1265,7 +1265,7 @@
                 </div>
                 <div class="auction-item-4">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
+                        <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
@@ -1305,7 +1305,7 @@
                 </div>
                 <div class="auction-item-4">
                     <div class="auction-thumb">
-                        <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
+                        <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/realstate/auction-1.png')}}" alt="realstate"></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
@@ -1362,7 +1362,7 @@
                     <div class="section-header-2">
                         <div class="left">
                             <div class="thumb">
-                                <img src="{{URL::TO('/main/images/header-icons/camera-1.png')}}" alt="header-icons">
+                                <img src="{{URL::TO('/user/images/header-icons/camera-1.png')}}" alt="header-icons">
                             </div>
                             <h2 class="title">Electronics</h2>
                         </div>
@@ -1375,7 +1375,7 @@
                         <div class="slide-item">
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-1.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-1.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1402,7 +1402,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-2.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-2.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1429,7 +1429,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-3.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-3.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1456,7 +1456,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-4.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-4.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1485,7 +1485,7 @@
                         <div class="slide-item">
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-1.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-1.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1512,7 +1512,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-2.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-2.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1539,7 +1539,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-3.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-3.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1566,7 +1566,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/electronics/auction-4.jpg')}}" alt="electronics"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/electronics/auction-4.jpg')}}" alt="electronics"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1598,7 +1598,7 @@
                     <div class="section-header-2">
                         <div class="left">
                             <div class="thumb">
-                                <img src="{{URL::TO('/main/images/header-icons/art-1.png')}}" alt="header-icons">
+                                <img src="{{URL::TO('/user/images/header-icons/art-1.png')}}" alt="header-icons">
                             </div>
                             <h2 class="title">Art</h2>
                         </div>
@@ -1611,7 +1611,7 @@
                         <div class="slide-item">
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-1.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-1.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1638,7 +1638,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-2.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-2.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1665,7 +1665,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-3.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-3.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1692,7 +1692,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-4.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-4.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1721,7 +1721,7 @@
                         <div class="slide-item">
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-1.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-1.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1748,7 +1748,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-2.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-2.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1775,7 +1775,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-3.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-3.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1802,7 +1802,7 @@
                             </div>
                             <div class="auction-item-1">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{URL::TO('/main/images/auction/art/auction-4.jpg')}}" alt="art"></a>
+                                    <a href="product-details.html"><img src="{{URL::TO('/user/images/auction/art/auction-4.jpg')}}" alt="art"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
@@ -1848,7 +1848,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1000">
-                                <img src="{{URL::TO('/main/images/how/how1.png')}}" alt="how">
+                                <img src="{{URL::TO('/user/images/how/how1.png')}}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
                                 <h4 class="title">Sign Up</h4>
@@ -1859,7 +1859,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1200">
-                                <img src="{{URL::TO('/main/images/how/how2.png')}}" alt="how">
+                                <img src="{{URL::TO('/user/images/how/how2.png')}}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1400">
                                 <h4 class="title">Bid</h4>
@@ -1870,7 +1870,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1400">
-                                <img src="{{URL::TO('/main/images/how/how3.png')}}" alt="how">
+                                <img src="{{URL::TO('/user/images/how/how3.png')}}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1600">
                                 <h4 class="title">Win</h4>
@@ -1901,7 +1901,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="{{URL::TO('/main/images/client/client01.png')}}" alt="client">
+                                    <img src="{{URL::TO('/user/images/client/client01.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -1923,7 +1923,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="{{URL::TO('/main/images/client/client02.png')}}" alt="client">
+                                    <img src="{{URL::TO('/user/images/client/client02.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -1945,7 +1945,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="{{URL::TO('/main/images/client/client03.png')}}" alt="client">
+                                    <img src="{{URL::TO('/user/images/client/client03.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -1968,35 +1968,35 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="{{URL::TO('/main/images/footer/footer-bg.jpg')}}">
+    <footer class="bg_img padding-top oh" data-background="{{URL::TO('/user/images/footer/footer-bg.jpg')}}">
         <div class="footer-top-shape">
-            <img src="{{URL::TO('/main/css/img/footer-top-shape.png')}}" alt="css">
+            <img src="{{URL::TO('/user/css/img/footer-top-shape.png')}}" alt="css">
         </div>
         <div class="anime-wrapper">
             <div class="anime-1 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p1.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p1.png')}}" alt="footer">
             </div>
             <div class="anime-2 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p2.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p2.png')}}" alt="footer">
             </div>
             <div class="anime-3 plus-anime">
-                <img src="{{URL::TO('/main/images/footer/p3.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/p3.png')}}" alt="footer">
             </div>
             <div class="anime-5 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c2.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c2.png')}}" alt="footer">
             </div>
             <div class="anime-6 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c3.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c3.png')}}" alt="footer">
             </div>
             <div class="anime-7 zigzag">
-                <img src="{{URL::TO('/main/images/footer/c4.png')}}" alt="footer">
+                <img src="{{URL::TO('/user/images/footer/c4.png')}}" alt="footer">
             </div>
         </div>
         <div class="newslater-wrapper">
             <div class="container">
                 <div class="newslater-area">
                     <div class="newslater-thumb">
-                        <img src="{{URL::TO('/main/images/footer/newslater.png')}}" alt="footer">
+                        <img src="{{URL::TO('/user/images/footer/newslater.png')}}" alt="footer">
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
@@ -2136,20 +2136,20 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src="{{URL::TO('/main/images/logo/footer-logo.png')}}" alt="logo"></a>
+                            <a href="index.html"><img src="{{URL::TO('/user/images/logo/footer-logo.png')}}" alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/paypal.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/paypal.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/visa.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/visa.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/discover.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/discover.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="{{URL::TO('/main/images/footer/mastercard.png')}}" alt="footer"></a>
+                                <a href="#0"><img src="{{URL::TO('/user/images/footer/mastercard.png')}}" alt="footer"></a>
                             </li>
                         </ul>
                         <div class="copyright"><p>&copy; Copyright 2024 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
@@ -2162,21 +2162,21 @@
 
 
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')"></script><script src="{{URL::TO('/main/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/modernizr-3.6.0.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/plugins.js')}}"></script>
-    <script src="{{URL::TO('/main/js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/isotope.pkgd.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/aos.js')}}"></script>
-    <script src="{{URL::TO('/main/js/wow.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/waypoints.js')}}"></script>
-    <script src="{{URL::TO('/main/js/nice-select.js')}}"></script>
-    <script src="{{URL::TO('/main/js/counterup.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/owl.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/magnific-popup.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/yscountdown.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/jquery-ui.min.js')}}"></script>
-    <script src="{{URL::TO('/main/js/main.js')}}"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')"></script><script src="{{URL::TO('/user/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/plugins.js')}}"></script>
+    <script src="{{URL::TO('/user/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/aos.js')}}"></script>
+    <script src="{{URL::TO('/user/js/wow.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/waypoints.js')}}"></script>
+    <script src="{{URL::TO('/user/js/nice-select.js')}}"></script>
+    <script src="{{URL::TO('/user/js/counterup.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/owl.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/magnific-popup.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/yscountdown.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/jquery-ui.min.js')}}"></script>
+    <script src="{{URL::TO('/user/js/main.js')}}"></script>
 </body>
 
 
