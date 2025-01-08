@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class rollCheckMiddleware
 {
@@ -16,9 +17,13 @@ class rollCheckMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dd('hello from middleware');
-        if(auth()->check() && auth()->user()->roll == 'admin'){
-            return $next($request);
+        if(!Auth::check()){
+            return redirect()->route('loginPage');
+        }
+        $data = User::where('id','=',Auth::id())->first();
+
+        if($data->roll != '1'){ // 1 for admin and 0 for user
+            return redirect()->route('loginPage');
         }
         return $next($request);
     }

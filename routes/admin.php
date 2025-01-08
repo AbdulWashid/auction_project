@@ -2,10 +2,8 @@
 use App\Http\Middleware\rollCheckMiddleware;  
 
 
-Route::group([ 'middleware' => rollCheckMiddleware::class,'prefix' => 'admin'],function(){
+Route::group(['prefix' => 'admin' ,'as' => 'admin.' , 'middleware' => rollCheckMiddleware::class],function(){
     Route::get('index',function(){
-        dd('hello from admin route php file');
-        return view('master.index');
-        // dd("hello from index function in route");
+        return view('Admin.index');
     })->name('index');
 });

@@ -22,7 +22,7 @@ class authController extends Controller
         $login = Auth::attempt($credientials);
         // dd($login);
         if(!$login){
-            return redirect()->route('login')->with('error','Invalid login credientials');
+            return redirect()->route('loginPage')->with('error','Invalid login credientials');
         }
         else{
             return redirect()->route('admin.index');
