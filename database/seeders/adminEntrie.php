@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use DB;
 
 class adminEntrie extends Seeder
 {
@@ -13,10 +14,10 @@ class adminEntrie extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => "admin@gmail.com",
+            'name' => 'abdul',
+            'email' => "abdul@gmail.com",
             'roll'=>'1',
-            'password' => Hash::make('12345678'),//$2y$12$mrOXn9Zddlf28jctNyU8POEMA//SVWXFKs3ACK8qySI7Lm.UWNTpC
+            'password' =>bcrypt('12345678')
         ]);
     }
 }

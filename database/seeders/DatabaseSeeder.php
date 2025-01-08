@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => "admin@gmail.com",
             'roll'=>'1',
-            'password' => '$2y$12$mrOXn9Zddlf28jctNyU8POEMA//SVWXFKs3ACK8qySI7Lm.UWNTpC', // Hash::make('12345678'),//$2y$12$mrOXn9Zddlf28jctNyU8POEMA//SVWXFKs3ACK8qySI7Lm.UWNTpC
+            'password' =>bcrypt('12345678')
         ]);
     }
 }
