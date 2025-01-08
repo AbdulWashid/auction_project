@@ -2,13 +2,13 @@
 <html lang="en">
 
 
-
+<!-- Mirrored from pixner.net/sbidu/main/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:40 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sbidu</title>
+    <title>Sbidu - Bid And Auction HTML Template</title>
 
     <link rel="stylesheet" href="{{URL::TO('/main/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::TO('/main/css/all.min.css')}}">
@@ -297,7 +297,7 @@
                     <div class="or">
                         <span>Or</span>
                     </div>
-                    <form class="login-form" method="post" action="{{route('login')}}">
+                    <form class="login-form" method="post" action="{{route('login.create')}}">
                         @csrf
                         <div class="form-group mb-30">
                             <label for="login-email"><i class="far fa-envelope"></i></label>

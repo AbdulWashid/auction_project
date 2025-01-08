@@ -5,8 +5,8 @@ use App\Http\Controllers\crudController;
 use App\Http\Middleware\rollCheckMiddleware;
 
 Route::get('/', function () {
-    return view('main.sign-up');
+    return view('user.sign-up');
 });
 
-Route::get('login',[crudController::class,'create']);
+Route::resource('login',crudController::class);
 Route::post('login',[crudController::class,'store'])->name('login')->middleware(rollCheckMiddleware::class);
