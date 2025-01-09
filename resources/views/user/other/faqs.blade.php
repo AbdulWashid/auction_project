@@ -10,18 +10,18 @@
 
     <title>Sbidu - Bid And Auction HTML Template</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/owl.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="{{asset('/user/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/main.css')}}">
 
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('/user/images/favicon.png')}}" type="image/x-icon">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="logo">
+                            <img src="{{asset('/user/images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
@@ -191,7 +191,7 @@
     <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo/logo2.png" alt="logo">
+                <img src="{{asset('/user/images/logo/logo2.png')}}" alt="logo">
             </a>
             <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
         </div>
@@ -200,7 +200,7 @@
                 <h4 class="title">Shopping cart</h4>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop01.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop01.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Color Pencil</a></h4>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop02.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop02.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Water Pot</a></h4>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop03.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop03.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Art Paper</a></h4>
@@ -230,7 +230,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop04.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop04.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Stop Watch</a></h4>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop05.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop05.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Comics Book</a></h4>
@@ -272,7 +272,7 @@
                 </li>
             </ul>
         </div>
-        <div class="bg_img hero-bg bottom_center" data-background="assets/images/banner/hero-bg.png"></div>
+        <div class="bg_img hero-bg bottom_center" data-background="{{asset('/user/images/banner/hero-bg.png')}}"></div>
     </div>
     <!--============= Hero Section Ends Here =============-->
 
@@ -289,7 +289,7 @@
                     <div class="faq-wrapper">
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -297,7 +297,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -305,7 +305,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -313,7 +313,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -321,7 +321,7 @@
                         </div>
                         <div class="faq-item open active">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -329,7 +329,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -337,7 +337,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -345,7 +345,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How to leave an absentee bid</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How to leave an absentee bid</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -353,7 +353,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How do I know if I won an item?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How do I know if I won an item?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -361,7 +361,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How do I know if I'm the high bidder?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How do I know if I'm the high bidder?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -369,7 +369,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Can I bid using my mobile device?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Can I bid using my mobile device?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -377,7 +377,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Where do I access my saved items?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Where do I access my saved items?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -385,7 +385,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Cancellations and returns</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Cancellations and returns</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -393,7 +393,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -401,7 +401,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -409,7 +409,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -417,7 +417,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="assets/css/img/faq.png" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
+                                <img src="{{asset('/user/css/img/faq.png')}}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -427,7 +427,7 @@
                 </div>
                 <div class="col-lg-4 mb-50">
                     <aside class="sticky-menu">
-                        <div class="faq-menu bg_img mb-30" data-background="./assets/images/faq/faq-menu.png" style="background-image: url(_/assets/images/faq/faq-menu.html);">
+                        <div class="faq-menu bg_img mb-30" data-background="./{{asset('/user/images/faq/faq-menu.png')}}" style="background-image: url(_/{{asset('/user/images/faq/faq-menu.html);">
                             <ul id="faq-menu">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#company">For Companies</a>
@@ -451,7 +451,7 @@
                         </div>
                         <div class="faq-video mb-30">
                             <a href="https://www.youtube.com/watch?v=Mj3QejzYZ70" class="video-area popup">
-                                <img src="assets/images/faq/video.png" alt="faq">
+                                <img src="{{asset('/user/images/faq/video.png')}}" alt="faq">
                                 <div class="video-button-2">
                                     <span></span>
                                     <span></span>
@@ -491,35 +491,35 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="assets/images/footer/footer-bg.jpg">
+    <footer class="bg_img padding-top oh" data-background="{{asset('/user/images/footer/footer-bg.jpg')}}">
         <div class="footer-top-shape">
-            <img src="assets/css/img/footer-top-shape.png" alt="css">
+            <img src="{{asset('/user/css/img/footer-top-shape.png')}}" alt="css">
         </div>
         <div class="anime-wrapper">
             <div class="anime-1 plus-anime">
-                <img src="assets/images/footer/p1.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p1.png')}}" alt="footer">
             </div>
             <div class="anime-2 plus-anime">
-                <img src="assets/images/footer/p2.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p2.png')}}" alt="footer">
             </div>
             <div class="anime-3 plus-anime">
-                <img src="assets/images/footer/p3.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p3.png')}}" alt="footer">
             </div>
             <div class="anime-5 zigzag">
-                <img src="assets/images/footer/c2.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c2.png')}}" alt="footer">
             </div>
             <div class="anime-6 zigzag">
-                <img src="assets/images/footer/c3.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c3.png')}}" alt="footer">
             </div>
             <div class="anime-7 zigzag">
-                <img src="assets/images/footer/c4.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c4.png')}}" alt="footer">
             </div>
         </div>
         <div class="newslater-wrapper">
             <div class="container">
                 <div class="newslater-area">
                     <div class="newslater-thumb">
-                        <img src="assets/images/footer/newslater.png" alt="footer">
+                        <img src="{{asset('/user/images/footer/newslater.png')}}" alt="footer">
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
@@ -659,20 +659,20 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="{{asset('/user/images/logo/footer-logo.png')}}" alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>
-                                <a href="#0"><img src="assets/images/footer/paypal.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/paypal.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/visa.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/visa.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/discover.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/discover.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/mastercard.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/mastercard.png')}}" alt="footer"></a>
                             </li>
                         </ul>
                         <div class="copyright"><p>&copy; Copyright 2024 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
@@ -685,21 +685,21 @@
 
 
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoints.js"></script>
-    <script src="assets/js/nice-select.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/owl.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/yscountdown.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('/user/js/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{asset('/user/js/plugins.js')}}"></script>
+    <script src="{{asset('/user/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/user/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('/user/js/aos.js')}}"></script>
+    <script src="{{asset('/user/js/wow.min.js')}}"></script>
+    <script src="{{asset('/user/js/waypoints.js')}}"></script>
+    <script src="{{asset('/user/js/nice-select.js')}}"></script>
+    <script src="{{asset('/user/js/counterup.min.js')}}"></script>
+    <script src="{{asset('/user/js/owl.min.js')}}"></script>
+    <script src="{{asset('/user/js/magnific-popup.min.js')}}"></script>
+    <script src="{{asset('/user/js/yscountdown.min.js')}}"></script>
+    <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('/user/js/main.js')}}"></script>
 </body>
 
 

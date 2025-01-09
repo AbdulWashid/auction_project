@@ -10,18 +10,18 @@
 
     <title>Sbidu - Bid And Auction HTML Template</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/owl.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="{{asset('/user/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('/user/css/main.css')}}">
 
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('/user/images/favicon.png')}}" type="image/x-icon">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="logo">
+                            <img src="{{asset('/user/images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
@@ -191,7 +191,7 @@
     <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo/logo2.png" alt="logo">
+                <img src="{{asset('/user/images/logo/logo2.png')}}" alt="logo">
             </a>
             <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
         </div>
@@ -200,7 +200,7 @@
                 <h4 class="title">Shopping cart</h4>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop01.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop01.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Color Pencil</a></h4>
@@ -210,7 +210,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop02.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop02.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Water Pot</a></h4>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop03.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop03.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Art Paper</a></h4>
@@ -230,7 +230,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop04.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop04.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Stop Watch</a></h4>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <a href="#0"><img src="assets/images/shop/shop05.jpg" alt="shop"></a>
+                        <a href="#0"><img src="{{asset('/user/images/shop/shop05.jpg')}}" alt="shop"></a>
                     </div>
                     <div class="content">
                         <h4 class="title"><a href="#0">Comics Book</a></h4>
@@ -258,7 +258,7 @@
 
 
     <!--============= Banner Section Starts Here =============-->
-    <section class="banner-section-4 bg_img oh" data-background="assets/images/banner/banner-bg-4.png">
+    <section class="banner-section-4 bg_img oh" data-background="{{asset('/user/images/banner/banner-bg-4.png')}}">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
@@ -279,14 +279,14 @@
                     <div class="banner-thumb-4 banner-4update">
                         <a href="#0" class="bid-now"><i class="flaticon-auction"></i><span>Bid Now</span></a>
                         <div class="thums">
-                            <img src="assets/images/banner/banner-4.png" alt="banner">
+                            <img src="{{asset('/user/images/banner/banner-4.png')}}" alt="banner">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="banner-shape d-none d-lg-block bot-0">
-            <img src="assets/css/img/banner-shape-4.png" alt="css">
+            <img src="{{asset('/user/css/img/banner-shape-4.png')}}" alt="css">
         </div>
     </section>
     <!--============= Banner Section Ends Here =============-->
@@ -303,7 +303,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="how-item">
                         <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1000">
-                            <img src="assets/images/how/how1.png" alt="how">
+                            <img src="{{asset('/user/images/how/how1.png')}}" alt="how">
                         </div>
                         <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
                             <h4 class="title">Sign Up</h4>
@@ -314,7 +314,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="how-item">
                         <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1000">
-                            <img src="assets/images/how/how2.png" alt="how">
+                            <img src="{{asset('/user/images/how/how2.png')}}" alt="how">
                         </div>
                         <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
                             <h4 class="title">Bid</h4>
@@ -325,7 +325,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="how-item">
                         <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1000">
-                            <img src="assets/images/how/how3.png" alt="how">
+                            <img src="{{asset('/user/images/how/how3.png')}}" alt="how">
                         </div>
                         <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
                             <h4 class="title">Win</h4>
@@ -335,14 +335,14 @@
                 </div>
             </div>
         </div>
-        <div class="car-2 d-none d-lg-block"><img src="assets/images/how/car2.png" alt="how"></div>
+        <div class="car-2 d-none d-lg-block"><img src="{{asset('/user/images/how/car2.png')}}" alt="how"></div>
     </section>
     <!--============= How Section Starts Here =============-->
 
 
     <!--============= Car Auction Section Starts Here =============-->
     <section class="car-auction-section padding-bottom pos-rel oh">
-        <div class="car-bg"><img src="assets/images/auction/car/car-bg.png" alt="car"></div>
+        <div class="car-bg"><img src="{{asset('/user/images/auction/car/car-bg.png')}}" alt="car"></div>
         <div class="container">
             <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                 <div class="left d-block">
@@ -355,7 +355,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="assets/images/auction/car/auction-1.jpg" alt="car"></a>
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-1.jpg')}}" alt="car"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -398,7 +398,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="assets/images/auction/car/auction-2.jpg" alt="car"></a>
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-2.jpg')}}" alt="car"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -441,7 +441,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="product-details.html"><img src="assets/images/auction/car/auction-3.jpg" alt="car"></a>
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-3.jpg')}}" alt="car"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -502,7 +502,7 @@
                     <div class="auction-item-6" data-aos="zoom-out-up" data-aos-duration="1200">
                         <div class="auction-inner">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/trending/auction-1.png" alt="trending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/trending/auction-1.png')}}" alt="trending"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -547,7 +547,7 @@
                     <div class="auction-item-6" data-aos="zoom-out-up" data-aos-duration="1300">
                         <div class="auction-inner">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/trending/auction-2.png" alt="trending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/trending/auction-2.png')}}" alt="trending"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -592,7 +592,7 @@
                     <div class="auction-item-6" data-aos="zoom-out-up" data-aos-duration="1400">
                         <div class="auction-inner">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/trending/auction-3.png" alt="trending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/trending/auction-3.png')}}" alt="trending"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -637,7 +637,7 @@
                     <div class="auction-item-6" data-aos="zoom-out-up" data-aos-duration="1500">
                         <div class="auction-inner">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/trending/auction-4.png" alt="trending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/trending/auction-4.png')}}" alt="trending"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
@@ -686,7 +686,7 @@
 
     <!--============= Ending Auction Section Starts Here =============-->
     <section class="ending-auction padding-top pos-rel">
-        <div class="popular-bg bg_img" data-background="assets/images/auction/popular/popular-bg.png"></div>
+        <div class="popular-bg bg_img" data-background="{{asset('/user/images/auction/popular/popular-bg.png')}}"></div>
         <div class="container">
             <div class="section-header cl-white">
                 <span class="cate">Closing Within 24 Hours</span>
@@ -698,7 +698,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction01.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction01.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -724,7 +724,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction02.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction02.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -750,7 +750,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction03.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction03.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -776,7 +776,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction04.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction04.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -802,7 +802,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction05.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction05.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -828,7 +828,7 @@
                     <div class="col-lg-6">
                         <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="800">
                             <div class="auction-thumb">
-                                <a href="product-details.html"><img src="assets/images/auction/ending/auction06.png" alt="ending"></a>
+                                <a href="product-details.html"><img src="{{asset('/user/images/auction/ending/auction06.png')}}" alt="ending"></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
@@ -864,7 +864,7 @@
     <!--============= Call In Section Starts Here =============-->
     <section class="call-in-section padding-top">
         <div class="container">
-            <div class="call-wrapper cl-white bg_img" data-background="assets/images/call-in/call-bg.png">
+            <div class="call-wrapper cl-white bg_img" data-background="{{asset('/user/images/call-in/call-bg.png')}}">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
                     <h3 class="title">Register for Free & Start Bidding Now!</h3>
                     <p>From cars to diamonds to iPhones, we have it all.</p>
@@ -892,7 +892,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="assets/images/client/client01.png" alt="client">
+                                    <img src="{{asset('/user/images/client/client01.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -914,7 +914,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="assets/images/client/client02.png" alt="client">
+                                    <img src="{{asset('/user/images/client/client02.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -936,7 +936,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="assets/images/client/client03.png" alt="client">
+                                    <img src="{{asset('/user/images/client/client03.png')}}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -959,35 +959,35 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="assets/images/footer/footer-bg.jpg">
+    <footer class="bg_img padding-top oh" data-background="{{asset('/user/images/footer/footer-bg.jpg')}}">
         <div class="footer-top-shape">
-            <img src="assets/css/img/footer-top-shape.png" alt="css">
+            <img src="{{asset('/user/css/img/footer-top-shape.png')}}" alt="css">
         </div>
         <div class="anime-wrapper">
             <div class="anime-1 plus-anime">
-                <img src="assets/images/footer/p1.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p1.png')}}" alt="footer">
             </div>
             <div class="anime-2 plus-anime">
-                <img src="assets/images/footer/p2.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p2.png')}}" alt="footer">
             </div>
             <div class="anime-3 plus-anime">
-                <img src="assets/images/footer/p3.png" alt="footer">
+                <img src="{{asset('/user/images/footer/p3.png')}}" alt="footer">
             </div>
             <div class="anime-5 zigzag">
-                <img src="assets/images/footer/c2.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c2.png')}}" alt="footer">
             </div>
             <div class="anime-6 zigzag">
-                <img src="assets/images/footer/c3.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c3.png')}}" alt="footer">
             </div>
             <div class="anime-7 zigzag">
-                <img src="assets/images/footer/c4.png" alt="footer">
+                <img src="{{asset('/user/images/footer/c4.png')}}" alt="footer">
             </div>
         </div>
         <div class="newslater-wrapper">
             <div class="container">
                 <div class="newslater-area">
                     <div class="newslater-thumb">
-                        <img src="assets/images/footer/newslater.png" alt="footer">
+                        <img src="{{asset('/user/images/footer/newslater.png')}}" alt="footer">
                     </div>
                     <div class="newslater-content">
                         <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
@@ -1127,20 +1127,20 @@
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="{{asset('/user/images/logo/footer-logo.png')}}" alt="logo"></a>
                         </div>
                         <ul class="gateway-area">
                             <li>
-                                <a href="#0"><img src="assets/images/footer/paypal.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/paypal.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/visa.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/visa.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/discover.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/discover.png')}}" alt="footer"></a>
                             </li>
                             <li>
-                                <a href="#0"><img src="assets/images/footer/mastercard.png" alt="footer"></a>
+                                <a href="#0"><img src="{{asset('/user/images/footer/mastercard.png')}}" alt="footer"></a>
                             </li>
                         </ul>
                         <div class="copyright"><p>&copy; Copyright 2024 | <a href="#0">Sbidu</a> By <a href="#0">Uiaxis</a></p></div>
@@ -1153,21 +1153,21 @@
 
 
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoints.js"></script>
-    <script src="assets/js/nice-select.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/owl.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/yscountdown.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('/user/js/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{asset('/user/js/plugins.js')}}"></script>
+    <script src="{{asset('/user/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/user/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('/user/js/aos.js')}}"></script>
+    <script src="{{asset('/user/js/wow.min.js')}}"></script>
+    <script src="{{asset('/user/js/waypoints.js')}}"></script>
+    <script src="{{asset('/user/js/nice-select.js')}}"></script>
+    <script src="{{asset('/user/js/counterup.min.js')}}"></script>
+    <script src="{{asset('/user/js/owl.min.js')}}"></script>
+    <script src="{{asset('/user/js/magnific-popup.min.js')}}"></script>
+    <script src="{{asset('/user/js/yscountdown.min.js')}}"></script>
+    <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('/user/js/main.js')}}"></script>
 </body>
 
 
