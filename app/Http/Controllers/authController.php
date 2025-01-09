@@ -30,5 +30,9 @@ class authController extends Controller
             return redirect()->route('loginPage')->with('error','Invalid login credientials');
         }
     }
+    function logout(){
+        Auth::logout();
+        return redirect()->route('loginPage');
+    }
 
 }

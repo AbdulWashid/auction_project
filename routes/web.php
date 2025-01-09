@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 Route::view('login','user.sign-in')->name('loginPage'); // login page route
 Route::post('login',[authController::class,'login'])->name('login'); // login data store
+Route::get('logout',[authController::class,'logout'])->name('logout');
 
 require __DIR__.'/admin.php';
 require __DIR__.'/user.php';
