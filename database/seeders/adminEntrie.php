@@ -15,8 +15,8 @@ class adminEntrie extends Seeder
     public function run(): void
     {
         DB::table('users')->insert([
-            'name' => 'abdul',
-            'email' => "abdul@gmail.com",
+            'name' => 'admin',
+            'email' => "admin@gmail.com",
             'roll'=>'1',
             'password' =>Hash::make('12345678')
         ]);
