@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from pixner.net/sbidu/user/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:15:26 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Sbidu - Bid And Auction HTML Template</title>
-
+    <title>Sbidu</title>
     <link rel="stylesheet" href="{{asset('user/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/animate.css')}}">
@@ -79,7 +74,7 @@
                     <ul class="menu ml-auto">
                         <li>
                             <a href="#0">Home</a>
-                            <ul class="submenu">
+                            <!-- <ul class="submenu">
                                 <li>
                                     <a href="index.html">Home Page One</a>
                                 </li>
@@ -95,7 +90,7 @@
                                 <li>
                                     <a href="index-5.html">Home Page Five</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li>
                             <a href="product.html">Auction</a>

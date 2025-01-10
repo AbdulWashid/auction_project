@@ -20,8 +20,8 @@ class adminRollCheck
         if(!Auth::check()){
             return redirect()->route('loginPage');
         }
-
-        $data = User::where('id','=',Auth::id())->first();
+        // $data = User::where('id','=',Auth::id())->first();
+        $data = Auth::user();
         if($data->roll == '1'){ // 1 for admin and 0 for user
             return $next($request);
         }
