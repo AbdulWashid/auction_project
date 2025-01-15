@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from pixner.net/sbidu/main/error.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:53 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sbidu - Bid And Auction HTML Template</title>
+    <title>@yield('title')</title>
 
     <link rel="stylesheet" href="{{asset('/user/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/user/css/all.min.css')}}">
@@ -25,28 +22,23 @@
 </head>
 
 <body>
-
-
+    <!-- ============= ScrollToTop Section Starts Here =============-->
     <div class="overlayer" id="overlayer">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
     </div>
-    <!--============= Error Section Starts Here =============-->
-    <div class="error-section padding-top padding-bottom bg_img" data-background="{{asset('/user/images/error-bg.png')}}">
-        <div class="container">
-            <div class="error-wrapper">
-                <div class="error-thumb">
-                    <img src="{{asset('/user/images/error.png')}}" alt="error">
-                </div>
-                <h4 class="title">Return to the <a href="index.html">homepage</a></h4>
-            </div>
-        </div>
-    </div>
-    <!--============= Error Section Ends Here =============-->
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here ============= -->
 
 
-    <script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
+    @include('user.layouts.header')
+    @include('user.layouts.cart')
+    @yield('main')
+    @include('user.layouts.footer')
+
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')"></script><script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('/user/js/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('/user/js/plugins.js')}}"></script>
     <script src="{{asset('/user/js/bootstrap.min.js')}}"></script>
@@ -62,7 +54,4 @@
     <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/user/js/main.js')}}"></script>
 </body>
-
-
-<!-- Mirrored from pixner.net/sbidu/main/error.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 05:16:54 GMT -->
 </html>

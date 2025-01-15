@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
 
 Route::get('/', function () {
-    return view('user.sign-in');
-});
+    return view('user.faqs');//faqs
+})->name('user.index');
+
 Route::view('login','user.sign-in')->name('loginPage'); // login page route
+Route::view('registration','user.sign-up')->name('registrationPage'); // login page route
 Route::post('login',[authController::class,'login'])->name('login'); // login data store
 Route::get('logout',[authController::class,'logout'])->name('logout');
 

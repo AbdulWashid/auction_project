@@ -18,7 +18,13 @@ class adminEntrie extends Seeder
             'name' => 'admin',
             'email' => "admin@gmail.com",
             'roll'=>'1',
-            'password' =>Hash::make('12345678')
+            'password' =>Hash::make('121212')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'user',
+            'email' => "user@gmail.com",
+            'roll'=>'0',
+            'password' =>Hash::make('121212')
         ]);
     }
 }
