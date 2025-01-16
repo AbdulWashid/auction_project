@@ -5292,6 +5292,13 @@ div[class*=auction] .custom-button {
   position: absolute;
   cursor: pointer;
 }
+.pass-type2 {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  cursor: pointer;
+}
 .login-form .form-group input {
   height: 50px;
   border: 1px solid rgba(97, 90, 191, 0.2);
@@ -5336,7 +5343,7 @@ div[class*=auction] .custom-button {
   .login-form .form-group label {
     left: 10px;
   }
-  .login-form .form-group .pass-type {
+  .login-form .form-group .pass-type .pass-type2 {
     right: 10px;
   }
 }

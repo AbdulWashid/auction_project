@@ -8,7 +8,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('user.index')}}">Home</a>
                 </li>
                 <li>
                     <a href="#0">Pages</a>
@@ -40,28 +40,56 @@
                             <a href="#0"><i class="fab fa-google-plus"></i>Log in with Google</a>
                         </li>
                     </ul>
+                    @if(session('error'))
+                    <div class="text text-danger text-center">{{session('error')}}</div>
+                    @endif
                     <div class="or">
                         <span>Or</span>
                     </div>
-                    <form class="login-form" method="post" action="{{route('login.create')}}">
+                    <form class="login-form" method="post" action="{{route('registration')}}">
                         @csrf
                         <div class="form-group mb-30">
+                            <label for="name"><i class="far fa-user"></i></label>
+                            <input name="name" type="text" id="name" placeholder=" Full name" value="{{old('name')}}" required>
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-30">
+                            <label for="mobile"><i class="far fa-contact"></i></label>
+                            <input name="mobile" type="number" id="mobile" value="{{old('mobile')}}"  placeholder="Mobile No." required>
+                            @error('mobile')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-30">
                             <label for="login-email"><i class="far fa-envelope"></i></label>
-                            <input name="email" type="text" id="login-email" placeholder="Email Address" required>
+                            <input name="email" type="text" value="{{old('email')}}" id="login-email" placeholder="Email Address" required>
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group mb-30">
                             <label for="login-pass"><i class="fas fa-lock"></i></label>
-                            <input name="password" type="password" id="login-pass" placeholder="Password" required>
+                            <input name="password" type="password" minlength='6' id="login-pass" placeholder="Password" required>
                             <span class="pass-type"><i class="fas fa-eye"></i></span>
                             @error('password')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror                          
                         </div>
+                        <div class="form-group mb-30">
+                            <label for="password_confirmation"><i class="fas fa-lock"></i></label>
+                            <input name="password_confirmation" type="password" minlength='6' id="password_confirmation" placeholder="confirm-password" required>
+                            <span class="pass-type2"><i class="fas fa-eye"></i></span>
+                            @error('password_confirmation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror                          
+                        </div>
                         <div class="form-group checkgroup mb-30">
-                            <input type="checkbox" name="terms" id="check"><label for="check">The Sbidu Terms of Use apply</label>
+                            <input type="checkbox" name="terms" id="check" required><label for="check">The Sbidu Terms of Use apply</label>
+                            @error('terms')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror    
                         </div>
                         <div class="form-group mb-0">
                             <button type="submit" class="custom-button">LOG IN</button>
@@ -72,7 +100,7 @@
                     <div class="section-header mb-0">
                         <h3 class="title mt-0">ALREADY HAVE AN ACCOUNT?</h3>
                         <p>Log in and go to your Dashboard.</p>
-                        <a href="sign-in.html" class="custom-button transparent">Login</a>
+                        <a href="{{route('loginPage')}}" class="custom-button transparent">Login</a>
                     </div>
                 </div>
             </div>

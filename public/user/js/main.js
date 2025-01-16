@@ -1163,6 +1163,15 @@
         x.type = "password";
       }
     });
+
+    $('.pass-type2').on('click', function () {
+      var x = document.getElementById("password_confirmation");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    });
     $( function() {
       $( "#slider-range" ).slider({
         range: true,

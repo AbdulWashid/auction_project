@@ -25,10 +25,8 @@ class authController extends Controller
             return redirect()->route('loginPage')->with('error','Invalid login Email and Password');
         }
 
-        // $data = User::where('id','=',Auth::id())->first();
         $data = Auth::user();
-        // dd($data);
-        // dd($login);
+
         if($data->roll == '1'){//admin
             return redirect()->route('admin.index');
         }
@@ -44,4 +42,24 @@ class authController extends Controller
         return redirect()->route('loginPage');
     }
 
+    function registration(Request $request){
+        $request->validate([
+            'name' =>     ['required', 'min:3'],
+            'mobile' =>   ['required', 'min:10','unique:users,mobile'],
+            'email' =>    ['required', 'email','unique:users,email'],
+            'password' => ['required', 'confirmed'],
+            'password_confirmation' => ['required',],
+            'terms' =>    ['required', 'accepted'],
+        ],
+        [
+            'mobile.unique' => 'The mobile number address is already registered.',
+            'email.unique' => 'The email address is already registered.',
+        ]);
+        $data = new user;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->mobile = $request->mobile;
+        $data->password = $request->password;
+        $data->save();
+    }
 }

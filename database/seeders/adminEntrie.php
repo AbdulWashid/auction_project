@@ -17,12 +17,14 @@ class adminEntrie extends Seeder
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => "admin@gmail.com",
+            'mobile' => "7770824060",
             'roll'=>'1',
             'password' =>Hash::make('121212')
         ]);
         DB::table('users')->insert([
             'name' => 'user',
             'email' => "user@gmail.com",
+            'mobile' => "7770824061",
             'roll'=>'0',
             'password' =>Hash::make('121212')
         ]);
