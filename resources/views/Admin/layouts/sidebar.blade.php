@@ -36,11 +36,37 @@
                   </p>
                 </a>
               </li>
+
               <li class="nav-item menu-open">
-                <a href="{{route('admin.index')}}" class="nav-link active">
+                <a href="{{route('admin.category.index')}}" class="nav-link active">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
-                    Dashboard2
+                    Categories
+                  </p>
+                </a>
+              </li>
+
+              <li class="nav-item menu-open">
+                <a href="{{route('admin.product.index')}}" class="nav-link active">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Products
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item menu-open">
+                <a href="{{route('admin.user.show')}}" class="nav-link active">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Users
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item menu-open">
+                <a href="{{route('admin.product.index')}}" class="nav-link active">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Orders
                   </p>
                 </a>
               </li>

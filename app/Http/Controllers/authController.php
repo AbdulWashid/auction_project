@@ -61,5 +61,7 @@ class authController extends Controller
         $data->mobile = $request->mobile;
         $data->password = $request->password;
         $data->save();
+
+        return redirect()->route('user.index');
     }
 }

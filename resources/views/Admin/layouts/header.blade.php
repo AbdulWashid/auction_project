@@ -43,25 +43,25 @@
                   />
                   <p>
                     Abdul Washid - Web Developer
-                    <small>Member since Nov. 2023</small>
+                    <small>Member since Nov. 2025</small>
                   </p>
                 </li>
                 <!--end::User Image-->
                 <!--begin::Menu Body-->
-                <li class="user-body">
+                <!-- <li class="user-body"> -->
                   <!--begin::Row-->
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-4 text-center"><a href="#">Followers</a></div>
                     <div class="col-4 text-center"><a href="#">Sales</a></div>
                     <div class="col-4 text-center"><a href="#">Friends</a></div>
-                  </div>
+                  </div> -->
                   <!--end::Row-->
-                </li>
+                <!-- </li> -->
                 <!--end::Menu Body-->
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                  <a href="{{route('logout')}}" class="btn btn-default btn-flat float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->
               </ul>

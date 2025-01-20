@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('name');
-            $table->integer('price');
+            $table->integer('sale_price');
+            $table->integer('bid_start_price');
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->longText('description');
             $table->string('image');
-            $table->string('moreImages');
+            $table->json('moreImages')->nullable()->default(null);
             $table->timestamps();
         });
     }

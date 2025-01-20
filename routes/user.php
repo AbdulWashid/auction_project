@@ -1,6 +1,6 @@
 <?php
 //controller
-use App\Http\Controllers\userDashboardController;
+use App\Http\Controllers\userController\userDashboardController;
 
 
 //middleware
