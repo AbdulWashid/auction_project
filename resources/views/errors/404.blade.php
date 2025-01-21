@@ -39,7 +39,7 @@
                 <div class="error-thumb">
                     <img src="{{asset('/user/images/error.png')}}" alt="error">
                 </div>
-                <h4 class="title">Return to the <a href="index.html">homepage</a></h4>
+                <h4 class="title">Return to the <a href="{{route('user.index')}}">homepage</a></h4>
             </div>
         </div>
     </div>

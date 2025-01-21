@@ -10,13 +10,13 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('user.index')}}">Home</a>
                 </li>
                 <li>
                     <a href="#0">Pages</a>
                 </li>
                 <li>
-                    <span>Vehicles</span>
+                    <span>{{$product[0]->category_name}}</span>
                 </li>
             </ul>
         </div>
@@ -32,68 +32,31 @@
                 <div class="product-details-slider owl-theme owl-carousel" id="sync1">
                     <div class="slide-top-item">
                         <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product1.png')}}" alt="product">
+                            <img src="{{asset($product[0]['image'])}}" alt="product">
                         </div>
                     </div>
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product2.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product3.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product4.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product5.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/product6.png')}}" alt="product">
-                        </div>
-                    </div>
+                    @if(json_decode($product[0]['moreImages']))
+                        @foreach( json_decode($product[0]['moreImages']) as $bigImage)
+                            <div class="slide-top-item">
+                                <div class="slide-inner">
+                                    <img src="{{asset($bigImage)}}" alt="{{$loop->iteration}}">
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="product-details-slider-wrapper">
                 <div class="product-bottom-slider owl-theme owl-carousel" id="sync2">
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/01.png')}}" alt="product">
+                    @if(json_decode($product[0]['moreImages']))
+                    @foreach( json_decode($product[0]['moreImages']) as $sortImage)
+                        <div class="slide-bottom-item">
+                            <div class="slide-inner">
+                                <img src="{{asset($sortImage)}}" alt="product">
+                            </div>
                         </div>
-                    </div>
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/02.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/03.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/04.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/05.png')}}" alt="product">
-                        </div>
-                    </div>
-                    <div class="slide-bottom-item">
-                        <div class="slide-inner">
-                            <img src="{{asset('/user/images/product/06.png')}}" alt="product">
-                        </div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
                 <span class="det-prev det-nav">
                     <i class="fas fa-angle-left"></i>
@@ -106,7 +69,7 @@
                 <div class="col-lg-8">
                     <div class="product-details-content">
                         <div class="product-details-header">
-                            <h2 class="title">The Breeze Zodiac IX</h2>
+                            <h2 class="title">{{$product[0]->name}}</h2>
                             <ul>
                                 <li>Listing ID: 14076242</li>
                                 <li>Item #: 7300-3356862</li>
@@ -115,7 +78,7 @@
                         <ul class="price-table mb-30">
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
-                                <h3 class="price">US $700.00</h3>
+                                <h3 class="price">₹{{$product[0]->bid_start_price}}</h3>
                             </li>
                             <li>
                                 <span class="details">Buyer's Premium</span>
@@ -136,22 +99,22 @@
                             </form>
                         </div>
                         <div class="buy-now-area">
-                            <a href="#0" class="custom-button">Buy Now: $4,200</a>
+                            <a href="#0" class="custom-button">Buy Now: ₹{{ $product[0]->sale_price}}</a>
                             <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
                             <div class="share-area">
                                 <span>Share to:</span>
                                 <ul>
                                     <li>
-                                        <a href="#0"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#0"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
                                     </li>
                                 </ul>
                             </div>

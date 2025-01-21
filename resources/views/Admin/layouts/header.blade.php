@@ -1,5 +1,5 @@
       <!--begin::Header-->
-      <nav class="app-header navbar navbar-expand bg-body">
+      <nav class="app-header navbar navbar-expand bg-body" style="z-index: -100; position: relative;">
         <!--begin::Container-->
         <div class="container-fluid">
           <!--begin::Start Navbar Links-->
@@ -60,7 +60,7 @@
                 <!--end::Menu Body-->
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{route('admin.profile.index')}}" class="btn btn-default btn-flat">Profile</a>
                   <a href="{{route('logout')}}" class="btn btn-default btn-flat float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->

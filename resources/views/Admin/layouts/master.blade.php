@@ -137,13 +137,13 @@
      <script>
       $(document).ready( function () {
           $('#DataTable').DataTable({
-            responsive:true,
-            ordering   : true,
-            searching: true,
-            lengthChange: true,
-            paging: true,
-            info      : true,
-            columnDefs: [
+            responsive   :true,
+            'ordering'   : true,
+            searching    : true,
+            lengthChange : true,
+            paging       : true,
+            'info'       : true,
+            'columnDefs' : [
                 {"className": "dt-center", "targets": "_all"}
             ],
           });
@@ -154,16 +154,16 @@
         $(function() {
             // Initialize Start DateTime Picker
             $('#start_at').datetimepicker({
-                dateFormat: 'yy-mm-dd',    // Date format
-                timeFormat: 'hh:mm TT',   // Time format with AM/PM
-                showSecond: false,        // Hide seconds
-                controlType: 'select',    // Use dropdowns for hour and minute
-                ampm: true,               // Use AM/PM instead of 24-hour format
-                stepHour: 1,            // Hour interval
-                stepMinute: 5,          // Minute interval
-                stepSecond: 10,         // Second interval
-                showButtonPanel: true ,  // Show button panel for "Done" and "Today"
-                onClose: function(selectedDateTime) {
+                dateFormat      : 'dd-mm-yy',    // Date format
+                timeFormat      : 'hh:mm TT',   // Time format with AM/PM
+                showSecond      : false,        // Hide seconds
+                controlType     : 'select',    // Use dropdowns for hour and minute
+                ampm            : true,               // Use AM/PM instead of 24-hour format
+                stepHour        : 1,            // Hour interval
+                stepMinute      : 5,          // Minute interval
+                stepSecond      : 10,         // Second interval
+                showButtonPanel : true ,  // Show button panel for "Done" and "Today"
+                onClose         : function(selectedDateTime) {
                     // Set minimum date/time for end_datetime
                     $('#end_datetime').datetimepicker('option', 'minDate', selectedDateTime);
                 }
@@ -171,16 +171,16 @@
 
             // Initialize End DateTime Picker
             $('#end_at').datetimepicker({
-                dateFormat: 'yy-mm-dd',    // Date format
-                timeFormat: 'hh:mm TT',   // Time format with AM/PM
-                showSecond: false,        // Hide seconds
-                controlType: 'select',    // Use dropdowns for hour and minute
-                ampm: true,               // Use AM/PM instead of 24-hour format
-                stepHour: 1,            // Hour interval
-                stepMinute: 5,          // Minute interval
-                stepSecond: 10,         // Second interval
-                showButtonPanel: true ,  // Show button panel for "Done" and "Today"
-                onClose: function(selectedDateTime) {
+                dateFormat      : 'yy-mm-dd',    // Date format
+                timeFormat      : 'hh:mm TT',   // Time format with AM/PM
+                showSecond      : false,        // Hide seconds
+                controlType     : 'select',    // Use dropdowns for hour and minute
+                ampm            : true,               // Use AM/PM instead of 24-hour format
+                stepHour        : 1,            // Hour interval
+                stepMinute      : 5,          // Minute interval
+                stepSecond      : 10,         // Second interval
+                showButtonPanel : true ,  // Show button panel for "Done" and "Today"
+                onClose         : function(selectedDateTime) {
                     // Set maximum date/time for start_datetime
                     $('#start_datetime').datetimepicker('option', 'maxDate', selectedDateTime);
                 }

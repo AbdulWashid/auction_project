@@ -4,6 +4,7 @@
 
 @section('title','Sbidu')
 @section('main')
+
     <!--============= Banner Section Starts Here =============-->
     <section class="banner-section bg_img" data-background="{{asset('/user/images/banner/banner-bg-1.png')}}">
         <div class="container">
@@ -32,8 +33,8 @@
     <!--============= Banner Section Ends Here =============-->
 
 
+    <!--============= Hightlight Slider Section Starts Here =============-->
     <div class="browse-section ash-bg">
-        <!--============= Hightlight Slider Section Starts Here =============-->
         <div class="browse-slider-section mt--140">
             <div class="container">
                 <div class="section-header-2 cl-white mb-4">
@@ -47,188 +48,263 @@
                 </div>
                 <div class="m--15">
                     <div class="browse-slider owl-theme owl-carousel">
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/01.png')}}" alt="auction">
-                            <span class="info">Vehicles</span>
-                        </a>
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/02.png')}}" alt="auction">
-                            <span class="info">Jewelry</span>
-                        </a>
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/03.png')}}" alt="auction">
-                            <span class="info">Watches</span>
-                        </a>
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/04.png')}}" alt="auction">
-                            <span class="info">Electronics</span>
-                        </a>
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/05.png')}}" alt="auction">
-                            <span class="info">Sports</span>
-                        </a>
-                        <a href="#0" class="browse-item">
-                            <img src="{{asset('/user/images/auction/06.png')}}" alt="auction">
-                            <span class="info">Real Estate</span>
-                        </a>
+                        @foreach($categories as $category)
+                            <a href="{{route('user.category',$category->id)}}" class="browse-item">
+                                <img src="{{asset($category->image)}}" alt="{{$category->name}} Image">
+                                <span class="info">{{$category->name}}</span>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
-        <!--============= Hightlight Slider Section Ends Here =============-->
-        
-        <!--============= Car Auction Section Starts Here =============-->
-        <section class="car-auction-section padding-bottom padding-top pos-rel oh">
-            <div class="car-bg"><img src="{{asset('/user/images/auction/car/car-bg.png')}}" alt="car"></div>
-            <div class="container">
-                <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
-                    <div class="left">
-                        <div class="thumb">
-                            <img src="{{asset('/user/images/header-icons/car-1.png')}}" alt="header-icons">
+    </div>
+    <!--============= Hightlight Slider Section Ends Here =============-->
+
+    @foreach($categories as $category)
+        @if($category->closing_stock > 2)
+            <!--============= Car Auction Section Starts Here =============-->
+            <section class="padding-bottom padding-top pos-rel oh">
+                @if($category->bg_image)
+                    <div class="car-bg"><img src="{{asset($category->bg_image)}}" alt="car"></div>
+                @endif
+                <div class="container">
+                    <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
+                        <div class="left">
+                            <div class="thumb">
+                                <img src="{{asset($category->image)}}" alt="header-icons">
+                            </div>
+                            <div class="title-area">
+                                <h2 class="title">{{$category->name}}</h2>
+                                <p>We offer affordable {{$category->name}}</p>
+                            </div>
                         </div>
-                        <div class="title-area">
-                            <h2 class="title">Vehicles</h2>
-                            <p>We offer affordable Vehicles</p>
-                        </div>
+                        <a href="#0" class="normal-button">View All</a>
                     </div>
-                    <a href="#0" class="normal-button">View All</a>
+                    <div class="row justify-content-center mb-30-none">
+                    @foreach($products as $product)
+                        @if($product->category_name == $category->name)
+                            <div class="col-sm-10 col-md-6 col-lg-4">
+                                <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                                    <div class="auction-thumb">
+                                        <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+                                        <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
+                                        <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                                    </div>
+                                    <div class="auction-content">
+                                        <h6 class="title">
+                                            <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
+                                        </h6>
+                                        <div class="bid-area">
+                                            <div class="bid-amount">
+                                                <div class="icon">
+                                                    <i class="flaticon-auction"></i>
+                                                </div>
+                                                <div class="amount-content">
+                                                    <div class="current">Current Bid</div>
+                                                    <div class="amount"> ₹{{$product->bid_start_price}}</div>
+                                                </div>
+                                            </div>
+                                            <div class="bid-amount">
+                                                <div class="icon">
+                                                    <i class="flaticon-money"></i>
+                                                </div>
+                                                <div class="amount-content">
+                                                    <div class="current">Buy Now</div>
+                                                    <div class="amount">₹{{$product->sale_price}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="countdown-area">
+                                            <div class="countdown">
+                                                <div id="bid_counter26"></div>
+                                            </div>
+                                            <span class="total-bids">30 Bids</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @if($loop->index == 3)
+                                @break
+                            @endif
+                        @endif
+                    @endforeach
+                    </div>
                 </div>
-                <div class="row justify-content-center mb-30-none">
-                    <div class="col-sm-10 col-md-6 col-lg-4">
-                        <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
-                            <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-1.jpg')}}" alt="car"></a>
-                                <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+            </section>
+            <!--============= Car Auction Section Ends Here =============-->
+            @if(!Auth::check() && $loop->iteration == 3)
+            <!--============= Call In Section Starts Here =============-->
+            <section class="call-in-section padding-top pt-max-xl-0">
+                <div class="container">
+                    <div class="call-wrapper cl-white bg_img" data-background="{{asset('/user/images/call-in/call-bg.png')}}">
+                        <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
+                            <h3 class="title">Register for Free & Start Bidding Now!</h3>
+                            <p>From cars to diamonds to iPhones, we have it all.</p>
+                        </div>
+                        <a href="sign-up.html" class="custom-button white">Register</a>
+                    </div>
+                </div>
+            </section>
+            <!--============= Call In Section Ends Here =============-->
+            @endif
+        @endif
+
+    @endforeach
+{{--
+    <!--============= Car Auction Section Starts Here =============-->
+    <section class="car-auction-section padding-bottom padding-top pos-rel oh">
+        <div class="car-bg"><img src="{{asset('/user/images/auction/car/car-bg.png')}}" alt="car"></div>
+        <div class="container">
+            <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
+                <div class="left">
+                    <div class="thumb">
+                        <img src="{{asset('/user/images/header-icons/car-1.png')}}" alt="header-icons">
+                    </div>
+                    <div class="title-area">
+                        <h2 class="title">Vehicles</h2>
+                        <p>We offer affordable Vehicles</p>
+                    </div>
+                </div>
+                <a href="#0" class="normal-button">View All</a>
+            </div>
+            <div class="row justify-content-center mb-30-none">
+                <div class="col-sm-10 col-md-6 col-lg-4">
+                    <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                        <div class="auction-thumb">
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-1.jpg')}}" alt="car"></a>
+                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
+                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                        </div>
+                        <div class="auction-content">
+                            <h6 class="title">
+                                <a href="product-details.html">2018 Hyundai Sonata</a>
+                            </h6>
+                            <div class="bid-area">
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-auction"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Current Bid</div>
+                                        <div class="amount">$876.00</div>
+                                    </div>
+                                </div>
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-money"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Buy Now</div>
+                                        <div class="amount">$5,00.00</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="auction-content">
-                                <h6 class="title">
-                                    <a href="product-details.html">2018 Hyundai Sonata</a>
-                                </h6>
-                                <div class="bid-area">
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-auction"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Current Bid</div>
-                                            <div class="amount">$876.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-money"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Buy Now</div>
-                                            <div class="amount">$5,00.00</div>
-                                        </div>
-                                    </div>
+                            <div class="countdown-area">
+                                <div class="countdown">
+                                    <div id="bid_counter26"></div>
                                 </div>
-                                <div class="countdown-area">
-                                    <div class="countdown">
-                                        <div id="bid_counter26"></div>
-                                    </div>
-                                    <span class="total-bids">30 Bids</span>
-                                </div>
-                                <div class="text-center">
-                                    <a href="#0" class="custom-button">Submit a bid</a>
-                                </div>
+                                <span class="total-bids">30 Bids</span>
+                            </div>
+                            <div class="text-center">
+                                <a href="#0" class="custom-button">Submit a bid</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-md-6 col-lg-4">
-                        <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1100">
-                            <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-2.jpg')}}" alt="car"></a>
-                                <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                </div>
+                <div class="col-sm-10 col-md-6 col-lg-4">
+                    <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1100">
+                        <div class="auction-thumb">
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-2.jpg')}}" alt="car"></a>
+                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
+                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                        </div>
+                        <div class="auction-content">
+                            <h6 class="title">
+                                <a href="product-details.html">2018 Nissan Versa, S</a>
+                            </h6>
+                            <div class="bid-area">
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-auction"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Current Bid</div>
+                                        <div class="amount">$876.00</div>
+                                    </div>
+                                </div>
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-money"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Buy Now</div>
+                                        <div class="amount">$5,00.00</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="auction-content">
-                                <h6 class="title">
-                                    <a href="product-details.html">2018 Nissan Versa, S</a>
-                                </h6>
-                                <div class="bid-area">
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-auction"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Current Bid</div>
-                                            <div class="amount">$876.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-money"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Buy Now</div>
-                                            <div class="amount">$5,00.00</div>
-                                        </div>
-                                    </div>
+                            <div class="countdown-area">
+                                <div class="countdown">
+                                    <div id="bid_counter27"></div>
                                 </div>
-                                <div class="countdown-area">
-                                    <div class="countdown">
-                                        <div id="bid_counter27"></div>
-                                    </div>
-                                    <span class="total-bids">30 Bids</span>
-                                </div>
-                                <div class="text-center">
-                                    <a href="#0" class="custom-button">Submit a bid</a>
-                                </div>
+                                <span class="total-bids">30 Bids</span>
+                            </div>
+                            <div class="text-center">
+                                <a href="#0" class="custom-button">Submit a bid</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-md-6 col-lg-4">
-                        <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1200">
-                            <div class="auction-thumb">
-                                <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-3.jpg')}}" alt="car"></a>
-                                <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                </div>
+                <div class="col-sm-10 col-md-6 col-lg-4">
+                    <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1200">
+                        <div class="auction-thumb">
+                            <a href="product-details.html"><img src="{{asset('/user/images/auction/car/auction-3.jpg')}}" alt="car"></a>
+                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
+                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                        </div>
+                        <div class="auction-content">
+                            <h6 class="title">
+                                <a href="product-details.html">2018 Honda Accord, Sport</a>
+                            </h6>
+                            <div class="bid-area">
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-auction"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Current Bid</div>
+                                        <div class="amount">$876.00</div>
+                                    </div>
+                                </div>
+                                <div class="bid-amount">
+                                    <div class="icon">
+                                        <i class="flaticon-money"></i>
+                                    </div>
+                                    <div class="amount-content">
+                                        <div class="current">Buy Now</div>
+                                        <div class="amount">$5,00.00</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="auction-content">
-                                <h6 class="title">
-                                    <a href="product-details.html">2018 Honda Accord, Sport</a>
-                                </h6>
-                                <div class="bid-area">
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-auction"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Current Bid</div>
-                                            <div class="amount">$876.00</div>
-                                        </div>
-                                    </div>
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-money"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Buy Now</div>
-                                            <div class="amount">$5,00.00</div>
-                                        </div>
-                                    </div>
+                            <div class="countdown-area">
+                                <div class="countdown">
+                                    <div id="bid_counter28"></div>
                                 </div>
-                                <div class="countdown-area">
-                                    <div class="countdown">
-                                        <div id="bid_counter28"></div>
-                                    </div>
-                                    <span class="total-bids">30 Bids</span>
-                                </div>
-                                <div class="text-center">
-                                    <a href="#0" class="custom-button">Submit a bid</a>
-                                </div>
+                                <span class="total-bids">30 Bids</span>
+                            </div>
+                            <div class="text-center">
+                                <a href="#0" class="custom-button">Submit a bid</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--============= Car Auction Section Ends Here =============-->
-    </div>
-
+        </div>
+    </section>
+    <!--============= Car Auction Section Ends Here =============-->
 
     <!--============= Jewelry Auction Section Starts Here =============-->
     <section class="jewelry-auction-section padding-bottom padding-top pos-rel">
@@ -381,7 +457,6 @@
     </section>
     <!--============= Jewelry Auction Section Ends Here =============-->
 
-
     <!--============= Call In Section Starts Here =============-->
     <section class="call-in-section padding-top pt-max-xl-0">
         <div class="container">
@@ -395,7 +470,6 @@
         </div>
     </section>
     <!--============= Call In Section Ends Here =============-->
-
 
     <!--============= Watches Auction Section Starts Here =============-->
     <section class="watches-auction-section padding-bottom padding-top">
@@ -1581,7 +1655,7 @@
         </div>
     </section>
     <!--============= Art Auction Section Ends Here =============-->
-
+--}}
 
     <!--============= How Section Starts Here =============-->
     <section class="how-section padding-top">

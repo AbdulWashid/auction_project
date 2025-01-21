@@ -34,7 +34,8 @@ class categoryController extends Controller
     {
         $request->validate([
             'name' => ['required',],
-            'image' => ['required','image']
+            'image' => ['required','image'],
+            'bg_image' => ['image']
         ]);
         
         $image = $request->file('image');
@@ -42,9 +43,19 @@ class categoryController extends Controller
         $path = public_path('user\images\auction');
         $image->move($path,$name);
 
+        if($request->has('bg_image')){
+            $bg_image = $request->file('bg_image');
+            $bg_name = time().rand().$request->name."." .$bg_image->getClientOriginalExtension();
+            $bg_path = public_path('user\images\auction\bgImages');
+            $bg_image->move($bg_path,$bg_name);
+        }
+
         $data = new Product_categorie;        
         $data->name = $request->name;
         $data->image = 'user\images\auction\\'.$name;
+        if($request->has('bg_image')){
+            $data->bg_image = 'user\images\auction\bgImages\\'.$bg_name;
+        }
         $data->save();
 
         return redirect()->route('admin.category.index')->with('success', 'Category Add successfully.');
@@ -75,17 +86,19 @@ class categoryController extends Controller
     public function update(Request $request, string $id)
     {
         $data = Product_categorie::findOrFail($id);
-
         $request->validate([
             'name' => ['required'],
-            'image' => ['image']
+            'image' => ['image'],
+            'bg_image' => ['image']
         ]);
-        if($request->image){
+
+        if($request->has('image')){
             // delete existing image
             $image = Public_path($data->image);
             if(File::exists($image)){
                 File::delete($image);
             }
+        
 
             //store new image
             $image = $request->file('image');
@@ -94,10 +107,28 @@ class categoryController extends Controller
             $image->move($path,$name);
         }
 
+        if($request->has('bg_image')){
+            // delete existing image
+            if($data->bg_image){
+                $bg_image = Public_path($data->bg_image);
+                if(File::exists($bg_image)){
+                    File::delete($bg_image);
+                }
+            }
+
+            $bg_image = $request->file('bg_image');
+            $bg_name = time().rand().$request->name."." .$bg_image->getClientOriginalExtension();
+            $bg_path = public_path('user\images\auction\bgImages\\');
+            $bg_image->move($bg_path , $bg_name);
+        }
+
         //store in db
         $data->name = $request->name;
         if($request->image){
             $data->image = 'user\images\auction\\'.$name;
+        }
+        if($request->has('bg_image')){
+            $data->bg_image = 'user\images\auction\bgImages\\'.$bg_name;
         }
         $data->save();
 
@@ -113,6 +144,10 @@ class categoryController extends Controller
         $image = Public_path($data->image);
         if(File::exists($image)){
             File::delete($image);
+        }
+        $bg_image = Public_path($data->bg_image);
+        if(File::exists($bg_image)){
+            File::delete($bg_image);
         }
         $data->delete();
         return back()->with('success', 'Category deleted successfully.');

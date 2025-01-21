@@ -27,6 +27,14 @@
                 @enderror
             </div>
 
+            <!--bg Image Upload Field --><br>
+            <div class="mb-3 col-9">
+                <label for="image" class="form-label">Background Image</label>
+                <input type="file" class="form-control" id="bg_image" name="bg_image" accept="image/*">
+                @error('bg_image')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
             <!-- Submit Button -->
              <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>

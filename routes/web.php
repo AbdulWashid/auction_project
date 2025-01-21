@@ -2,13 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\viewOpenController;
 
 
-Route::get('/', function () {
-    return view('user.index');
-})->name('user.index');
-
-
+Route::get('/',[viewOpenController::class,'index'])->name('user.index');
+Route::get('product/{id}',[viewOpenController::class,'product'])->name('user.product');
+Route::get('category/{id}',[viewOpenController::class,'category'])->name('user.category');
 
 Route::view('login','user.sign-in')->name('loginPage'); // login page route
 Route::view('registration','user.sign-up')->name('registrationPage'); // registration page route

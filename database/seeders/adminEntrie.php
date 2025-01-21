@@ -18,6 +18,7 @@ class adminEntrie extends Seeder
             'name' => 'admin',
             'email' => "admin@gmail.com",
             'mobile' => "7770824060",
+            'address' => "Court Mohalla Neemuch City",
             'roll'=>'1',
             'password' =>Hash::make('121212')
         ]);

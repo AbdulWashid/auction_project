@@ -34,7 +34,7 @@
                             @foreach($category as $category)
                                 <option 
                                     value="{{ $category->id }}" {{ $category->id == old('category_id', $data->id ?? '') ? 'selected' : '' }}
-                                    >
+                                    >   
                                     {{ $category->name }}
                                 </option>
                             @endforeach

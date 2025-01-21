@@ -29,7 +29,7 @@
               data-accordion="false"
             >
               <li class="nav-item menu-open">
-                <a href="{{route('admin.index')}}" class="nav-link active">
+                <a href="{{route('admin.index')}}" class="{{Request::is('admin/index') ? 'nav-link ' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
@@ -38,7 +38,7 @@
               </li>
 
               <li class="nav-item menu-open">
-                <a href="{{route('admin.category.index')}}" class="nav-link active">
+                <a href="{{route('admin.category.index')}}" class="{{Request::is('admin/category') ? 'nav-link' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Categories
@@ -47,7 +47,7 @@
               </li>
 
               <li class="nav-item menu-open">
-                <a href="{{route('admin.product.index')}}" class="nav-link active">
+                <a href="{{route('admin.product.index')}}" class="{{Request::is('admin/product') ? 'nav-link ' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Products
@@ -55,7 +55,7 @@
                 </a>
               </li>
               <li class="nav-item menu-open">
-                <a href="{{route('admin.user.show')}}" class="nav-link active">
+                <a href="{{route('admin.user.show')}}" class="{{Request::is('admin/user') ? 'nav-link' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Users
@@ -63,7 +63,7 @@
                 </a>
               </li>
               <li class="nav-item menu-open">
-                <a href="{{route('admin.product.index')}}" class="nav-link active">
+                <a href="{{route('admin.product.index')}}" class= "nav-link">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Orders

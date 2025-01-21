@@ -58,7 +58,7 @@ class productController extends Controller
         $path = public_path('user\images\product');
         $main_image->move($path,$main_image_name);
         
-        if($request->more_images){
+        if($request->has('more_images')){
             $uploadedFiles = $request->file('more_images');
             $filePaths = [];
             foreach ($uploadedFiles as $file) {
