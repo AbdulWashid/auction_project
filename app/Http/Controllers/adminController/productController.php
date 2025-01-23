@@ -40,13 +40,13 @@ class productController extends Controller
     {
         // dd($request->toArray());
         $request->validate([
-            'Pname'         => ['required',],
-            'category_id'   => ['required',],
+            'Pname'         => ['required','string'],
+            'category_id'   => ['required','string'],
             'sale_price'    => ['required',],
             'bid_price'     => ['required',],
-            'start_at'      => ['required',],
-            'end_at'        => ['required',],
-            'description'   => ['required',],
+            'start_at'      => ['required','string'],
+            'end_at'        => ['required','string'],
+            'description'   => ['string'],
             'main_image'    => ['required','image'],
             'more_images.*' => ['image']
         ]);
@@ -54,7 +54,7 @@ class productController extends Controller
         
         // for image
         $main_image = $request->file('main_image');
-        $main_image_name = time().rand().$request->Pname. "." .$main_image->getClientOriginalExtension();
+        $main_image_name = time().rand(). "." .$main_image->getClientOriginalExtension();
         $path = public_path('user\images\product');
         $main_image->move($path,$main_image_name);
         
@@ -62,7 +62,7 @@ class productController extends Controller
             $uploadedFiles = $request->file('more_images');
             $filePaths = [];
             foreach ($uploadedFiles as $file) {
-                $name = time().rand().$request->Pname. "." .$file->getClientOriginalExtension();
+                $name = time().rand(). "." .$file->getClientOriginalExtension();
                 $path = public_path('user\images\product');
                 $file->move($path,$name);
                 $filePaths[] = 'user\images\product\\'.$name;
@@ -73,12 +73,12 @@ class productController extends Controller
 
         $data = new product;        
         $data->category_id = $request->category_id;
-        $data->name = $request->Pname;
+        $data->name = addslashes($request->Pname);
         $data->sale_price = $request->sale_price;
         $data->bid_start_price = $request->bid_price;
         $data->start_at = date('Y-m-d H:i:s', strtotime($request->start_at));
         $data->end_at = date('Y-m-d H:i:s', strtotime($request->end_at));
-        $data->description = $request->description;
+        $data->description = addslashes($request->description);
         $data->image = 'user\images\product\\'.$main_image_name;
         if($request->more_images){
             $data->moreImages = json_encode($filePaths);
@@ -115,12 +115,12 @@ class productController extends Controller
     {
         $data = product::findOrFail($id);
         $request->validate([
-            'Pname'         => ['required',],
+            'Pname'         => ['required','string'],
             'sale_price'    => ['required',],
             'bid_price'     => ['required',],
             'start_at'      => ['required',],
             'end_at'        => ['required',],
-            'description'   => ['required',],
+            'description'   => ['string',],
             'main_image'    => ['image'],
             'more_images.*' => ['image']
         ]);
@@ -134,7 +134,7 @@ class productController extends Controller
 
             //store new image
             $image = $request->file('main_image');
-            $main_image_name = time().rand().$request->Pname. "." .$image->getClientOriginalExtension();
+            $main_image_name = time().rand(). "." .$image->getClientOriginalExtension();
             $path = public_path('user\images\product');
             $image->move($path,$main_image_name);
         }
@@ -157,7 +157,7 @@ class productController extends Controller
             $uploadedFiles = $request->file('more_images');
             $filePaths = [];
             foreach ($uploadedFiles as $file) {
-                $name = time().rand().$request->Pname. "." .$file->getClientOriginalExtension();
+                $name = time().rand()."." .$file->getClientOriginalExtension();
                 $path = public_path('user\images\product');
                 $file->move($path,$name);
                 $filePaths[] = 'user\images\product\\'.$name;

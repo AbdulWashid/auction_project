@@ -1,5 +1,5 @@
 @extends('Admin.layouts.master')
-@section('title','Category')
+@section('title','Category Add')
 @section('content')
 <main class="app-main"> 
     <div class="card card-outline card-primary container m-5 col-6">

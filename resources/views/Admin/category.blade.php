@@ -1,5 +1,5 @@
 @extends('Admin.layouts.master')
-@section('title','Category')
+@section('title','categories')
 @section('content')
 <main class="app-main">    
   @if(session('success'))
@@ -13,7 +13,7 @@
     <div class="card mb-4">
       <div class="card-header"><h3 class="card-title">Category List</h3></div>
       <div class=" card-body table-responsive">
-        <table id="DataTable" class="table table-bordered table-striped">
+        <table id="DataTable" class="table table-bordered table-hover">
           <thead class="table-dark">
             <tr>
               <th>#</th>
@@ -29,11 +29,11 @@
               <td style="width: 30%;">{{$data->name}}</td>
               <td style="width: 25%;"><img src="{{asset($data->image)}}"class="img-fluid rounded w-25" alt="Category Image"></td>
               <td style="width: 15%;">
-                <a href="{{route('admin.category.edit',$data->id)}}"><button class="btn btn-primary btn-sm">Edit</button></a>
+                <a href="{{route('admin.category.edit',$data->id)}}"><button class="btn btn-primary btn-sm"><i class="bi bi-pencil"></i> Edit</button></a>
                 <form action="{{route('admin.category.destroy',$data->id)}}" method="POST" class="d-inline">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this Category?')">Delete</button>
+                  <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this Category?')"><i class="bi bi-trash"></i> Delete</button>
                 </form>
               </td>
             </tr>

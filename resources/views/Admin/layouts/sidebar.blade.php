@@ -29,7 +29,7 @@
               data-accordion="false"
             >
               <li class="nav-item menu-open">
-                <a href="{{route('admin.index')}}" class="{{Request::is('admin/index') ? 'nav-link ' : 'nav-link active'}}">
+                <a href="{{route('admin.index')}}" class="{{Request::is('admin/index*') ? 'nav-link ' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
@@ -38,7 +38,7 @@
               </li>
 
               <li class="nav-item menu-open">
-                <a href="{{route('admin.category.index')}}" class="{{Request::is('admin/category') ? 'nav-link' : 'nav-link active'}}">
+                <a href="{{route('admin.category.index')}}" class="{{Request::is('admin/category*') ? 'nav-link' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Categories
@@ -47,10 +47,18 @@
               </li>
 
               <li class="nav-item menu-open">
-                <a href="{{route('admin.product.index')}}" class="{{Request::is('admin/product') ? 'nav-link ' : 'nav-link active'}}">
+                <a href="{{route('admin.product.index')}}" class="{{Request::is('admin/product*') ? 'nav-link ' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Products
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item menu-open">
+                <a href="{{route('admin.feature.index')}}" class="{{Request::is('admin/feature*') ? 'nav-link' : 'nav-link active'}}">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Features
                   </p>
                 </a>
               </li>
@@ -63,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item menu-open">
-                <a href="{{route('admin.product.index')}}" class= "nav-link">
+                <a href="{{route('admin.product.index')}}" class="nav-link active">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Orders

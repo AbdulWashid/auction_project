@@ -1,17 +1,13 @@
-
 @extends('user.layouts.master')
-
-
 @section('title','Dashboard')
 @section('main')
-
 
     <!--============= Hero Section Starts Here =============-->
     <div class="hero-section style-2 pb-lg-400">
         <div class="container">
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('user.index')}}">Home</a>
                 </li>
                 <li>
                     <a href="#0">My Account</a>
@@ -35,14 +31,13 @@
                         <div class="user">
                             <div class="thumb-area">
                                 <div class="thumb">
-                                    <img src="{{asset('/user/images/dashboard/user.png')}}" alt="user">
+                                    <img src="{{ $userdata->image ? asset($userdata->image) : asset('/user/images/dashboard/user.png') }}" alt="user">
                                 </div>
                                 <label for="profile-pic" class="profile-pic-edit"><i class="flaticon-pencil"></i></label>
                                 <input type="file" id="profile-pic" class="d-none">
                             </div>
                             <div class="content">
                                 <h5 class="title"><a href="#0">Percy Reed</a></h5>
-                                <span class="username"><a href="https://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640e0b0c0a240309050d084a070b09">[email&#160;protected]</a></span>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
@@ -50,7 +45,7 @@
                                 <a href="#0" class="active"><i class="flaticon-dashboard"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="profile.html"><i class="flaticon-settings"></i>Personal Profile </a>
+                                <a href="{{route('user.profile')}}"><i class="flaticon-settings"></i>Personal Profile </a>
                             </li>
                             <li>
                                 <a href="my-bid.html"><i class="flaticon-auction"></i>My Bids</a>

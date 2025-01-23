@@ -14,17 +14,27 @@
 
     <!-- custom link start -->
       <!-- Include Bootstrap CSS -->
-      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"> -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       
       <!-- Include DataTables CSS -->
       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
       
+        <!-- Include DataTables responsive Extension -->
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
+
       <!-- jquery UI link 1.3 begin -->
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
       <!-- jquery date time picker link 1.6 begin -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+
+      <!-- jquery Data Table  -->
+      <style>
+        table.dataTable tbody tr:hover {
+            background-color: #f2f2f2; /* Light gray on hover */
+            cursor: pointer; /* Optional: Change cursor to pointer */
+        }
+      </style>
     <!-- custom link start --> 
 
     <!--begin::Fonts-->
@@ -71,11 +81,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   
     <!-- Include Bootstrap JS -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- boostrap link 5.3 begin  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- jquery ui start -->
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"> </script>
@@ -86,6 +93,7 @@
     <!-- Include DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
 
   <!-- custom link start -->
 
@@ -136,16 +144,11 @@
     <!-- Data Table start -->
      <script>
       $(document).ready( function () {
-          $('#DataTable').DataTable({
-            responsive   :true,
-            'ordering'   : true,
-            searching    : true,
-            lengthChange : true,
-            paging       : true,
-            'info'       : true,
-            'columnDefs' : [
-                {"className": "dt-center", "targets": "_all"}
-            ],
+          var table = $('#DataTable').DataTable({
+            responsive : true,
+            autoWidth  : false, // Disable automatic width calculation
+            ordering   : true, // Allow sorting
+            scrollX    : true // Enable horizontal scrolling if needed
           });
       } );
      </script>

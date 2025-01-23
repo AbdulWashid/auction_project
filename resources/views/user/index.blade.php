@@ -4,7 +4,6 @@
 
 @section('title','Sbidu')
 @section('main')
-
     <!--============= Banner Section Starts Here =============-->
     <section class="banner-section bg_img" data-background="{{asset('/user/images/banner/banner-bg-1.png')}}">
         <div class="container">
@@ -82,6 +81,9 @@
                         <a href="#0" class="normal-button">View All</a>
                     </div>
                     <div class="row justify-content-center mb-30-none">
+                    @php
+                        $count = 0
+                    @endphp
                     @foreach($products as $product)
                         @if($product->category_name == $category->name)
                             <div class="col-sm-10 col-md-6 col-lg-4">
@@ -127,7 +129,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($loop->index == 3)
+                            @if(++$count == 3)
                                 @break
                             @endif
                         @endif

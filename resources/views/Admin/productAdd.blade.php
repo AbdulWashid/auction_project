@@ -1,6 +1,7 @@
 @extends('Admin.layouts.master')
-@section('title','Category')
+@section('title','Product Add')
 @section('content')
+
 <main class="app-main">
     <!--begin::Form Validation-->
     <div class="card card-info card-outline mb-4 m-5">
@@ -20,7 +21,7 @@
                     <!--begin::Col     product Name--> 
                     <div class="col-md-6">
                         <label for="Pname" class="form-label">Product Name</label>
-                        <input type="text" class="form-control" id="Pname" name="Pname" value="{{ old('Pname', $data->name ?? '') }}"  required />
+                        <input type="text" class="form-control" id="Pname" name="Pname" value="{{ old('Pname', $data->name ?? '') }}" placeholder="Product Name"  required />
                         @error('Pname')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -33,7 +34,7 @@
                             <option {{ isset($data) ? "" : 'selected' }} disabled value="">Choose a Category</option>
                             @foreach($category as $category)
                                 <option 
-                                    value="{{ $category->id }}" {{ $category->id == old('category_id', $data->id ?? '') ? 'selected' : '' }}
+                                    value="{{ $category->id }}" {{ $category->id == old('category_id', $data->category_id ?? '') ? 'selected' : '' }}
                                     >   
                                     {{ $category->name }}
                                 </option>
@@ -47,7 +48,7 @@
                     <!--begin::Col     product sale price-->
                     <div class="col-md-6">
                         <label for="sale_price" class="form-label">Sale Price</label>
-                        <input type="number" class="form-control" id="sale_price" name="sale_price" value="{{ old('price', $data->sale_price ?? '') }}"  required />
+                        <input type="number" class="form-control price-input" id="sale_price" name="sale_price" value="{{ old('price', $data->sale_price ?? '') }}" placeholder="₹ 0.00"  required />
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -56,7 +57,7 @@
                     <!--begin::Col     product bid start price-->
                     <div class="col-md-6">
                         <label for="bid_price" class="form-label">Bid Price</label>
-                        <input type="number" class="form-control" id="bid_price" name="bid_price" value="{{ old('bid_price', $data->bid_start_price ?? '') }}"  required />
+                        <input type="number" class="form-control price-input" id="bid_price" name="bid_price" value="{{ old('bid_price', $data->bid_start_price ?? '') }}" placeholder="₹ 0.00" required />
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

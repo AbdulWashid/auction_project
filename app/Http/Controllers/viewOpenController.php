@@ -38,12 +38,17 @@ class viewOpenController extends Controller
     }
 
     function category($id){
-        $category = product::where('products.category_id','=',$id)
+        $product = product::where('products.category_id','=',$id)
+                            ->orderBy('products.id','desc')
                             ->join('product_categories','products.category_id','=','product_categories.id')
                             ->select('products.*','product_categories.name as category_name')
                             ->get();
         // dd($category->toArray());
-        return view('user.product',compact('category'));
+        return view('user.products',compact('product'));
+    }
+
+    function categoryPro(){
+
     }
 
 }

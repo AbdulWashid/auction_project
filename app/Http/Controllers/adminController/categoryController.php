@@ -33,7 +33,7 @@ class categoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required',],
+            'name' => ['required','string'],
             'image' => ['required','image'],
             'bg_image' => ['image']
         ]);
@@ -45,13 +45,13 @@ class categoryController extends Controller
 
         if($request->has('bg_image')){
             $bg_image = $request->file('bg_image');
-            $bg_name = time().rand().$request->name."." .$bg_image->getClientOriginalExtension();
+            $bg_name = time().rand()."." .$bg_image->getClientOriginalExtension();
             $bg_path = public_path('user\images\auction\bgImages');
             $bg_image->move($bg_path,$bg_name);
         }
 
         $data = new Product_categorie;        
-        $data->name = $request->name;
+        $data->name = addslashes($request->name);
         $data->image = 'user\images\auction\\'.$name;
         if($request->has('bg_image')){
             $data->bg_image = 'user\images\auction\bgImages\\'.$bg_name;
@@ -87,7 +87,7 @@ class categoryController extends Controller
     {
         $data = Product_categorie::findOrFail($id);
         $request->validate([
-            'name' => ['required'],
+            'name' => ['required','string'],
             'image' => ['image'],
             'bg_image' => ['image']
         ]);
@@ -116,8 +116,8 @@ class categoryController extends Controller
                 }
             }
 
-            $bg_image = $request->file('bg_image');
-            $bg_name = time().rand().$request->name."." .$bg_image->getClientOriginalExtension();
+            $bg_image = addslashes($request->file('bg_image'));
+            $bg_name = time().rand()."." .$bg_image->getClientOriginalExtension();
             $bg_path = public_path('user\images\auction\bgImages\\');
             $bg_image->move($bg_path , $bg_name);
         }
