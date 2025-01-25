@@ -30,7 +30,7 @@
           <tbody>
             @foreach($data as $data)
               <tr class="align-middle">
-                <td style="width: 5%;">{{ $loop->index + 1 }}</td>
+                <td style="width: 5%;">{{ $loop->iteration }}</td>
                 <td style="width: 11.11%;">{{$data->name}}</td>
                 <td style="width: 11.11%;">{{$data->category_name}}</td>
                 <td style="width: 11.11%;">₹{{$data->bid_start_price}}</td>

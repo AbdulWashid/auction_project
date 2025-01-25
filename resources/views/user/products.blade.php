@@ -9,13 +9,13 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('user.index')}}">Home</a>
                 </li>
                 <li>
                     <a href="#0">Pages</a>
                 </li>
                 <li>
-                    <span>{{$product[0]->category_name}}</span>
+                    <span>{{$products[0]->category_name}}</span>
                 </li>
             </ul>
         </div>
@@ -31,11 +31,11 @@
                 <h3 class="title">Bid on These Featured Auctions!</h3>
             </div>
             <div class="row justify-content-center mb-30-none">
-            @foreach($product as $product)
+            @foreach($products as $product)
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="car"></a>
+                            <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="product"></a>
                             <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
                             <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 @if($loop->iteration == 3)
-                @break
+                    @break
                 @endif
             @endforeach
             </div>
@@ -91,18 +91,20 @@
             <div class="row mb--50">
                 <div class="col-lg-4 mb-50">
                     <div class="widget">
-                        <h5 class="title">Filter by Price</h5>
-                        <div class="widget-body">
-                            <div id="slider-range"></div>
-                            <div class="price-range">
-                                <label for="amount">Price :</label>
-                                <input type="text" id="amount" readonly>
+                            <form action="{{route('user.category',$products[0]->category_id)}}" method="get">
+                            <h5 class="title">Filter by Price</h5>
+                            <div class="widget-body">
+                                <div id="slider-range"></div>
+                                <div class="price-range">
+                                    <label for="amount">Price :</label>
+                                    <input name="price_range" type="text" id="amount" readonly>
+                                </div>
                             </div>
+                            <div class="text-center mt-20">
+                                <button type="submit" class="custom-button">Filter</button>
+                            </div>
+                        </form>
                         </div>
-                        <div class="text-center mt-20">
-                            <a href="#0" class="custom-button">Filter</a>
-                        </div>
-                    </div>
                     <div class="widget">
                         <h5 class="title">Auction Type</h5>
                         <div class="widget-body">
@@ -117,27 +119,6 @@
                             <div class="widget-form-group">
                                 <input type="checkbox" name="check-by-type" id="check3">
                                 <label for="check3">Buy Now</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget">
-                        <h5 class="title">Ending Within</h5>
-                        <div class="widget-body">
-                            <div class="widget-form-group">
-                                <input type="checkbox" name="check-by-type" id="day">
-                                <label for="day">1 Day</label>
-                            </div>
-                            <div class="widget-form-group">
-                                <input type="checkbox" name="check-by-type" id="week">
-                                <label for="week">1 Week</label>
-                            </div>
-                            <div class="widget-form-group">
-                                <input type="checkbox" name="check-by-type" id="month1">
-                                <label for="month1">1 Month</label>
-                            </div>
-                            <div class="widget-form-group">
-                                <input type="checkbox" name="check-by-type" id="month3">
-                                <label for="month3">3 Month</label>
                             </div>
                         </div>
                     </div>
@@ -170,17 +151,17 @@
                         </form>
                     </div>
                     <div class="row mb-30-none justify-content-center">
-                        <!-- product start loop -->
+                        @foreach($products as $product)
                         <div class="col-sm-10 col-md-6">
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                                 <div class="auction-thumb">
-                                    <a href="product-details.html"><img src="{{asset('/user/images/auction/product/10.png')}}" alt="product"></a>
-                                    <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                    <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                                    <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="product"></a>
+                                    <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
+                                    <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
-                                        <a href="#0">Juste un Clou ring</a>
+                                        <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
                                     </h6>
                                     <div class="bid-area">
                                         <div class="bid-amount">
@@ -189,7 +170,7 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current">Current Bid</div>
-                                                <div class="amount">$876.00</div>
+                                                <div class="amount">₹{{$product->bid_start_price}}</div>
                                             </div>
                                         </div>
                                         <div class="bid-amount">
@@ -198,7 +179,7 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current">Buy Now</div>
-                                                <div class="amount">$5,00.00</div>
+                                                <div class="amount">₹{{$product->sale_price}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -209,30 +190,35 @@
                                         <span class="total-bids">30 Bids</span>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#0" class="custom-button">Submit a bid</a>
+                                        <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- product start loop -->
+                        @endforeach
                     </div>
-                    <ul class="pagination">
+                    <!-- pagination -->
+                     <ul class="pagination">
+                        @if(!$products->onFirstPage())
+                            <li >
+                                <a href="{{$products->url(1) }}"><i class="flaticon-left-arrow"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{$products->previousPageUrl()}}">{{ $products->currentPage() - 1 }}</a>
+                            </li>
+                        @endif
                         <li>
-                            <a href="#0"><i class="flaticon-left-arrow"></i></a>
+                            <a href="#0" class="active">{{ $products->currentPage() }}</a>
                         </li>
-                        <li>
-                            <a href="#0">1</a>
-                        </li>
-                        <li>
-                            <a href="#0" class="active">2</a>
-                        </li>
-                        <li>
-                            <a href="#0">3</a>
-                        </li>
-                        <li>
-                            <a href="#0"><i class="flaticon-right-arrow"></i></a>
-                        </li>
-                    </ul>
+                        @if($products->hasMorePages())
+                            <li>
+                                <a href="{{$products->nextPageUrl()}}">{{ $products->currentPage() + 1 }}</a>
+                            </li>
+                            <li>
+                                <a href="{{$products->lastPage()}}"><i class="flaticon-right-arrow"></i></a>
+                            </li>
+                        @endif
+                    </ul> 
                 </div>
             </div>
         </div>

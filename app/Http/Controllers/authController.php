@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Hash;
 use App\Models\User;
+use Laravel\Socialite\Facades\Socialite;
 
 class authController extends Controller
 {
@@ -63,5 +64,13 @@ class authController extends Controller
         $data->save();
 
         return redirect()->route('user.index');
+    }
+    function google(){
+        return Socialite::driver('google')->redirect();
+
+    }
+    function googleData(){
+        $data = Socialite::driver('google')->user();
+        dd($data);
     }
 }
