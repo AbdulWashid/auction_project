@@ -2,6 +2,63 @@
 @section('title','Product Add')
 @section('content')
 
+@push('DateTimePicker_css')
+    <!-- jquery date time picker link 1.6 begin -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+@endpush
+@push('croperjs_js')
+<!-- cropper js -->
+<script>
+    let cropper;
+    const productImageInput = $('#main_image');
+    const cropperModal = $('#cropperModal');
+    const imageToCrop = document.getElementById('imageToCrop');
+
+    // Trigger Cropper.js when an image is selected
+    productImageInput.on('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imageToCrop.src = e.target.result;
+                cropperModal.modal('show'); // Show the modal
+                if (cropper) cropper.destroy(); // Destroy any previous instance
+                cropper = new Cropper(imageToCrop, {
+                    aspectRatio: 3 / 2, // Adjust the aspect ratio as needed
+                    viewMode: 1,
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Handle the "Crop Image" button click
+    $('#cropImage').on('click', function () {
+        if (cropper) {
+            // Get the cropped image as a Blob
+            cropper.getCroppedCanvas().toBlob(function (blob) {
+                // Create a new file object from the blob
+                const croppedFile = new File([blob], 'cropped-image.png', { type: 'image/png' });
+
+                // Replace the original file input with the cropped image file
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(croppedFile);
+                productImageInput[0].files = dataTransfer.files;
+
+                cropperModal.modal('hide'); // Close the modal
+                cropper.destroy(); // Clean up the cropper instance
+            }, 'image/png');
+        }
+    });
+
+</script>
+@endpush
+@push('cropperjs_css')
+    <!-- Cropper js -->
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet">
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+@endpush
+
 <main class="app-main">
     <!--begin::Form Validation-->
     <div class="card card-info card-outline mb-4 m-5">
@@ -9,7 +66,7 @@
         <div class="card-header"><div class="card-title">{{ isset($data) ? 'Edit Product' : 'Add Product' }}</div></div>
         <!--end::Header-->
         <!--begin::Form-->
-        <form action="{{ isset($data) ? route('admin.product.update', $data->id) :  route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ isset($data) ? route('admin.product.update', $data->id) :  route('admin.product.store') }}" method="POST" id="form" enctype="multipart/form-data">
             @csrf
             @if(isset($data))
                 @method('PUT') <!-- Use PUT method for updates -->
@@ -108,6 +165,8 @@
                         @enderror
                     </div>
                     <!--end::Col-->
+                    <!-- Hidden input to store the cropped image -->
+                    <input type="hidden" id="croppedImageInput" name="croppedImage">
                 </div>
                 <!--end::Row-->
             </div>
@@ -124,4 +183,27 @@
 
 
 </main>
+
+<!-- Cropper Modal -->
+<div class="modal fade" id="cropperModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Crop Image</h5>
+        </div>
+        <div class="modal-body d-flex justify-content-center align-items-center">
+            <img class="img-fluid" id="imageToCrop" src="" alt="Image to Crop">
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="cropImage" class="btn btn-success">  <i class="bi bi-crop"></i> &nbsp; Crop</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 @endsection

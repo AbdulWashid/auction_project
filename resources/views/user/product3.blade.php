@@ -14,7 +14,7 @@
                     <a href="#0">Pages</a>
                 </li>
                 <li>
-                    <span>{{$product[0]->category_name}}</span>
+                    <span>{{$product->category_name}}</span>
                 </li>
             </ul>
         </div>

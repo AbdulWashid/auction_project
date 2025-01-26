@@ -71,6 +71,19 @@ class authController extends Controller
     }
     function googleData(){
         $data = Socialite::driver('google')->user();
-        dd($data);
+        $user = User::where('email',$data->email)->first();
+        if($user){
+            Auth::login($user);
+            return redirect()->route('user.index');
+        }
+        else{
+            $newUser = new User;
+            $newUser->name = $data->name;
+            $newUser->email = $data->email;
+            $newUser->password = '123@456';
+            $newUser->save();
+            Auth::login($newUser);
+            return redirect()->route('user.index');
+        }
     }
 }

@@ -105,13 +105,10 @@
                                 <li>
                                     <a href="faqs.html">Faqs</a>
                                 </li>
-                                <li>
-                                    <a href="error.html">404 Error</a>
-                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="{{route('contact')}}">Contact</a>
                         </li>
                     </ul>
                     <form class="search-form">

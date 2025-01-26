@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->DATE('DOB')->nullable();
             $table->string('address')->nullable();
-            $table->string('mobile')->unique();
+            $table->string('mobile')->unique()->nullable();
             $table->integer('google_id')->unique()->nullable();
             $table->enum('roll',['1','0'])->comment('1 is admin & 0 is users')->default('0');
             $table->timestamp('email_verified_at')->nullable();

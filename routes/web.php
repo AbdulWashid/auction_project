@@ -10,6 +10,8 @@ use App\Http\Controllers\{
 Route::get('/',[viewOpenController::class,'index'])->name('user.index');                    //main index page route
 Route::get('category/{id}',[viewOpenController::class,'category'])->name('user.category');  //category wise product page route
 Route::get('product/{id}',[viewOpenController::class,'product'])->name('user.product');     //product details page route
+Route::view('contact','user.contact')->name('contact');
+
 
 //login registration related route
 Route::view('login','user.sign-in')->name('loginPage');                                     // login page route

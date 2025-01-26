@@ -45,7 +45,7 @@ class productController extends Controller
             'sale_price'    => ['required',],
             'bid_price'     => ['required',],
             'start_at'      => ['required','string'],
-            'end_at'        => ['required','string'],
+            'end_at'        => ['required','string','after:start_at'],
             'description'   => ['string'],
             'main_image'    => ['required','image'],
             'more_images.*' => ['image']
@@ -119,7 +119,7 @@ class productController extends Controller
             'sale_price'    => ['required',],
             'bid_price'     => ['required',],
             'start_at'      => ['required',],
-            'end_at'        => ['required',],
+            'end_at'        => ['required','after:start_at'],
             'description'   => ['string',],
             'main_image'    => ['image'],
             'more_images.*' => ['image']

@@ -25,9 +25,6 @@
       <!-- jquery UI link 1.3 begin -->
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-      <!-- jquery date time picker link 1.6 begin -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
-
       <!-- jquery Data Table  -->
       <style>
         table.dataTable tbody tr:hover {
@@ -35,6 +32,8 @@
             cursor: pointer; /* Optional: Change cursor to pointer */
         }
       </style>
+    @stack('DateTimePicker_css')
+    @stack('cropperjs_css')
     <!-- custom link start --> 
 
     <!--begin::Fonts-->
@@ -190,6 +189,7 @@
             });
         });
       </script>
+@stack('croperjs_js')
       <!-- custom script start -->
    {{-- 
     <!-- OPTIONAL SCRIPTS -->
