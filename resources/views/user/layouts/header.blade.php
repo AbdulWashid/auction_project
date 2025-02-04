@@ -25,7 +25,12 @@
                         </li>                        
                         <li>
                             <a href="{{route('user.dashboard')}}" class="user-button"><i class="flaticon-user"></i></a>
-                        </li>                        
+                        </li> 
+                        @if(Auth::check())
+                            <li>
+                                <a href="{{route('logout')}}" class="text-white"><i class="bi bi-box-arrow-right me-2"></i> Logout</a> 
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

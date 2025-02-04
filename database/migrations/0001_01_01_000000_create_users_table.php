@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->json('save_products_id')->nullable();
             $table->DATE('DOB')->nullable();
             $table->string('address')->nullable();
             $table->string('mobile')->unique()->nullable();

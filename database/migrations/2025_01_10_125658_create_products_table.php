@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('name');
-            $table->decimal('sale_price',8,2);
-            $table->decimal('bid_start_price',8,2);
+            $table->decimal('sale_price',15,2);
+            $table->decimal('bid_start_price',15,2);
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->longText('description');

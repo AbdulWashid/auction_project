@@ -1,63 +1,65 @@
 @extends('Admin.layouts.master')
 @section('title','Product Add')
-@section('content')
-
 @push('DateTimePicker_css')
     <!-- jquery date time picker link 1.6 begin -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
 @endpush
+
 @push('croperjs_js')
-<!-- cropper js -->
-<script>
-    let cropper;
-    const productImageInput = $('#main_image');
-    const cropperModal = $('#cropperModal');
-    const imageToCrop = document.getElementById('imageToCrop');
+    <!-- cropper js -->
+    <script>
+        let cropper;
+        const productImageInput = $('#main_image'); //main form
+        const cropperModal = $('#cropperModal');  // modal
+        const imageToCrop = document.getElementById('imageToCrop'); // model img tag
 
-    // Trigger Cropper.js when an image is selected
-    productImageInput.on('change', function (event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                imageToCrop.src = e.target.result;
-                cropperModal.modal('show'); // Show the modal
-                if (cropper) cropper.destroy(); // Destroy any previous instance
-                cropper = new Cropper(imageToCrop, {
-                    aspectRatio: 3 / 2, // Adjust the aspect ratio as needed
-                    viewMode: 1,
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+        // Trigger Cropper.js when an image is selected
+        productImageInput.on('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imageToCrop.src = e.target.result;
+                    cropperModal.modal('show'); // Show the modal
+                    if (cropper) cropper.destroy(); // Destroy any previous instance
+                    cropper = new Cropper(imageToCrop, {
+                        aspectRatio: 3 / 2, // Adjust the aspect ratio as needed
+                        viewMode: 1,
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        });
 
-    // Handle the "Crop Image" button click
-    $('#cropImage').on('click', function () {
-        if (cropper) {
-            // Get the cropped image as a Blob
-            cropper.getCroppedCanvas().toBlob(function (blob) {
-                // Create a new file object from the blob
-                const croppedFile = new File([blob], 'cropped-image.png', { type: 'image/png' });
+        // Handle the "Crop Image" button click
+        $('#cropImage').on('click', function () {
+            if (cropper) {
+                // Get the cropped image as a Blob
+                cropper.getCroppedCanvas().toBlob(function (blob) {
+                    // Create a new file object from the blob
+                    const croppedFile = new File([blob], 'cropped-image.png', { type: 'image/png' });
 
-                // Replace the original file input with the cropped image file
-                const dataTransfer = new DataTransfer();
-                dataTransfer.items.add(croppedFile);
-                productImageInput[0].files = dataTransfer.files;
+                    // Replace the original file input with the cropped image file
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(croppedFile);
+                    productImageInput[0].files = dataTransfer.files;
 
-                cropperModal.modal('hide'); // Close the modal
-                cropper.destroy(); // Clean up the cropper instance
-            }, 'image/png');
-        }
-    });
+                    cropperModal.modal('hide'); // Close the modal
+                    cropper.destroy(); // Clean up the cropper instance
+                }, 'image/png');
+            }
+        });
 
-</script>
+    </script>
 @endpush
+
 @push('cropperjs_css')
     <!-- Cropper js -->
     <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet">
     <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
 @endpush
+@section('content')
+
 
 <main class="app-main">
     <!--begin::Form Validation-->
@@ -105,7 +107,7 @@
                     <!--begin::Col     product sale price-->
                     <div class="col-md-6">
                         <label for="sale_price" class="form-label">Sale Price</label>
-                        <input type="number" class="form-control price-input" id="sale_price" name="sale_price" value="{{ old('price', $data->sale_price ?? '') }}" placeholder="₹ 0.00"  required />
+                        <input type="number" class="form-control price-input" id="sale_price" name="sale_price" value="{{ old('sale_price', $data->sale_price ?? '') }}" placeholder="₹ 0.00"  required />
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

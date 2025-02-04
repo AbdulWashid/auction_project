@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('/user/css/main.css')}}">
 
     <link rel="shortcut icon" href="{{asset('/user/images/favicon.png')}}" type="image/x-icon">
+    @stack('index_css')
 </head>
 
 <body>

@@ -23,7 +23,7 @@
       <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css">
 
       <!-- jquery UI link 1.3 begin -->
-      <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+      <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> -->
 
       <!-- jquery Data Table  -->
       <style>

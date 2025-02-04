@@ -46,6 +46,9 @@
                                 <a href="{{route('user.dashboard')}}"><i class="flaticon-dashboard"></i>Dashboard</a>
                             </li>
                             <li>
+                                <a href="{{route('user.recharge')}}" class="active"><i class="fas fa-credit-card"></i>Recharge</a>
+                            </li>
+                            <li>
                                 <a href="#" class="active"><i class="flaticon-settings"></i>Personal Profile </a>
                             </li>
                             <li>

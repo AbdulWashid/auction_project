@@ -7,12 +7,13 @@ use App\Models\Product_categorie;
 use App\Models\product;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Auth;
 
 class viewOpenController extends Controller
 {
     // home page open
     function index(){
+        
         $categories = Product_categorie::
                     leftjoin('products','product_categories.id','=','products.category_id')
                     ->Distinct()
@@ -72,7 +73,13 @@ class viewOpenController extends Controller
                             join('product_categories','products.category_id','=','product_categories.id')
                             ->select('products.*','product_categories.name as category_name')
                             ->findOrFail($id);
+                        
+    $now = Carbon::now();
+    $startAt = Carbon::parse($product->start_at);
+    $endAt = Carbon::parse($product->end_at);
         return view('user.product-details',compact('product'));
     }
+
+    
 
 }

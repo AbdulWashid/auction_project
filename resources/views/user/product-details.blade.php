@@ -4,7 +4,24 @@
 
 @section('title','Product')
 @section('main')
-
+@php
+    use Carbon\Carbon;
+    $now = Carbon::now();
+    $startAt = Carbon::parse($product->start_at);
+    $endAt = Carbon::parse($product->end_at);
+@endphp
+@push('index_css')
+    <style>
+        .slide-inner{
+            display: flex;
+            justify-content: space-around;
+        }
+        .search-icon{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+@endpush
     <!--============= Hero Section Starts Here =============-->
     <div class="hero-section style-2">
         <div class="container">
@@ -32,14 +49,14 @@
                 <div class="product-details-slider owl-theme owl-carousel" id="sync1">
                     <div class="slide-top-item">
                         <div class="slide-inner">
-                            <img src="{{asset($product['image'])}}" alt="product">
+                            <img class="w-50 text-center" src="{{asset($product['image'])}}" alt="product">
                         </div>
                     </div>
                     @if(json_decode($product['moreImages']))
                         @foreach( json_decode($product['moreImages']) as $bigImage)
                             <div class="slide-top-item">
                                 <div class="slide-inner">
-                                    <img src="{{asset($bigImage)}}" alt="{{$loop->iteration}}">
+                                    <img class="img-fluid w-50" src="{{asset($bigImage)}}" alt="{{$loop->iteration}}">
                                 </div>
                             </div>
                         @endforeach
@@ -70,10 +87,6 @@
                     <div class="product-details-content">
                         <div class="product-details-header">
                             <h2 class="title">{{$product->name}}</h2>
-                            <ul>
-                                <li>Listing ID: 14076242</li>
-                                <li>Item #: 7300-3356862</li>
-                            </ul>
                         </div>
                         <ul class="price-table mb-30">
                             <li class="header">
@@ -81,22 +94,21 @@
                                 <h3 class="price">₹{{$product->bid_start_price}}</h3>
                             </li>
                             <li>
-                                <span class="details">Buyer's Premium</span>
-                                <h5 class="info">10.00%</h5>
-                            </li>
-                            <li>
-                                <span class="details">Bid Increment (US)</span>
+                                <span class="details">Bid Increment </span>
                                 <h5 class="info">$50.00</h5>
                             </li>
                         </ul>
                         <div class="product-bid-area">
-                            <form class="product-bid-form">
                                 <div class="search-icon">
                                     <img src="{{asset('/user/images/product/search-icon.png')}}" alt="product">
+
+
+                                    @if( $now->between($startAt, $endAt))
+                                        <a href="{{route('user.livebid',$product->id)}}"><button type="submit" class="custom-button">start a bid</button></a>
+                                    @else
+                                        <a href="#0"><button type="submit" class="custom-button">bid start at {{date('d-m-y H:i', strtotime($product->start_at))}}</button></a>
+                                    @endif
                                 </div>
-                                <input type="text" placeholder="Enter you bid amount">
-                                <button type="submit" class="custom-button">Submit a bid</button>
-                            </form>
                         </div>
                         <div class="buy-now-area">
                             <a href="#0" class="custom-button">Buy Now: ₹{{ $product->sale_price}}</a>

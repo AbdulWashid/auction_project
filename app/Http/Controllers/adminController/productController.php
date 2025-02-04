@@ -28,8 +28,6 @@ class productController extends Controller
     public function create()
     {
         $category = Product_categorie::all();
-        // $category = $category->toArray();
-        // dd($category);
         return view('Admin.productAdd',compact('category'));
     }
 
@@ -38,12 +36,11 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->toArray());
         $request->validate([
             'Pname'         => ['required','string'],
             'category_id'   => ['required','string'],
-            'sale_price'    => ['required',],
-            'bid_price'     => ['required',],
+            'sale_price'    => ['required','numeric','min:1','max:99999999.99'],
+            'bid_price'     => ['required','numeric','min:1','max:99999999.99'],
             'start_at'      => ['required','string'],
             'end_at'        => ['required','string','after:start_at'],
             'description'   => ['string'],

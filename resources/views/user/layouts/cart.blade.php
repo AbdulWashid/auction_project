@@ -1,4 +1,5 @@
     <!--============= Cart Section Starts Here =============-->
+    
     <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="{{route('user.index')}}" class="logo">
