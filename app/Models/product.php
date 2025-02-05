@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class product extends Model
 {
-    //
+    public function bids()
+    {
+        return $this->hasMany(Bid::class);
+    }
+
 }

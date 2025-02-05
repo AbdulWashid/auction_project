@@ -1,5 +1,5 @@
 @extends('Admin.layouts.master')
-@section('title','categories')
+@section('title','Categories')
 @section('content')
 <main class="app-main">    
   @if(session('success'))

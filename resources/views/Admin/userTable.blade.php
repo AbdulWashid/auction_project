@@ -1,5 +1,5 @@
 @extends('Admin.layouts.master')
-@section('title','user')
+@section('title','User')
 @section('content')
 <main class="app-main">
     <div class="container mt-5">

@@ -20,6 +20,12 @@
             display: flex;
             justify-content: space-around;
         }
+        .disabled-button{
+            filter: grayscale(50%);
+        }
+        .disabled-button:hover {
+            cursor: not-allowed;
+        }
     </style>
 @endpush
     <!--============= Hero Section Starts Here =============-->
@@ -95,7 +101,7 @@
                             </li>
                             <li>
                                 <span class="details">Bid Increment </span>
-                                <h5 class="info">$50.00</h5>
+                                <h5 class="info">₹{{$product->bid_start_price * 5 / 100}}</h5>
                             </li>
                         </ul>
                         <div class="product-bid-area">
@@ -103,10 +109,12 @@
                                     <img src="{{asset('/user/images/product/search-icon.png')}}" alt="product">
 
 
-                                    @if( $now->between($startAt, $endAt))
-                                        <a href="{{route('user.livebid',$product->id)}}"><button type="submit" class="custom-button">start a bid</button></a>
+                                    @if( $now->greaterThan($startAt) && $now->lessThan($endAt))
+                                        <a href="{{route('user.livebid',$product->id)}}"><button class="custom-button">start a bid</button></a>
+                                    @elseif($now->greaterThan($endAt))
+                                        <a href="#0"><button  class="disabled-button custom-button" disabled>Auction Ended</button></a>
                                     @else
-                                        <a href="#0"><button type="submit" class="custom-button">bid start at {{date('d-m-y H:i', strtotime($product->start_at))}}</button></a>
+                                        <a href="#0"><button class="disabled-button custom-button" disabled>bid start at {{date('d-m-y H:i', strtotime($product->start_at))}}</button></a>
                                     @endif
                                 </div>
                         </div>
@@ -138,7 +146,7 @@
                         <div class="product-single-sidebar mb-3">
                             <h6 class="title">This Auction Ends in:</h6>
                             <div class="countdown">
-                                <div id="bid_counter1"></div>
+                                <div id="couter_bid"></div>
                             </div>
                             <div class="side-counter-area">
                                 <div class="side-counter-item">
@@ -170,7 +178,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#0" class="cart-link">View Shipping, Payment & Auction Policies</a>
+                        <a href="{{route('termAndConditions')}}" class="cart-link">View Shipping, Payment & Auction Policies</a>
                     </div>
                 </div>
             </div>
@@ -256,53 +264,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">NYC Fleet / DCAS units may be located at either of two locations:</h5>
-                                <ul>
-                                    <li>Brooklyn, NY (1908 Shore Parkway)</li>
-                                    <li>Medford, NY (66 Peconic Ave)</li>
-                                </ul>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">This unit is located at:</h5>
-                                <ul>
-                                    <li>Kenben Industries Ltd.</li>
-                                    <li>1908 Shore Parkway</li>
-                                    <li>Brooklyn, NY 11214</li>
-                                </ul>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Acceptance of condition - buyer inspection/preview</h5>
-                                <p>Vehicles and equipment often display significant wear and tear. Assets are sold AS IS with no warranty, express or implied, and we highly recommend previewing them before bidding. The preview period is the only opportunity to inspect an asset to verify condition and suitability. No refunds, adjustments or returns will be entertained. </p>
-                                <p>Vehicle preview inspections of the vehicle can be done at the below location on Monday and Tuesday from 10am - 2pm. See Preview Rules Here.</p>                                
-                                <ul>
-                                    <li>Kenben Industries Ltd.</li>
-                                    <li>1908 Shore Parkway</li>
-                                    <li>Brooklyn, NY 11214</li>
-                                </ul>
-                                <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Legal Notice</h5>
-                                <p>Vehicles may not be driven off the lot except with a dealer plate affixed. By law, vehicles are not permitted to be parked on or to drive on the streets of New York without registration and plates registered to the vehicle. If the buyer cannot obtain the required registration and plates prior to pick up, they should have the vehicle towed at their own expense. The buyer should have the vehicle towed at their own expense.</p>
-                                <p>Condition: Untested - Sold As-Is</p>
-                                <p>Employees of Sbidu, its subcontractors and affiliated companies, employees of the NYC Government and those bidding on behalf of PropertyRoom.com, its subcontractors and affiliated companies and employees of the NYC Government are not permitted to bid on or purchase NYC Fleet/DCAS assets. </p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Condition</h5>
-                                <p>This ASSET is being listed on behalf of a law enforcement agency or other partner ("SELLER") by PropertyRoom.com on a Sold AS IS, WHERE IS, WITH ALL FAULTS basis, with no representation or warranty from PropertyRoom.com or SELLER. In many cases, the car, boat, truck, motorcycle, aircraft, mowers/tractors, etc. ("ASSET") sold on PropertyRoom.com comes from seizure or forfeiture, and the SELLER typically does not possess use-based knowledge of the ASSET. Further, PropertyRoom.com does not physically inspect the ASSET and cannot attest to actual working conditions. PropertyRoom.com and SELLER gather information about the ASSET from authoritative sources; still, errors may appear from time to time in the listing. PropertyRoom.com cautions any website user, shopper, bidder, etc. ("BUYER") to attempt to confirm, with us, information material to a bidding/purchasing decision.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Bidding</h5>
-                                <p>At this time Sbidu only accepts bidders from the United States, Canada and Mexico on Vehicles and Heavy Industrial Equipment. The Bid Now button will appear on auctions where you are qualified to place a bid.</p>
-                            </div>
-                            <div class="item">
-                                <h5 class="subtitle">Buyer Responsibility</h5>
-                                <p>The BUYER will receive an email notification from PropertyRoom.com following the close of an auction. After fraud verification and payment settlement, we will email the BUYER instructions for retrieving the ASSET from the Will-Call Location listed above.</p>
-                                <p>All applicable shipping, logistics, transportation, customs, fees, taxes, export/import activities and all associated costs are the sole responsibility of the BUYER. No shipping, customs, export or import assistance is available from Sbidu.</p>
-                                <p>When applicable for a given ASSET, BUYER bears responsibility for determining motor vehicle registration requirements in the applicable jurisdiction as well as costs, including any fees, registration fees, taxes, etc., owed as a result of BUYER registering an ASSET; for example, BUYER bears sole responsibility for all title/registration/smog and other such fees.</p>
-                                <p>BUYER is responsible for all storage fees at time of pick-up. See above under IMPORTANT PICK-UP TIMES for specific requirements for this asset, but generally assets must be picked up within 2 business days of payment otherwise additional storage fees will be applied.</p>
                             </div>
                         </div>
                     </div>
@@ -500,5 +461,39 @@
         </div>
     </section>
     <!--============= Product Details Section Ends Here =============-->
+    @push('SingleProductCountdown')
+    <script>
+        $(document).ready( ()=>{
+            element = $('#couter_bid');
+       
+            var countDownDate = new Date("{{$product->end_at}}").getTime();
 
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+            // Get today's date and time
+            var now = new Date().getTime();
+                
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+                
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+            // Output the result in an element with id="demo"
+            element.html(days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ") ;
+                
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                element.html('Expired');
+            }
+            }, 1000);
+        })
+    </script>
+@endpush
 @endsection

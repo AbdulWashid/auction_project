@@ -42,10 +42,10 @@
                         </div>
                         <ul class="dashboard-menu">
                             <li>
-                                <a href="#0" class="active"><i class="flaticon-dashboard"></i>Dashboard</a>
+                                <a href="{{route('user.dashboard')}}" class="active"><i class="flaticon-dashboard"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="{{route('user.recharge')}}" class="active"><i class="fas fa-credit-card"></i>Recharge</a>
+                                <a href="{{route('user.recharge')}}"><i class="fas fa-credit-card"></i>Recharge</a>
                             </li>
                             <li>
                                 <a href="{{route('user.profile')}}"><i class="flaticon-settings"></i>Personal Profile </a>

@@ -14,7 +14,9 @@ class userDashboardController extends Controller
     function livebid($id){
         $product = Product::join('product_categories','products.category_id','=','product_categories.id')
                         ->select('products.*','product_categories.name as category_name')
+                        ->with('Bids')
                         ->findOrFail($id);
+
         return view('user.liveBid',compact('product'));
     }
 

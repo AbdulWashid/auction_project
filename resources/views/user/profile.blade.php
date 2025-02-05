@@ -46,10 +46,10 @@
                                 <a href="{{route('user.dashboard')}}"><i class="flaticon-dashboard"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="{{route('user.recharge')}}" class="active"><i class="fas fa-credit-card"></i>Recharge</a>
+                                <a href="{{route('user.recharge')}}"><i class="fas fa-credit-card"></i>Recharge</a>
                             </li>
                             <li>
-                                <a href="#" class="active"><i class="flaticon-settings"></i>Personal Profile </a>
+                                <a href="{{route('user.profile')}}" class="active"><i class="flaticon-settings"></i>Personal Profile </a>
                             </li>
                             <li>
                                 <a href="my-bid.html"><i class="flaticon-auction"></i>My Bids</a>

@@ -51,7 +51,7 @@
                     <div class="product-single-sidebar mb-3">
                         <h6 class="title">This Auction Ends in:</h6>
                         <div class="countdown">
-                            <div id="bid_counter1"></div>
+                            <div id="couter_bid"></div>
                         </div>
                         <div class="side-counter-area">
                             <div class="side-counter-item">
@@ -97,15 +97,25 @@
                         </li>
                         <li>
                             <span class="details">Bid Increment</span>
-                            <h5 class="info">$50.00</h5>
+                            <h5 class="info">₹{{$product->bid_start_price * 5 / 100}}</h5>
                         </li>
                     </ul>
                     <div class="product-bid-area">
-                                <form class="product-bid-form">
+                        <div class="text-center text-dark">Win  a Bid </div>
+                                <form action={{route('user.new.bid')}} method="POST" class="product-bid-form">
+                                    @csrf
+                                    <input type="hidden" name="productId" value="{{$product->id}}">
+                                    <input type="hidden" name="minimumBid" value="{{  ($product->current_bid ? $product->current_bid + $product->current_bid * 5 / 100 : $product->bid_start_price + $product->bid_start_price * 5 / 100) }}">
                                     <div class="search-icon">
                                         <img src="{{asset('/user/images/product/search-icon.png')}}" alt="product">
                                     </div>
-                                    <input type="text" placeholder="Enter you bid amount">
+                                    <div class="col-md-6">
+                                        <input type="text" id="newBid" placeholder="Enter you bid amount" name="newBid" 
+                                        value="{{ old('newBid', ($product->current_bid ? $product->current_bid + $product->current_bid * 5 / 100 : $product->bid_start_price + $product->bid_start_price * 5 / 100)) }}" required>
+                                        @error('newBid')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                                     <button type="submit" class="custom-button">Submit a bid</button>
                                 </form>
                         </div>
@@ -114,9 +124,9 @@
             </div>
         </div>
     </div>
-    
+    <br><br><br>
     <div class="container">
-        Bid History
+        <h4 class="text-center text-dark">Bid History</h4>
         <div class="table-responsive">
             <table class="table table-striped table-hover rounded">
                 <thead>
@@ -137,11 +147,56 @@
         </div>
     </div>
 </section>
+<script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+<script>
 
+  // Enable pusher logging - don't include this in production
+  Pusher.logToConsole = true;
 
+  var pusher = new Pusher("{{ env('PUSHER_APP_KEY') }}", {
+    cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
+    encrypted: true
+  });
 
+  var channel = pusher.subscribe('abdul-message');
+  channel.bind('abdul-event', function(data) {
+      console.log(data);
+  });
+</script>
+@push('SingleProductCountdown')
+    <script>
+        $(document).ready( ()=>{
+            element = $('#couter_bid');
 
-
-
-
+            var countDownDate = new Date("{{$product->end_at}}").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+            // Get today's date and time
+            var now = new Date().getTime();
+                
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+                
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+            // Output the result in an element with id="demo"
+            element.html(days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ") ;
+                
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                element.html('Expired');
+            }
+            }, 1000);
+        })
+    </script>
+@endpush
 @endsection
+    

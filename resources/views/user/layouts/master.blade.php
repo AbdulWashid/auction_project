@@ -39,7 +39,8 @@
     @yield('main')
     @include('user.layouts.footer')
 
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')"></script><script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
+    {{-- <script data-cfasync="false" src="{{('/user/js/email-decode.min.js')}}"></script> --}}
+    <script src="{{asset('/user/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('/user/js/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('/user/js/plugins.js')}}"></script>
     <script src="{{asset('/user/js/bootstrap.min.js')}}"></script>
@@ -54,5 +55,6 @@
     <script src="{{asset('/user/js/yscountdown.min.js')}}"></script>
     <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/user/js/main.js')}}"></script>
+    @stack('SingleProductCountdown')
 </body>
 </html>

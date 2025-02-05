@@ -25,6 +25,7 @@ class viewOpenController extends Controller
                     orderBy('id','desc')
                     ->join('product_categories','products.category_id','=','product_categories.id')
                     ->select('products.*','product_categories.name as category_name','product_categories.image as category_image')
+                    ->where('products.end_at','>=',Carbon::now())
                     ->get();
 
         $latestProducts = Product::
@@ -62,6 +63,7 @@ class viewOpenController extends Controller
                             ->orderBy('products.id','desc')
                             ->join('product_categories','products.category_id','=','product_categories.id')
                             ->select('products.*','product_categories.name as category_name')
+                            ->where('products.end_at','>=',Carbon::now())
                             ->paginate(4);
 
         return view('user.products',[ 'products' => $product]);
@@ -73,10 +75,6 @@ class viewOpenController extends Controller
                             join('product_categories','products.category_id','=','product_categories.id')
                             ->select('products.*','product_categories.name as category_name')
                             ->findOrFail($id);
-                        
-    $now = Carbon::now();
-    $startAt = Carbon::parse($product->start_at);
-    $endAt = Carbon::parse($product->end_at);
         return view('user.product-details',compact('product'));
     }
 
