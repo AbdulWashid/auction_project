@@ -15,7 +15,7 @@
                     <a href="#0">My Account</a>
                 </li>
                 <li>
-                    <span>Personal profile</span>
+                    <span>Wallet</span>
                 </li>
             </ul>
         </div>
@@ -80,7 +80,13 @@
                                     <ul class="dash-pro-body">
                                         <li>
                                             <div class="info-name">Amount</div>
-                                            <div class="info-value">  ₹ {{$wallet->balance}}  </div>
+                                            @php
+                                                $total=0;
+                                                foreach($wallet as $amount){
+                                                    $total = $total + $amount->balance;
+                                                }
+                                            @endphp
+                                            <div class="info-value">  <h1> ₹{{ $total }} </h1> </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -128,7 +134,7 @@
                 .then(response => response.json())
                 .then(data => {
                     let options = {
-                        "key": "{{ config('razorePay.key') }}",
+                        "key": "{{ env('RAZORPAY_KEY') }}",
                         "amount": amount * 100,
                         "currency": "INR",
                         "name": "Wallet Recharge",
@@ -148,7 +154,7 @@
                             .then(response => response.json())
                             .then(data => {
                                 alert(data.message);
-                                location.reload();
+                                // location.reload();
                             });
                         }
                     };

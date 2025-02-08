@@ -25,6 +25,6 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
     Route::view('pusher','pusher');
     
     Route::get('event',[PusherController::class,'index'])->name('bid');
-    Route::post('event',[PusherController::class,'index'])->name('new.bid');
+    Route::post('event/{id}',[PusherController::class,'index'])->name('new.bid');
     // Route::post('bid',[PusherController::class,'newbid'])->name('new.bid');
 });

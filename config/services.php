@@ -42,5 +42,11 @@ return [
         'redirect' => env('GOOGLE_CALLBACK_URL'),
         ],
         
+    // razorPay
+    'razorpay' => [
+        'key' => env('RAZORPAY_KEY'),
+        'secret' => env('RAZORPAY_SECRET'),
+        'merchant_id' => env('RAZORPAY_MERCHANT_ID'),
+        ],
 
 ];

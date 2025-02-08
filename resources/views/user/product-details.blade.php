@@ -75,7 +75,7 @@
                     @foreach( json_decode($product['moreImages']) as $sortImage)
                         <div class="slide-bottom-item">
                             <div class="slide-inner">
-                                <img src="{{asset($sortImage)}}" alt="product">
+                                <img class="w-50 text-center" src="{{asset($sortImage)}}" alt="product">
                             </div>
                         </div>
                     @endforeach
@@ -107,8 +107,6 @@
                         <div class="product-bid-area">
                                 <div class="search-icon">
                                     <img src="{{asset('/user/images/product/search-icon.png')}}" alt="product">
-
-
                                     @if( $now->greaterThan($startAt) && $now->lessThan($endAt))
                                         <a href="{{route('user.livebid',$product->id)}}"><button class="custom-button">start a bid</button></a>
                                     @elseif($now->greaterThan($endAt))

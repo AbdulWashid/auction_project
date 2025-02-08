@@ -64,101 +64,146 @@
 
     <!--============= Products Section start =============-->
     @foreach($categories as $category)
-        @if($category->closing_stock > 2)
-            <section id="getStart" class="padding-bottom padding-top pos-rel oh">
-                @if($category->bg_image)
-                    <div class="car-bg"><img src="{{asset($category->bg_image)}}" alt="car"></div>
-                @endif
-                <div class="container">
-                    <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
-                        <div class="left">
-                            <div class="thumb">
-                                <img src="{{asset($category->image)}}" alt="header-icons">
-                            </div>
-                            <div class="title-area">
-                                <h2 class="title">{{$category->name}}</h2>
-                                <p>We offer affordable {{$category->name}}</p>
+        <section id="getStart" class="padding-bottom padding-top pos-rel oh">
+            @if($category->bg_image)
+                <div class="car-bg"><img src="{{asset($category->bg_image)}}" alt="car"></div>
+            @endif
+            <div class="container">
+                <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
+                    <div class="left">
+                        <div class="thumb">
+                            <img src="{{asset($category->image)}}" alt="header-icons">
+                        </div>
+                        <div class="title-area">
+                            <h2 class="title">{{$category->name}}</h2>
+                            <p>We offer affordable {{$category->name}}</p>
+                        </div>
+                    </div>
+                    <a href="{{route('user.category',$category->id)}}" class="normal-button">View All</a>
+                </div>
+                <div class="row justify-content-center mb-30-none">
+                @php
+                    $count = 0
+                @endphp
+                @foreach($products as $product)
+                    @if($product->category_name == $category->name)
+                        <div class="col-sm-10 col-md-6 col-lg-4">
+                            <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                                <div class="auction-thumb">
+                                    <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+                                    <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
+                                    <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                                </div>
+                                <div class="auction-content">
+                                    <h6 class="title">
+                                        <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
+                                    </h6>
+                                    <div class="bid-area">
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-auction"></i>
+                                            </div>
+                                            <div class="amount-content">
+                                                <div class="current">Current Bid</div>
+                                                <div class="amount"> ₹{{$product->bid_start_price}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-money"></i>
+                                            </div>
+                                            <div class="amount-content">
+                                                <div class="current">Buy Now</div>
+                                                <div class="amount">₹{{$product->sale_price}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="countdown-area">
+                                        <div class="countdown">
+                                            <div id="bid_counter26"></div>
+                                        </div>
+                                        <span class="total-bids">30 Bids</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <a href="{{route('user.category',$category->id)}}" class="normal-button">View All</a>
+                        @if(++$count == 3)
+                            @break
+                        @endif
+                    @endif
+                @endforeach
+                </div>
+            </div>
+        </section>
+
+        @if(!Auth::check() && $loop->iteration == 2)
+        <!--============= Call In Section Starts Here =============-->
+        <section class="call-in-section padding-top pt-max-xl-0">
+            <div class="container">
+                <div class="call-wrapper cl-white bg_img" data-background="{{asset('/user/images/call-in/call-bg.png')}}">
+                    <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
+                        <h3 class="title">Register for Free & Start Bidding Now!</h3>
+                        <p>From cars to diamonds to iPhones, we have it all.</p>
                     </div>
+                    <a href="{{route('registrationPage')}}" class="custom-button white">Register</a>
+                </div>
+            </div>
+        </section>
+        <!--============= Call In Section Ends Here =============-->
+        @endif
+
+        @if($loop->iteration == 2 && !$liveProducts->isEmpty())
+        <!--============= live Auction Section Starts Here =============-->
+        <br><br>
+        <section class="popular-auction padding-top pos-rel">
+            <div class="popular-bg bg_img" data-background="{{asset('user/images/auction/popular/popular-bg.png')}}"></div>
+            <div class="container">
+                <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
+                    <span class="cate"></span>
+                    <h2 class="title" data-aos="fade-down" data-aos-duration="1500">Live Auctions</h2>
+                    <p>Bid and win great deals,Our auction process is simple, efficient, and transparent.</p>
+                </div>
+                <div class="popular-auction-wrapper">
                     <div class="row justify-content-center mb-30-none">
-                    @php
-                        $count = 0
-                    @endphp
-                    @foreach($products as $product)
-                        @if($product->category_name == $category->name)
-                            <div class="col-sm-10 col-md-6 col-lg-4">
-                                <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                        @foreach($liveProducts as $product)
+                            <div class="col-lg-6">
+                                <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1500">
                                     <div class="auction-thumb">
-                                        <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
-                                        <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
+                                        <a href="{{route('user.product',$product->id)}}"><img class="img img-fluid" src="{{asset($product->image)}}" alt="popular"></a>
                                         <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                                     </div>
                                     <div class="auction-content">
                                         <h6 class="title">
                                             <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
                                         </h6>
-                                        <div class="bid-area">
-                                            <div class="bid-amount">
-                                                <div class="icon">
-                                                    <i class="flaticon-auction"></i>
-                                                </div>
-                                                <div class="amount-content">
-                                                    <div class="current">Current Bid</div>
-                                                    <div class="amount"> ₹{{$product->bid_start_price}}</div>
-                                                </div>
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-auction"></i>
                                             </div>
-                                            <div class="bid-amount">
-                                                <div class="icon">
-                                                    <i class="flaticon-money"></i>
-                                                </div>
-                                                <div class="amount-content">
-                                                    <div class="current">Buy Now</div>
-                                                    <div class="amount">₹{{$product->sale_price}}</div>
-                                                </div>
+                                            <div class="amount-content">
+                                                <div class="current">Current Bid</div>
+                                                <div class="amount">₹{{$product->bid_start_price}}</div>
                                             </div>
                                         </div>
-                                        <div class="countdown-area">
-                                            <div class="countdown">
-                                                <div id="bid_counter26"></div>
-                                            </div>
-                                            <span class="total-bids">30 Bids</span>
-                                        </div>
-                                        <div class="text-center">
-                                            <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
+                                        <div class="bids-area">
+                                            Total Bids : <span class="total-bids">130 Bids</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @if(++$count == 3)
-                                @break
-                            @endif
-                        @endif
-                    @endforeach
+                        @endforeach
                     </div>
                 </div>
-            </section>
-
-            @if(!Auth::check() && $loop->iteration == 2)
-            <!--============= Call In Section Starts Here =============-->
-            <section class="call-in-section padding-top pt-max-xl-0">
-                <div class="container">
-                    <div class="call-wrapper cl-white bg_img" data-background="{{asset('/user/images/call-in/call-bg.png')}}">
-                        <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                            <h3 class="title">Register for Free & Start Bidding Now!</h3>
-                            <p>From cars to diamonds to iPhones, we have it all.</p>
-                        </div>
-                        <a href="{{route('registrationPage')}}" class="custom-button white">Register</a>
-                    </div>
-                </div>
-            </section>
-            <!--============= Call In Section Ends Here =============-->
-            @endif
+            </div>
+        </section>
+        <!--============= live Auction Section Ends Here =============-->
         @endif
 
         @if($loop->iteration == 3 && !$latestProducts->isEmpty())
-            <!--============= Popular Auction Section Starts Here =============-->
+            <!--============= latest Auction Section Starts Here =============-->
             <section class="popular-auction padding-top pos-rel">
                 <div class="popular-bg bg_img" data-background="{{asset('user/images/auction/popular/popular-bg.png')}}"></div>
                 <div class="container">
@@ -200,7 +245,7 @@
                     </div>
                 </div>
             </section>
-            <!--============= Popular Auction Section Ends Here =============-->
+            <!--============= latest Auction Section Ends Here =============-->
         @endif
     @endforeach
     <!--============= Products section End =============-->

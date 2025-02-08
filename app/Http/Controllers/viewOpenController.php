@@ -30,11 +30,22 @@ class viewOpenController extends Controller
 
         $latestProducts = Product::
                             where('created_at', '>=', Carbon::now()->subDays(7))
+                            ->where('end_at','>=',Carbon::now())
                             ->orderBy('created_at', 'desc')
                             ->limit(6)
                             ->get();
 
-        return view('user.index',compact('categories','products','latestProducts'));
+        $liveProducts = Product::
+                            whereRaw('NOW() BETWEEN start_at AND end_at')
+                            ->where('end_at','>=',Carbon::now())
+                            ->orderBy('created_at', 'desc')
+                            ->limit(6)
+                            ->get();
+        // where('created_at', '>=', Carbon::now()->subDays(7))
+        // where(Carbon::now()->between('end_at','start_at'))
+        // whereBetween(Carbon::now(), ['start_at', 'end_at'])
+
+        return view('user.index',compact('categories','products','latestProducts','liveProducts'));
     }
 
     // category wise product page open
