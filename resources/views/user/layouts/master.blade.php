@@ -20,6 +20,7 @@
 
     <link rel="shortcut icon" href="{{asset('/user/images/favicon.png')}}" type="image/x-icon">
     @stack('index_css')
+    @stack('liveBid_css')
 </head>
 
 <body>
@@ -56,5 +57,6 @@
     <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/user/js/main.js')}}"></script>
     @stack('SingleProductCountdown')
+    @stack('liveBid_js')
 </body>
 </html>

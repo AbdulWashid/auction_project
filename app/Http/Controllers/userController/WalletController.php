@@ -24,7 +24,8 @@ class WalletController extends Controller
             'receipt' => 'wallet_recharge_' . time(),
             'amount' => $request->amount * 100, // Convert to paisa
             'currency' => 'INR',
-            'payment_capture' => 1
+            'payment_capture' => 1,
+            'method'          => 'upi', // Restrict to UPI payments only
         ]);
         return response()->json(['order_id' => $order['id']]);
     }

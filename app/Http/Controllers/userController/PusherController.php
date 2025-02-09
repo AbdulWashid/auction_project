@@ -4,7 +4,6 @@ namespace App\Http\Controllers\userController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use App\Events\MessageSent;
 use Pusher\Pusher;
 use App\Models\product;
 use App\Models\Bid;
@@ -14,9 +13,13 @@ class PusherController extends Controller
 {
     public function index(Request $request,$id)
     {  
+        $product = product::select('bid_start_price')->find($id);
+        $highBid = Bid::where('product_id','=',$id)->max('amount');
+        $highestBid = $highBid ? $highBid : $product;
+        $highestBid = $highestBid + $highestBid*5/100;
          // Request validation
         $request->validate([
-            'newBid' => ['required','numeric','min:'.$request->minimumBid]
+            'newBid' => ['required','numeric','min:'.$highestBid]
         ]);
         
         // data store in db
@@ -48,6 +51,6 @@ class PusherController extends Controller
         
         // Trigger event
         $pusher->trigger('liveBidChannel'.$id, 'liveBidEvent'.$id, $bidder);
-        return redirect()->back()->with(['success'=>'success']);
+        return redirect()->back()->with('success','bid register successfully');
     }
 }

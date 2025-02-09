@@ -4,24 +4,27 @@ namespace App\Http\Controllers\userController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Bid;
-use App\Models\product;
 use Illuminate\Support\Facades\Auth;
+// use Pusher\Pusher;
+use App\Models\{
+                User,
+                Bid,
+                product,
+            };
 
-
-class userDashboardController extends Controller
+class viewOpenController extends Controller
 {
     function livebid($id){
         $product = Product::join('product_categories','products.category_id','=','product_categories.id')
                         ->select('products.*','product_categories.name as category_name')
-                        ->with('Bids')
                         ->findOrFail($id);
+
         $bidHistory = Bid::where('product_id','=',$id)
                         ->join('users','bids.user_id','=','users.id')
-                        ->select('bids.amount','users.name')
+                        ->select('bids.amount as amount','users.name as name','bids.user_id as user_id')
                         ->orderBy('bids.amount','desc')
                         ->get();
+                        
         return view('user.liveBid',compact('product','bidHistory'));
     }
 

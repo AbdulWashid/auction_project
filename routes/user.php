@@ -2,7 +2,7 @@
 use App\Http\Middleware\User\UserRollCheck;
 
 use App\Http\Controllers\userController\{
-                                            userDashboardController,
+                                            viewOpenController,
                                             WalletController,
                                             PusherController,
                                             cartController,
@@ -10,9 +10,10 @@ use App\Http\Controllers\userController\{
 
 
 Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollCheck::class],function(){
-    Route::get('dashboard',[userDashboardController::class,'dashboard'])->name('dashboard');
-    Route::get('profile',[userDashboardController::class,'profile'])->name('profile');
-    Route::get('livebid/{id}',[userDashboardController::class,'livebid'])->name('livebid');
+    Route::get('dashboard',[viewOpenController::class,'dashboard'])->name('dashboard');
+    Route::get('profile',[viewOpenController::class,'profile'])->name('profile');
+    Route::get('livebid/{id}',[viewOpenController::class,'livebid'])->name('livebid');
+
 
     Route::resource('cart',cartController::class);
 
@@ -22,9 +23,7 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
     Route::post('/wallet/payment-success', [WalletController::class, 'paymentSuccess'])->name('wallet.paymentSuccess');
 
 
-    Route::view('pusher','pusher');
     
-    Route::get('event',[PusherController::class,'index'])->name('bid');
     Route::post('event/{id}',[PusherController::class,'index'])->name('new.bid');
     // Route::post('bid',[PusherController::class,'newbid'])->name('new.bid');
 });
