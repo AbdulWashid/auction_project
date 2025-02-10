@@ -28,7 +28,7 @@
                         </li> 
                         @if(Auth::check())
                             <li>
-                                <a href="{{route('logout')}}" class="text-white"><i class="bi bi-box-arrow-right me-2"></i> Logout</a> 
+                                <a href="{{route('logout')}}" class="text-white">Logout</a> 
                             </li>
                         @endif
                     </ul>

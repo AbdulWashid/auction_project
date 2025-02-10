@@ -56,6 +56,12 @@
                             @error('password')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror   
+                        </div> <br>
+                        <div class="col-8 d-inline-flex align-items-center">
+                            <div class="form-check">
+                              <input name="remember" class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                              <label class="form-check-label" for="flexCheckDefault"> Remember Me </label>
+                            </div>
                         </div>
                         <div class="form-group mt-3 mb-3">
                             <a href="#0">Forgot Password?</a>

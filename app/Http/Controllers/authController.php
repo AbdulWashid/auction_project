@@ -19,11 +19,12 @@ class authController extends Controller
             'email' => $request->email,
             'password' => $request->password
         );
+        $remember = $request->has('remember');
 
-        $login = Auth::attempt($credientials);
+        $login = Auth::attempt($credientials,$remember);
 
         if(!$login){
-            return redirect()->route('loginPage')->with('error','Invalid login Email and Password');
+            return redirect()->route('loginPage')->with('error','Invalid login Email or Password');
         }
 
         $data = Auth::user();
