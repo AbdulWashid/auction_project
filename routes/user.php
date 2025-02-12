@@ -10,6 +10,7 @@ use App\Http\Controllers\userController\{
 
 
 Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollCheck::class],function(){
+
     Route::get('dashboard',[viewOpenController::class,'dashboard'])->name('dashboard');
     Route::get('profile',[viewOpenController::class,'profile'])->name('profile');
     Route::get('livebid/{id}',[viewOpenController::class,'livebid'])->name('livebid');
@@ -25,5 +26,5 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
 
     
     Route::post('event/{id}',[PusherController::class,'index'])->name('new.bid');
-    // Route::post('bid',[PusherController::class,'newbid'])->name('new.bid');
+    
 });

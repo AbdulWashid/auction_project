@@ -4,53 +4,59 @@ namespace App\Http\Controllers\userController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Jobs\winnerDeclare;
 use Pusher\Pusher;
-use App\Models\product;
-use App\Models\Bid;
-use Auth;
+use App\Models\{
+                product,
+                Bid,
+                Wallet
+                };
+
 
 class PusherController extends Controller
 {
     public function index(Request $request,$id)
     {  
+        // get highest bid
         $product = product::select('bid_start_price')->find($id);
         $highBid = Bid::where('product_id','=',$id)->max('amount');
-        $highestBid = $highBid ? $highBid : $product;
-        $highestBid = $highestBid + $highestBid*5/100;
+        $highestBid = $highBid ? $highBid : $product->bid_start_price;
+        $highestBid = $highestBid + ($highestBid * 0.05);
+
          // Request validation
         $request->validate([
             'newBid' => ['required','numeric','min:'.$highestBid]
         ]);
+
+        // check user balance
+        $user = Wallet::where('user_id','=',Auth::id())->sum('balance');
+        if($request->newBid > $user/2){
+            return redirect()->back()->with('error','Please Recharge wallet');
+        }
         
         // data store in db
-        $data = new Bid;
-        $data->product_id = $id;
-        $data->user_id = Auth::id();
-        $data->amount = $request->newBid;
-        $data->save();
+        $bid = new Bid;
+        $bid->product_id = $id;
+        $bid->user_id = Auth::id();
+        $bid->amount = $request->newBid;
+        $bid->save();
 
-        // pusher setup start
-        $options = [
-            'cluster' => env('PUSHER_APP_CLUSTER'),
-            'useTLS' => true
-        ];
-        
-        $pusher = new Pusher(
-            env('PUSHER_APP_KEY'),
-            env('PUSHER_APP_SECRET'),
-            env('PUSHER_APP_ID'),
-            $options
-        );
-        
-
-        // bidder data
+        // bidder data for pusher
         $bidder = [
             'name' => Auth::user()->name,
             'amount' => $request->newBid
         ];
-        
-        // Trigger event
-        $pusher->trigger('liveBidChannel'.$id, 'liveBidEvent'.$id, $bidder);
+
+        // pusher trigger
+        pusher()->trigger('liveBidChannel'.$id, 'liveBidEvent'.$id, $bidder);
+
+        // jobs work
+        winnerDeclare::dispatch($bid->id)
+                        ->delay(now()->addSeconds(30))
+                        ->onQueue('default');
+
+
         return redirect()->back()->with('success','bid register successfully');
     }
 }

@@ -16,8 +16,9 @@ return new class extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->integer('amount');
+            $table->enum('is_winner',['yes','no'])->default('no');
             $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            // $table->foreign('product_id')->references('id')->on('products')->onDelete('no action');
         });
     }
 

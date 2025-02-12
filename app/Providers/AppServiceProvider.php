@@ -23,9 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // for product cart 
          View::composer('user.layouts.cart', function ($view) {
             $savePro = product::all();
-            $view->with('savePro', $savePro); // Share with the view
+            $view->with('savePro', $savePro); 
         });
+
+        require_once app_path('Helpers/helpers.php');
     }
 }

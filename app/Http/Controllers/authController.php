@@ -72,7 +72,9 @@ class authController extends Controller
     }
     function googleData(){
         $data = Socialite::driver('google')->user();
-        $user = User::where('email',$data->email)->first();
+
+        $user = User::where('google_id', $data->id)->first();
+        
         if($user){
             Auth::login($user);
             return redirect()->route('user.index');
@@ -81,7 +83,8 @@ class authController extends Controller
             $newUser = new User;
             $newUser->name = $data->name;
             $newUser->email = $data->email;
-            $newUser->password = '123@456';
+            $newUser->google_id = $data->id; // Store the Google ID
+            $newUser->password = bcrypt(str_random(16)); // Securely generate a random password
             $newUser->save();
             Auth::login($newUser);
             return redirect()->route('user.index');

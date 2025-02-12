@@ -5,11 +5,11 @@ namespace App\Http\Controllers\userController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use Pusher\Pusher;
 use App\Models\{
                 User,
                 Bid,
                 product,
+                Wallet,
             };
 
 class viewOpenController extends Controller
@@ -24,8 +24,10 @@ class viewOpenController extends Controller
                         ->select('bids.amount as amount','users.name as name','bids.user_id as user_id')
                         ->orderBy('bids.amount','desc')
                         ->get();
+
+        $wallet = Wallet::where('user_id','=',Auth::id())->sum('balance');
                         
-        return view('user.liveBid',compact('product','bidHistory'));
+        return view('user.liveBid',compact('product','bidHistory','wallet'));
     }
 
     function dashboard(){

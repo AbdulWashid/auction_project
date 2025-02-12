@@ -75,7 +75,7 @@
                                     <img src="{{asset('/user/images/product/icon1.png')}}" alt="product">
                                 </div>
                                 <div class="content">
-                                    <h3 class="count-title"><span class="counter">₹61</span></h3>
+                                    <h3><span>₹{{$wallet}}</span></h3>
                                     <p>Wallet Amount</p>
                                 </div>
                             </div>
@@ -174,7 +174,46 @@
 @push('liveBid_js')
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if(session('error'))  
+<script>// sweet alert on bid submit error 
+    walletRecharge();
+</script>
+@endif
+
+<script>  // sweet alert on bid submit
+    $(document).ready(function(){
+        // function declare for wallet recharge
+        function walletRecharge(){
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please, recharge wallet to submit a bid",
+                showCancelButton: true, // Enable the Cancel button
+                confirmButtonText: 'Okay', // Confirm button text
+                cancelButtonText: 'Later', // Cancel button text
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{route('user.recharge')}}";
+                }
+            });
+        }
+        var wallet = {{$wallet}};
+        $('.product-bid-form').submit(function(event){
+            event.preventDefault();
+            var newBid = $('#newBid').val();
+            if(newBid > wallet/2){
+                walletRecharge();
+            }
+            else{
+                $(this).off("submit").submit();
+            }
+        });
+    });
+</script>
+
+<script>  //minimun bid set
     function reload( bid = 0){
         highestBid = bid ? bid : {{$highestBid}};
         highestBid = parseFloat(highestBid);
@@ -193,24 +232,30 @@
                     required: "Please enter your Bid",
                     min: "Please, Enter Minimum Bid  " + (+highestBid + (+highestBid*5/100)),
                 },
-            }
+            },
         });
     }
     reload();
 </script>
+
 <script> // script for pusher
-  var pusher = new Pusher("{{ env('PUSHER_APP_KEY') }}", {
-    cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
-    encrypted: true
-  });
-  let cname = 'liveBidChannel'+{{$product->id}};
-  var channel = pusher.subscribe(cname);
-  channel.bind('liveBidEvent'+{{$product->id}}, function(data) {
+    var pusher = new Pusher("{{ env('PUSHER_APP_KEY') }}", {
+        cluster: "{{ env('PUSHER_APP_CLUSTER') }}",
+        encrypted: true
+    });
+        //   pusher for current highest bid
+    var bidChannel = pusher.subscribe('liveBidChannel'+{{$product->id}});
+    bidChannel.bind('liveBidEvent'+{{$product->id}}, function(data) {
     if(data.amount > highestBid){
         $('#bidHistory').prepend(`<tr><td> ${data.name}  </td><td> ${data.amount} </td></tr>`);
         reload(data.amount);
     }
-  });
+    });
+    //   pusher for declared winner
+    var winnerChannel = pusher.subscribe('winnerChannel'+{{$product->id}});
+    winnerChannel.bind('winnerEvent'+{{$product->id}}, function(data) {
+            console.log(data);
+    });
 </script>
 
 <script> // script for reverse counter
@@ -246,7 +291,42 @@
         }, 1000);
     })
 </script>
+
+{{-- @if(session('success'))
+<script> // script for reverse counter
+    $(document).ready( ()=>{
+        element = $('#couter_bid');
+
+        var countDownDate = new Date("{{$product->end_at}}").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+        // Get today's date and time
+        var now = new Date().getTime();
+            
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+        // Output the result in an element with id="demo"
+        element.html(days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ") ;
+            
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            element.html('Expired');
+        }
+        }, 1000);
+    })
+</script>
+@endif --}}
 @endpush
 
 @endsection
-    
