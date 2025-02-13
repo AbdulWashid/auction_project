@@ -10,59 +10,20 @@
         <div class="bottom-content">
             <div class="cart-products">
                 <h4 class="title">Shopping cart</h4>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <a href="#0"><img src="{{asset('/user/images/shop/shop01.jpg')}}" alt="shop"></a>
+                @forelse ($cartPro as $product)
+                    <div class="single-product-item" id="cart-product-{{$product->id}}">
+                        <div class="thumb">
+                            <a href="{{route('user.product',$product->product_id)}}"><img src="{{asset($product->image)}}" alt="shop"></a>
+                        </div>
+                        <div class="content">
+                            <h4 class="title"><a href="{{route('user.product',$product->product_id)}}">{{$product->name}}</a></h4>
+                            <div class="price"><span class="pprice">₹{{$product->bid_start_price}}</span></div>
+                            <a href="#"  data-id="{{$product->id}}" class="remove-cart">Remove</a>
+                        </div>
                     </div>
-                    <div class="content">
-                        <h4 class="title"><a href="#0">Color Pencil</a></h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <a href="#0"><img src="{{asset('/user/images/shop/shop02.jpg')}}" alt="shop"></a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="#0">Water Pot</a></h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <a href="#0"><img src="{{asset('/user/images/shop/shop03.jpg')}}" alt="shop"></a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="#0">Art Paper</a></h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <a href="#0"><img src="{{asset('/user/images/shop/shop04.jpg')}}" alt="shop"></a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="#0">Stop Watch</a></h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <a href="#0"><img src="{{asset('/user/images/shop/shop05.jpg')}}" alt="shop"></a>
-                    </div>
-                    <div class="content">
-                        <h4 class="title"><a href="#0">Comics Book</a></h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="btn-wrapper text-center">
-                    <a href="#0" class="custom-button"><span>Checkout</span></a>
-                </div>
+                @empty
+                    <li>No products in your cart.</li>
+                @endforelse
             </div>
         </div>
     </div>

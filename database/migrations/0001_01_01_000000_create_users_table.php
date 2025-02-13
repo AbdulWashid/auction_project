@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->json('save_products_id')->nullable();
             $table->DATE('DOB')->nullable();
             $table->string('address')->nullable();
             $table->string('mobile')->unique()->nullable();
-            $table->integer('google_id')->unique()->nullable();
+            $table->string('image')->nullable();
+            $table->string('google_id')->unique()->nullable();
             $table->enum('roll',['1','0'])->comment('1 is admin & 0 is users')->default('0');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

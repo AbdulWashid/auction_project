@@ -91,7 +91,7 @@
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
                                 <div class="auction-thumb">
                                     <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
-                                    <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
+                                    <a href="#0" data-id="{{$product->id}}" class="rating"><i id="rating-{{$product->cart_id}}" class=" {{$product->cart_id ? 'fas' : 'far'}} fa-star"></i></a>
                                     <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">

@@ -23,8 +23,10 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
     Route::post('/wallet/order', [WalletController::class, 'createOrder'])->name('wallet.createOrder');
     Route::post('/wallet/payment-success', [WalletController::class, 'paymentSuccess'])->name('wallet.paymentSuccess');
 
-
     
     Route::post('event/{id}',[PusherController::class,'index'])->name('new.bid');
+
+    Route::delete('cart/remove/{id}',[cartController::class,'remove'])->name('cart.remove');
+    Route::post('cart/add/{id}',[cartController::class,'add'])->name('cart.add');
     
 });

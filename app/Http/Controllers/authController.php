@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 // use Hash;
 use App\Models\User;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class authController extends Controller
 {
@@ -74,18 +76,30 @@ class authController extends Controller
         $data = Socialite::driver('google')->user();
 
         $user = User::where('google_id', $data->id)->first();
-        
         if($user){
             Auth::login($user);
             return redirect()->route('user.index');
         }
         else{
+            // image 
+            $imageUrl = $data->avatar;
+            $imageName = time().rand() . '.jpg';
+            $imagePath = public_path('user/images/users/'.$imageName);
+            $imageContent = Http::get($imageUrl)->body();
+            file_put_contents($imagePath, $imageContent);
+            
+
+            // store in db
             $newUser = new User;
             $newUser->name = $data->name;
             $newUser->email = $data->email;
+            $newUser->image = 'user/images/users/' . $imageName;
             $newUser->google_id = $data->id; // Store the Google ID
-            $newUser->password = bcrypt(str_random(16)); // Securely generate a random password
+            $newUser->password = bcrypt('123@321'); // Securely generate a random password
             $newUser->save();
+
+
+            // login
             Auth::login($newUser);
             return redirect()->route('user.index');
         }

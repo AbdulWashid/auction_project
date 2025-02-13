@@ -21,10 +21,14 @@
                     </ul>
                     <ul class="cart-button-area">
                         <li>
-                            <a href="#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">08</span></a>
+                            <a href="#0" class="cart-button" ><i class="flaticon-shopping-basket"></i> <span id="cartCount">
+                             {!! $cartCount ? '<span class="amount" >'. $cartCount.'</span>' : '' !!}  </span>
+                            </a>
                         </li>                        
                         <li>
-                            <a href="{{route('user.dashboard')}}" class="user-button"><i class="flaticon-user"></i></a>
+                            <a href="{{route('user.dashboard')}}" class="user-button">
+                                {!! (Auth::check() && Auth()->user()->image) ? '<img src="' . Auth()->user()->image . '" alt="user image" class="rounded-circle img-fluid">' : '<i class="flaticon-user"></i>' !!}
+                            </a>
                         </li> 
                         @if(Auth::check())
                             <li>

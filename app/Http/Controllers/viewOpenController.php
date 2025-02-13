@@ -21,11 +21,24 @@ class viewOpenController extends Controller
                     ->withCount('products as closing_stock')
                     ->get();
 
-        $products = product::
-                    orderBy('id','desc')
-                    ->join('product_categories','products.category_id','=','product_categories.id')
-                    ->select('products.*','product_categories.name as category_name','product_categories.image as category_image')
-                    ->where('products.end_at','>=',Carbon::now())
+        // $products = product::
+        //             orderBy('id','desc')
+        //             ->join('product_categories','products.category_id','=','product_categories.id')
+        //             ->leftjoin('carts','products.id','=','carts.product_id')
+        //             ->select('products.*','product_categories.name as category_name','product_categories.image as category_image','carts.id as cart_id')
+        //             ->where('products.end_at','>=',Carbon::now())
+        //             ->get();
+        $products = Product::orderBy('products.id', 'desc')
+                    ->join('product_categories', 'products.category_id', '=', 'product_categories.id')
+                    ->leftJoin('carts', function($join) {
+                        $join->on('products.id', '=', 'carts.product_id')
+                            ->where('carts.user_id', Auth::id()); // Ensure cart entry matches the logged-in user
+                    })
+                    ->select('products.*', 
+                            'product_categories.name as category_name', 
+                            'product_categories.image as category_image', 
+                            'carts.id as cart_id') // If cart exists, get the cart ID
+                    ->where('products.end_at', '>=', Carbon::now()) // Only products that are still active
                     ->get();
 
         $latestProducts = Product::
@@ -41,9 +54,6 @@ class viewOpenController extends Controller
                             ->orderBy('created_at', 'desc')
                             ->limit(6)
                             ->get();
-        // where('created_at', '>=', Carbon::now()->subDays(7))
-        // where(Carbon::now()->between('end_at','start_at'))
-        // whereBetween(Carbon::now(), ['start_at', 'end_at'])
 
         return view('user.index',compact('categories','products','latestProducts','liveProducts'));
     }

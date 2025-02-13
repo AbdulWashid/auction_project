@@ -58,5 +58,69 @@
     <script src="{{asset('/user/js/main.js')}}"></script>
     @stack('SingleProductCountdown')
     @stack('liveBid_js')
+    @if(Auth::check())
+        <script>
+            $(document).ready(function () {
+                // product ramove from cart
+                $(".cart-products").on("click", ".remove-cart", function () {
+                    let itemId = $(this).data("id"); // Get product ID
+                    let url = "{{ route('user.cart.remove', ':id') }}".replace(':id', itemId);
+
+                    $.ajax({
+                        url: url,
+                        type: "DELETE",
+                        data: {
+                            _token: "{{ csrf_token() }}" // Laravel CSRF token
+                        },
+                        success: function (response) {
+                            if (response.status === "success") {
+                                $("#cart-product-" + itemId).fadeOut(500); // Remove row animation
+                                $('#rating-' + itemId).removeClass('fas fa-star').addClass('far fa-star');
+                                
+                                if(response.cartCount == 0){
+                                    $(".cart-products").html('<li>No products in your cart.</li>');
+                                    $("#cartCount").html(''); // Clear cart count
+                                }else {
+                                    $("#cartCount").html('<span class="amount">' + response.cartCount + '</span>');
+                                }
+                            }
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                });
+
+                //product add in cart
+                $(".rating").click(function () {
+                    let itemId = $(this).data("id"); // Get product ID
+                    let url = "{{ route('user.cart.add', ':id') }}".replace(':id', itemId);
+                    let icon = $(this).find('i');
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}" // Laravel CSRF token
+                        },
+                        success: function (response) {
+                            if (response.status === "success") {
+                                icon.removeClass('far fa-star').addClass('fas fa-star');
+                                $("#cartCount").html('<span class="amount">' + response.cartCount + '</span>'); 
+                                if(response.cartCount == 1){
+                                    $(".cart-products").html(response.element);
+                                }
+                                else{
+                                    $(".cart-products").append(response.element);
+                                }
+                            }
+                        },
+                        error: function (xhr) {
+                            console.log(xhr.responseText);
+                        }
+                    });
+                });
+            });
+        </script>
+    @endif
 </body>
 </html>
