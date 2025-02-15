@@ -86,53 +86,53 @@
                     $count = 0
                 @endphp
                 @foreach($products as $product)
-                    @if($product->category_name == $category->name)
-                        <div class="col-sm-10 col-md-6 col-lg-4">
-                            <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
-                                <div class="auction-thumb">
-                                    <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
-                                    <a href="#0" data-id="{{$product->id}}" class="rating"><i id="rating-{{$product->cart_id}}" class=" {{$product->cart_id ? 'fas' : 'far'}} fa-star"></i></a>
-                                    <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                    @if($product->bids->isNotEmpty()) @continue @endif
+                    @if($product->category_name != $category->name) @continue @endif
+                    <div class="col-sm-10 col-md-6 col-lg-4">
+                        <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                            <div class="auction-thumb">
+                                <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+                                <a href="#0" data-id="{{$product->id}}" class="rating"><i id="rating-{{$product->cart_id}}" class=" {{$product->cart_id ? 'fas' : 'far'}} fa-star"></i></a>
+                                <a href="{{route('user.product',$product->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                            </div>
+                            <div class="auction-content">
+                                <h6 class="title">
+                                    <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
+                                </h6>
+                                <div class="bid-area">
+                                    <div class="bid-amount">
+                                        <div class="icon">
+                                            <i class="flaticon-auction"></i>
+                                        </div>
+                                        <div class="amount-content">
+                                            <div class="current">Current Bid</div>
+                                            <div class="amount"> ₹{{$product->bid_start_price}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="bid-amount">
+                                        <div class="icon">
+                                            <i class="flaticon-money"></i>
+                                        </div>
+                                        <div class="amount-content">
+                                            <div class="current">Buy Now</div>
+                                            <div class="amount">₹{{$product->sale_price}}</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="auction-content">
-                                    <h6 class="title">
-                                        <a href="{{route('user.product',$product->id)}}">{{$product->name}}</a>
-                                    </h6>
-                                    <div class="bid-area">
-                                        <div class="bid-amount">
-                                            <div class="icon">
-                                                <i class="flaticon-auction"></i>
-                                            </div>
-                                            <div class="amount-content">
-                                                <div class="current">Current Bid</div>
-                                                <div class="amount"> ₹{{$product->bid_start_price}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="bid-amount">
-                                            <div class="icon">
-                                                <i class="flaticon-money"></i>
-                                            </div>
-                                            <div class="amount-content">
-                                                <div class="current">Buy Now</div>
-                                                <div class="amount">₹{{$product->sale_price}}</div>
-                                            </div>
-                                        </div>
+                                <div class="countdown-area">
+                                    <div class="countdown">
+                                        <div id="bid_counter26"></div>
                                     </div>
-                                    <div class="countdown-area">
-                                        <div class="countdown">
-                                            <div id="bid_counter26"></div>
-                                        </div>
-                                        <span class="total-bids">30 Bids</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
-                                    </div>
+                                    <span class="total-bids">30 Bids</span>
+                                </div>
+                                <div class="text-center">
+                                    <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>
                                 </div>
                             </div>
                         </div>
-                        @if(++$count == 3)
-                            @break
-                        @endif
+                    </div>
+                    @if(++$count == 3)
+                        @break
                     @endif
                 @endforeach
                 </div>

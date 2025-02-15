@@ -34,13 +34,16 @@ class viewOpenController extends Controller
                         $join->on('products.id', '=', 'carts.product_id')
                             ->where('carts.user_id', Auth::id()); // Ensure cart entry matches the logged-in user
                     })
+                    ->with(['bids' => function ($query){
+                        $query->where('is_winner', '=','true');
+                    }])
                     ->select('products.*', 
                             'product_categories.name as category_name', 
                             'product_categories.image as category_image', 
                             'carts.id as cart_id') // If cart exists, get the cart ID
                     ->where('products.end_at', '>=', Carbon::now()) // Only products that are still active
                     ->get();
-
+// dd($products->toArray());
         $latestProducts = Product::
                             where('created_at', '>=', Carbon::now()->subDays(7))
                             ->where('end_at','>=',Carbon::now())
