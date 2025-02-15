@@ -7,17 +7,6 @@
                         <li class="cmn-support-text">
                             <a href="#0" class="mr-3"><i class="fas fa-phone-alt"></i><span class="ml-2 d-none d-sm-inline-block">Customer Support</span></a>
                         </li>
-                        <li class="customer-cupport-lang">
-                            <i class="fas fa-globe"></i>
-                            <select name="language" class="select-bar">
-                                <option value="en">En</option>
-                                <option value="Bn">Bn</option>
-                                <option value="Rs">Rs</option>
-                                <option value="Us">Us</option>
-                                <option value="Pk">Pk</option>
-                                <option value="Arg">Arg</option>
-                            </select>
-                        </li>
                     </ul>
                     <ul class="cart-button-area">
                         <li>
@@ -27,7 +16,7 @@
                         </li>                        
                         <li>
                             <a href="{{route('user.dashboard')}}" class="user-button">
-                                {!! (Auth::check() && Auth()->user()->image) ? '<img src="' . Auth()->user()->image . '" alt="user image" class="rounded-circle img-fluid">' : '<i class="flaticon-user"></i>' !!}
+                                {!! (Auth::check() && Auth()->user()->image) ? '<img src="' . asset(Auth()->user()->image) . '" alt="user image" class="rounded-circle img-fluid">' : '<i class="flaticon-user"></i>' !!}
                             </a>
                         </li> 
                         @if(Auth::check())
