@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->decimal('balance', 10, 2)->default(0);
+            $table->enum('type',['deposit','withdraw'])->default('deposit');
+            $table->string('transaction_id')->unique();
+            $table->enum('status',['pending','cancelled','approved'])->default('pending');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -98,7 +98,21 @@ class viewOpenController extends Controller
         $product = product::
                             join('product_categories','products.category_id','=','product_categories.id')
                             ->select('products.*','product_categories.name as category_name')
+                            ->with(['bids' => function($query){
+                                $query->where('is_winner','=','true');
+                            }])
                             ->findOrFail($id);
+
+        // $product = Product::join('product_categories', 'products.category_id', '=', 'product_categories.id')
+        //         ->select('products.*', 'product_categories.name as category_name')
+        //         ->whereHas('bids', function ($query) {
+        //             $query->where('is_winner', '=', 'true');
+        //         })
+        //         ->with(['bids' => function ($query) {
+        //             $query->where('is_winner', '=', 'true');
+        //         }])
+        //         ->findOrFail($id);
+        //                     dd($product->toArray());
         return view('user.product-details',compact('product'));
     }
 

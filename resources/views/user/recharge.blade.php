@@ -4,6 +4,7 @@
 
 @section('title','profile')
 @section('main')
+
     <!--============= Hero Section Starts Here =============-->
     <div class="hero-section style-2">
         <div class="container">
@@ -83,14 +84,20 @@
                                             @php
                                                 $total=0;
                                                 foreach($wallet as $amount){
-                                                    $total = $total + $amount->balance;
+                                                    if($amount->type == 'deposit'){
+                                                        $total = $total + $amount->balance;
+                                                    }
+                                                    else{
+                                                        $total = $total - $amount->balance;
+                                                    }
                                                 }
                                             @endphp
-                                            <div class="info-value">  <h1> ₹{{ $total }} </h1> </div>
+                                            <div class="info-value">  <h2> ₹{{ $total }} </h2> </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
+                            {{-- wallet recharge form --}}
                             <div class="col-12">
                                 <div class="dash-pro-item mb-30 dashboard-widget">
                                     <div class="header">
@@ -98,14 +105,69 @@
                                     </div>
                                     <ul class="dash-pro-body">
                                         <li>
-                                            {{-- <form action="{{route('user.wallet.createOrder')}}" method="post" class="d-flex"> --}}
-                                                {{-- @csrf --}}
-                                                    <label for="amount" class="info-name">Amount</label>
-                                                    <input type="number" name="amount" id="amount" required>
-                                                    <button id="rechargeWallet">Recharge</button>
-                                            {{-- </form> --}}
+                                            <form action="{{ route('user.payment') }}" method="post" class="container mt-4">
+                                                @csrf
+                                                <div class="row mb-3">
+                                                    <div class="col-md-6">
+                                                        <label for="amount" class="form-label">Amount</label>
+                                                        <input type="number" name="balance" id="amount" class="form-control" required>
+                                                        @error('balance')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="transaction_id" class="form-label">Transaction ID</label>
+                                                        <input type="text" name="transaction_id" id="transaction_id" class="form-control" required>
+                                                        @error('transaction_id')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-primary" id="rechargeWallet">Recharge</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </li>
                                     </ul>
+                                </div>
+                            </div>
+                            {{-- user wallet History --}}
+                            <div class="col-12">
+                                <div class="dash-pro-item mb-30 dashboard-widget">
+                                    <div class="header">
+                                        <h4 class="title"> History</h4>
+                                    </div>
+                                    <div class="dash-pro-body">
+                                            
+                                            @forelse($wallet as $amount)
+                                                <div class="transaction-item">
+                                                    <div class="info-name text-start">
+                                                        <span class="date">{{ $amount->created_at->format('d-M-Y') }}</span>
+                                                        @if($amount->status == 'approved')
+                                                            @if($amount->type == 'deposit')
+                                                                <span class="text-success">Deposit</span>
+                                                            @else
+                                                                <span class="text-danger">Withdraw</span>
+                                                            @endif
+                                                        @elseif($amount->status == 'cancelled')
+                                                         <span class="text-danger">Cancelled give correct transaction Id</span>
+                                                        @else
+                                                         <span class="text-warning">Pending for approved</span>
+                                                        @endif
+                                                        
+                                                    </div>
+                                                    <div class="info-value text-end">
+                                                         <h2> {{ $amount->balance }} </h2>
+                                                    </div>
+                                                </div>
+                                                @empty
+                                                 <div class="text-center text-muted">No transaction found</div>
+                                            @endforelse
+                                            
+                                        </div>  
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,112 +175,18 @@
                 </div>
             </div>
         </section>
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+@push('recharge_page_js') <!-- recharge success alert -->
+    @if(session('success'))
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
-            document.getElementById('rechargeWallet').addEventListener('click', function () {
-                let amount = document.getElementById('amount').value;
-    
-                if (!amount || isNaN(amount) || amount <= 0) {
-                    alert("Invalid amount!");
-                    return;
-                }
-    
-                fetch("{{ route('user.wallet.createOrder') }}", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                    },
-                    body: JSON.stringify({ amount: amount })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    let options = {
-                        "key": "{{ env('RAZORPAY_KEY') }}",
-                        "amount": amount * 100,
-                        "currency": "INR",
-                        "name": "Wallet Recharge",
-                        "description": "Adding money to wallet",
-                        "order_id": data.order_id,
-                        "handler": function (response) {
-                            fetch("{{ route('user.wallet.paymentSuccess') }}", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                                },
-                                body: JSON.stringify({
-                                    payment_id: response.razorpay_payment_id,
-                                })
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                alert(data.message);
-                                // location.reload();
-                            });
-                        }
-                    };
-    
-                    let rzp1 = new Razorpay(options);
-                    rzp1.open();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
                 });
-            });
         </script>
-    @endsection
-    {{-- <div class="container">
-        <h2>Wallet Balance: ₹{{ $wallet->balance ?? 0 }}</h2>
-        
-        <button class="btn btn-primary" id="rechargeWallet">Recharge Wallet</button>
-        
-        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-        <script>
-            document.getElementById('rechargeWallet').addEventListener('click', function () {
-                let amount = prompt("Enter amount to recharge:");
-    
-                if (!amount || isNaN(amount) || amount <= 0) {
-                    alert("Invalid amount!");
-                    return;
-                }
-    
-                fetch("{{ route('user.wallet.createOrder') }}", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                    },
-                    body: JSON.stringify({ amount: amount })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    let options = {
-                        "key": "{{ config('razorePay.key') }}",
-                        "amount": amount * 100,
-                        "currency": "INR",
-                        "name": "Wallet Recharge",
-                        "description": "Adding money to wallet",
-                        "order_id": data.order_id,
-                        "handler": function (response) {
-                            fetch("{{ route('user.wallet.paymentSuccess') }}", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                                },
-                                body: JSON.stringify({
-                                    payment_id: response.razorpay_payment_id,
-                                })
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                alert(data.message);
-                                location.reload();
-                            });
-                        }
-                    };
-    
-                    let rzp1 = new Razorpay(options);
-                    rzp1.open();
-                });
-            });
-        </script>
-    </div> --}}
+    @endif
+@endpush
+@endsection
+            

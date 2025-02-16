@@ -20,9 +20,7 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
 
 
     Route::get('/recharge', [WalletController::class, 'index'])->name('recharge');
-    Route::post('/wallet/order', [WalletController::class, 'createOrder'])->name('wallet.createOrder');
-    Route::post('/wallet/payment-success', [WalletController::class, 'paymentSuccess'])->name('wallet.paymentSuccess');
-
+    Route::post('/recharge', [WalletController::class, 'payment'])->name('payment');
     
     Route::post('event/{id}',[PusherController::class,'index'])->name('new.bid');
 
@@ -30,3 +28,4 @@ Route::group(['prefix' => 'user' ,'as' => 'user.' , 'middleware' => UserRollChec
     Route::post('cart/add/{id}',[cartController::class,'add'])->name('cart.add');
     
 });
+

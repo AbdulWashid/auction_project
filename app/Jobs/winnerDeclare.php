@@ -33,10 +33,10 @@ class winnerDeclare implements ShouldQueue
                             ->max('amount');
         
         if($currentBid->amount == $highestBid){
-            $currentBid->is_winner = 'yes';
+            $currentBid->is_winner = 'true';
             $currentBid->save();
 
-            pusher()->trigger('winnerChannel'.$currentBid->product_id, 'winnerEvent'.$currentBid->product_id, Auth::user()->name);
+            pusher()->trigger('winnerChannel_'.$currentBid->product_id, 'winnerEvent_'.$currentBid->product_id, $currentBid);
         }
         else{
             return;

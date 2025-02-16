@@ -418,6 +418,7 @@
             });
           </script>
           @stack('croperjs_js')
+          @stack('transaction_script')
       <!-- custom link end -->
     <!--end::Script-->
   </body>

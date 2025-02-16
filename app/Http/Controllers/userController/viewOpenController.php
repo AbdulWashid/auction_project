@@ -21,13 +21,15 @@ class viewOpenController extends Controller
 
         $bidHistory = Bid::where('product_id','=',$id)
                         ->join('users','bids.user_id','=','users.id')
-                        ->select('bids.amount as amount','users.name as name','bids.user_id as user_id')
+                        ->select('bids.amount as amount','users.name as name','bids.user_id as user_id','bids.created_at as created_at','is_winner as is_winner')
                         ->orderBy('bids.amount','desc')
                         ->get();
-
+        
+        $winner = Bid::where('product_id','=',$id)->where('is_winner','=','true')
+                        ->get();
         $wallet = Wallet::where('user_id','=',Auth::id())->sum('balance');
-                        
-        return view('user.liveBid',compact('product','bidHistory','wallet'));
+                     
+        return view('user.liveBid',compact('product','bidHistory','wallet','winner'));
     }
 
     function dashboard(){

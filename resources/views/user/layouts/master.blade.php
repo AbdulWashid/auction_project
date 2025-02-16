@@ -58,6 +58,7 @@
     <script src="{{asset('/user/js/main.js')}}"></script>
     @stack('SingleProductCountdown')
     @stack('liveBid_js')
+    @stack('recharge_page_js')
     @if(Auth::check())
         <script>
             $(document).ready(function () {

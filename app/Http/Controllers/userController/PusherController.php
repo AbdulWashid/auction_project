@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Jobs\winnerDeclare;
-use Pusher\Pusher;
+use Carbon\Carbon;
 use App\Models\{
                 product,
                 Bid,
@@ -22,7 +22,7 @@ class PusherController extends Controller
         $product = product::select('bid_start_price')->find($id);
         $highBid = Bid::where('product_id','=',$id)->max('amount');
         $highestBid = $highBid ? $highBid : $product->bid_start_price;
-        $highestBid = $highestBid + ($highestBid * 0.05);
+        $highestBid = round($highestBid + ($highestBid * 0.05));
 
          // Request validation
         $request->validate([
@@ -39,13 +39,14 @@ class PusherController extends Controller
         $bid = new Bid;
         $bid->product_id = $id;
         $bid->user_id = Auth::id();
-        $bid->amount = $request->newBid;
+        $bid->amount = round($request->newBid);
         $bid->save();
 
         // bidder data for pusher
         $bidder = [
             'name' => Auth::user()->name,
-            'amount' => $request->newBid
+            'amount' => round($request->newBid),
+            'created_at' => Carbon::parse($bid->created_at)->addSeconds(30)->toIso8601String()
         ];
 
         // pusher trigger
@@ -53,7 +54,7 @@ class PusherController extends Controller
 
         // jobs work
         winnerDeclare::dispatch($bid->id)
-                        ->delay(now()->addSeconds(30))
+                        ->delay($bid->created_at->addSeconds(30))
                         ->onQueue('default');
 
 

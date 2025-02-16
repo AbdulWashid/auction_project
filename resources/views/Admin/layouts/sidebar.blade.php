@@ -55,6 +55,14 @@
                 </a>
               </li>
               <li class="nav-item menu-open">
+                <a href="{{route('admin.requests','all')}}" class="{{Request::is('admin/requests') ? 'nav-link ' : 'nav-link active'}}">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Transactions
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item menu-open">
                 <a href="{{route('admin.user.show')}}" class="{{Request::is('admin/user') ? 'nav-link' : 'nav-link active'}}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>

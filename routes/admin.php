@@ -5,6 +5,7 @@ use App\Http\Controllers\adminController\{categoryController,
                                         productController,
                                         userShowController,
                                         adminProfileController,
+                                        transactionController,
                                     };
 
 
@@ -14,4 +15,8 @@ Route::group(['prefix' => 'admin' ,'as' => 'admin.' , 'middleware' => adminRollC
     Route::resource('product',productController::class);                    //product route
     Route::resource('profile',adminProfileController::class);              
     Route::get('user',[userShowController::class,'show'])->name('user.show');  
+
+    Route::get('requests/{status}',[transactionController::class,'index'])->name('requests');
+    Route::post('status/{id}',[transactionController::class,'status'])->name('status');
+    Route::get('filter',[transactionController::class,'filter'])->name('filter');
 });
