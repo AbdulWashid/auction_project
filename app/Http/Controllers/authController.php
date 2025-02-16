@@ -77,7 +77,7 @@ class authController extends Controller
 
         $user = User::where('google_id', $data->id)->first();
         if($user){
-            Auth::login($user);
+            Auth::login($user,true);
             return redirect()->route('user.index');
         }
         else{
@@ -100,7 +100,7 @@ class authController extends Controller
 
 
             // login
-            Auth::login($newUser);
+            Auth::login($newUser,true);
             return redirect()->route('user.index');
         }
     }
