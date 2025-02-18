@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="{{asset('/user/css/main.css')}}">
 
     <link rel="shortcut icon" href="{{asset('/user/images/favicon.png')}}" type="image/x-icon">
-    @stack('index_css')
-    @stack('liveBid_css')
+    @stack('styles')
+    {{-- @stack('index_css')
+    @stack('liveBid_css') --}}
 </head>
 
 <body>
@@ -56,9 +57,12 @@
     <script src="{{asset('/user/js/yscountdown.min.js')}}"></script>
     <script src="{{asset('/user/js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('/user/js/main.js')}}"></script>
-    @stack('SingleProductCountdown')
+    @stack('scripts')
+    {{-- @stack('SingleProductCountdown')
     @stack('liveBid_js')
-    @stack('recharge_page_js')
+    @stack('recharge_page_js') --}}
+
+    {{-- script for cart --}}
     @if(Auth::check())
         <script>
             $(document).ready(function () {

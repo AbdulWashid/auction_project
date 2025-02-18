@@ -2,7 +2,7 @@
 @extends('user.layouts.master')
 @section('title','Product')
 @section('main')
-@push('liveBid_css')
+@push('styles')
     <style>
         .slide-inner{
             display: flex;
@@ -266,17 +266,17 @@
     <!--============= Table Section End Here =============-->
 </section>
 
-@push('liveBid_js')
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-<script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 @php // time get for reverset timer by DB
     use Carbon\Carbon;
     // Convert string to Carbon instance
     $endTime = $product->end_at ? Carbon::parse($product->end_at)->toIso8601String() : null;
     $reverseTimeMini = $bidHistory->isNotEmpty() ? Carbon::parse($bidHistory[0]->created_at)->addSeconds(30)->toIso8601String() : null;
 @endphp
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 @if(session('error'))  
 <script>// sweet alert on bid submit error 

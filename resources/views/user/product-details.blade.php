@@ -10,7 +10,7 @@
     $startAt = Carbon::parse($product->start_at);
     $endAt = Carbon::parse($product->end_at);
 @endphp
-@push('index_css')
+@push('styles')
     <style>
         .slide-inner{
             display: flex;
@@ -459,7 +459,7 @@
         </div>
     </section>
     <!--============= Product Details Section Ends Here =============-->
-    @push('SingleProductCountdown')
+    @push('scripts')
     <script>
         $(document).ready( ()=>{
             element = $('#couter_bid');
