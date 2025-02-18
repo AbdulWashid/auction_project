@@ -4,6 +4,16 @@
 
 @section('title','profile')
 @section('main')
+@push('styles')
+<style>
+    .scrollable-history {
+    max-height: 300px; /* Set your desired fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Optional: Add some padding to avoid content touching the scrollbar */
+    }
+</style>
+
+@endpush
 
     <!--============= Hero Section Starts Here =============-->
     <div class="hero-section style-2">
@@ -73,6 +83,7 @@
 
                     <div class="col-lg-8">
                         <div class="row">
+                            {{-- wallet amount --}}
                             <div class="col-12">
                                 <div class="dash-pro-item mb-30 dashboard-widget">
                                     <div class="header">
@@ -95,6 +106,36 @@
                                             <div class="info-value">  <h2> ₹{{ $total }} </h2> </div>
                                         </li>
                                     </ul>
+                                </div>
+                            </div>
+                            {{-- My account Detail --}}
+                            <div class="col-12">
+                                <div class="dash-pro-item mb-30 dashboard-widget">
+                                    <div class="header">
+                                        <h4 class="title">MyAccount detail</h4>
+                                    </div>
+                                    <div class="d-flex justify-content-around">
+                                    <ul class="dash-pro-body">
+                                        <li>
+                                            <div class="info-name">Name</div>
+                                            <div class="info-value">Abdul Washid</div>
+                                        </li>
+                                        <li>
+                                            <div class="info-name">VPA</div>
+                                            <div class="info-value">abdulwashid25@okicici</div>
+                                        </li>
+                                        <li>
+                                            <div class="info-name">account No.</div>
+                                            <div class="info-value">7770824060</div>
+                                        </li>
+                                        <li>
+                                            <div class="info-name">iffsc</div>
+                                            <div class="info-value">NeeMUC0BOB</div>
+                                        </li>
+                                    </ul>
+                                    <ul class="dash-pro-body">
+                                        {!! $qrCode !!}
+                                    </ul></div>
                                 </div>
                             </div>
                             {{-- wallet recharge form --}}
@@ -139,7 +180,7 @@
                                     <div class="header">
                                         <h4 class="title"> History</h4>
                                     </div>
-                                    <div class="dash-pro-body">
+                                    <div class="dash-pro-body scrollable-history">
                                             
                                             @forelse($wallet as $amount)
                                                 <div class="transaction-item">
@@ -159,7 +200,7 @@
                                                         
                                                     </div>
                                                     <div class="info-value text-end">
-                                                         <h2> {{ $amount->balance }} </h2>
+                                                         <h3> {{ $amount->balance }} </h3>
                                                     </div>
                                                 </div>
                                                 @empty
@@ -176,7 +217,7 @@
             </div>
         </section>
 
-@push('recharge_page_js') <!-- recharge success alert -->
+@push('scripts') <!-- recharge success alert -->
     @if(session('success'))
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
