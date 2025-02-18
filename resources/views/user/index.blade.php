@@ -89,7 +89,7 @@
                     @if($product->bids->isNotEmpty()) @continue @endif
                     @if($product->category_name != $category->name) @continue @endif
                     <div class="col-sm-10 col-md-6 col-lg-4">
-                        <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
+                        <div class="auction-item" data-end-time="{{$product->end_at}}" data-aos="zoom-out-up" data-aos-duration="2200">
                             <div class="auction-thumb">
                                 <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
                                 <a href="#0" data-id="{{$product->id}}" class="rating"><i id="rating-{{$product->cart_id}}" class=" {{$product->cart_id ? 'fas' : 'far'}} fa-star"></i></a>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="countdown-area">
                                     <div class="countdown">
-                                        <div id="bid_counter26"></div>
+                                        <div class="bid_counter"></div>
                                     </div>
                                     <span class="total-bids">30 Bids</span>
                                 </div>
@@ -379,5 +379,38 @@
         </div>
     </section>
     <!--============= Client Section Ends Here =============-->
+@push('scripts')
+<script>
+    function startCountdown() {
+        $(".auction-item").each(function() {
+            const $card = $(this);
+            const $timerElement = $card.find(".bid_counter");
+            const endTime = new Date($card.attr("data-end-time")).getTime();
 
+            function updateTimer() {
+                const now = new Date().getTime();
+                const timeLeft = endTime - now;
+
+                if (timeLeft <= 0) {
+                    $timerElement.text("Auction Ended");
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // $timerElement.text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+                $timerElement.text(` ${days}d ${hours}h ${minutes}m ${seconds}`);
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        });
+    }
+
+    $(document).ready(startCountdown);
+</script>
+@endpush
 @endsection
