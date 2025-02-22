@@ -33,7 +33,7 @@
             <div class="row justify-content-center mb-30-none">
             @foreach($products as $product)
                 <div class="col-sm-10 col-md-6 col-lg-4">
-                    <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
+                    <div class="auction-item" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
                             <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="product"></a>
                             <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>
@@ -153,7 +153,7 @@
                     <div class="row mb-30-none justify-content-center">
                         @foreach($products as $product)
                         <div class="col-sm-10 col-md-6">
-                            <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
+                            <div class="auction-item" data-aos="zoom-out-up" data-aos-duration="1000">
                                 <div class="auction-thumb">
                                     <a href="{{route('user.product',$product->id)}}"><img src="{{asset($product->image)}}" alt="product"></a>
                                     <a href="{{route('user.product',$product->id)}}" class="rating"><i class="far fa-star"></i></a>

@@ -64,6 +64,7 @@
 
     <!--============= Products Section start =============-->
     @foreach($categories as $category)
+        @if($category->closing_stock == 0) @continue @endif
         <section id="getStart" class="padding-bottom padding-top pos-rel oh">
             @if($category->bg_image)
                 <div class="car-bg"><img src="{{asset($category->bg_image)}}" alt="car"></div>
@@ -109,21 +110,11 @@
                                             <div class="amount"> ₹{{$product->bid_start_price}}</div>
                                         </div>
                                     </div>
-                                    <div class="bid-amount">
-                                        <div class="icon">
-                                            <i class="flaticon-money"></i>
-                                        </div>
-                                        <div class="amount-content">
-                                            <div class="current">Buy Now</div>
-                                            <div class="amount">₹{{$product->sale_price}}</div>
+                                    <div class="countdown-area">
+                                        <div class="countdown">
+                                            <div class="bid_counter"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="countdown-area">
-                                    <div class="countdown">
-                                        <div class="bid_counter"></div>
-                                    </div>
-                                    <span class="total-bids">30 Bids</span>
                                 </div>
                                 <div class="text-center">
                                     <a href="{{route('user.product',$product->id)}}" class="custom-button">Submit a bid</a>

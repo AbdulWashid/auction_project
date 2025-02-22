@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Roboto:ital,wght@0,400;0,500;0,700;1,500&amp;display=swap");
 /*
-Template Name: Sbidu - Bid & Auction HTML Template
-Template URI: http://pixner.net/sbidu/
-Author: uiaxis
-Author URI: https://themeforest.net/user/uiaxis
-Version: 1.0.0
-Text Domain: 
-*/
-/*
 ///// CSS Index \\
 01. Reset CSS Start
 ---------------------------
@@ -670,7 +662,7 @@ input[type=submit] {
   position: absolute;
   content: "";
 }
-
+.auction-item-3 .auction-content .bid-amount, .auction-item-3 .auction-thumb, .auction-item-3,
 .dashboard-widget .share-area, .alert-widget ul li, .sort-winning-bid, .dash-bid-item .button-area, .dash-bid-item .header, .dash-pro-item .dash-pro-body li, .dash-pro-item .header, .history-table .user-info, .product-tab-menu li, .product-info-table tbody, .share-area ul, .share-area, .buy-now-area, .product-bid-form, .price-table li, .product-details-header ul, .side-counter-item, .pagination, .product-header .product-header-item, .product-header, .faq-item .faq-title, .video-button-2, .error-section, .login-form .form-group.checkgroup, .account-wrapper .right-side, .account-wrapper, .login-with li a, .login-with, .about-content .item-area, .counter-item .counter-header, .team-item .team-inner .team-content .social,   .auction-wrapper-5, .auction-wrapper-7, .filter,  .call-wrapper, .auction-item .auction-content .countdown-area, .auction-item .auction-content .bid-area .bid-amount, .auction-item .auction-content .bid-area, .auction-item .auction-thumb, .client-item .client-author .content .ratings, .client-item .client-author, .price-range, .widget-form-group, .browse-item-2, .banner-thumb-4 .bid-now, .cart-sidebar-area .single-product-item .thumb, .cart-sidebar-area .single-product-item, .menu, .header-wrapper, .header-top-wrapper .customer-support li, .header-top-wrapper .customer-support, .header-top-wrapper .cart-button-area, .header-top-wrapper, .social-icons, .footer-bottom-wrapper .gateway-area, .footer-bottom-wrapper, .newslater-area, .slider-nav, .section-header-3 .left, .section-header-3, .section-header-2 .left, .section-header-2 {
   display: flex;
   flex-wrap: wrap;
@@ -3181,7 +3173,131 @@ div[class*=auction] .custom-button {
   }
 }
 
-
+/*Popular Auction Section Starts Here*/
+.auction-item-3 {
+  margin-bottom: 40px;
+  transition: all 0.4s;
+  transition: all 0.4s;
+}
+.auction-item-3 .auction-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgb(246, 246, 255);
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 7px);
+}
+.auction-item-3 .auction-thumb a {
+  display: block;
+  overflow: hidden;
+}
+.auction-item-3 .auction-thumb a img {
+  transition: all 0.5s;
+}
+.auction-item-3 .auction-thumb .bid {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  line-height: 40px;
+  font-size: 18px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  text-align: center;
+  background: -ms-linear-gradient(135deg, rgb(177, 34, 230) 0%, rgb(255, 99, 222) 100%);
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.13);
+  background: #ffffff;
+}
+.auction-item-3 .auction-thumb .bid i {
+  color: #43b055;
+}
+.auction-item-3 .auction-thumb .rating {
+  color: #ff7800;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.auction-item-3 .auction-thumb img {
+  width: 100%;
+}
+.auction-item-3 .auction-content {
+  padding-left: 20px;
+  width: calc(50% + 7px);
+  text-align: center;
+  align-self: center;
+}
+.auction-item-3 .auction-content .title {
+  margin: 0;
+  line-height: 26px;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.auction-item-3 .auction-content .title a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.auction-item-3 .auction-content .bid-amount {
+  padding: 12px 20px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px dotted #deddf5;
+  border-top: 2px dotted #deddf5;
+}
+.auction-item-3 .auction-content .bid-amount .icon i {
+  line-height: 1;
+  font-size: 36px;
+  color: #43b055;
+}
+.auction-item-3 .auction-content .bid-amount .amount-content {
+  padding-left: 15px;
+}
+.auction-item-3 .auction-content .bid-amount .amount-content .current {
+  font-size: 14px;
+  color: #43b055;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.auction-item-3 .auction-content .bid-amount .amount-content .amount {
+  font-size: 20px;
+  line-height: 20px;
+  color: #171d1c;
+}
+.auction-item-3 .auction-content .bids-area {
+  margin-top: 7px;
+  font-size: 16px;
+}
+.auction-item-3 .auction-content .bids-area .total-bids {
+  color: #43b055;
+}
+@media screen and (max-width: 520px) {
+  .auction-item-3 {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .auction-item-3 .auction-thumb, .auction-item-3 .auction-content {
+    width: 100%;
+  }
+  .auction-item-3 .auction-content {
+    padding: 0;
+    padding-top: 20px;
+  }
+}
+.auction-item-3:hover {
+  box-shadow: -2.034px 6.84px 10px 0px rgba(56, 34, 154, 0.168);
+}
+.auction-item-3:hover .auction-thumb a {
+  display: block;
+  overflow: hidden;
+}
+.auction-item-3:hover .auction-thumb a img {
+  transform: scale(1.1);
+}
 
 .popular-auction-wrapper {
   border-radius: 20px;

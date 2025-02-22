@@ -21,6 +21,14 @@ class viewOpenController extends Controller
                     ->withCount('products as closing_stock')
                     ->get();
 
+        // $categories = Product_categorie::
+        //             with(['products' => function($query){
+        //                 $query->where('end_at','<',now());
+        //             }])
+        //             ->get();
+        //             // dd(now().toString());
+        //             dd($categories->toArray());
+
         // $products = product::
         //             orderBy('id','desc')
         //             ->join('product_categories','products.category_id','=','product_categories.id')
