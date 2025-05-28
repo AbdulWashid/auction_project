@@ -56,7 +56,7 @@
 @push('cropperjs_css')
     <!-- Cropper js -->
     <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet">
-    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+    <script src="{{ asset('Admin/js/cropper.js') }}"></script>
 @endpush
 @section('content')
 
@@ -198,7 +198,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" id="cropImage" class="btn btn-success">  <i class="bi bi-crop"></i> &nbsp; Crop</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         </div>
     </div>
   </div>
